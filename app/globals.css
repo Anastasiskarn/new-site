@@ -810,9 +810,11 @@ textarea.demo-field {
   background: rgb(5 5 7 / 0.8);
 }
 /* Bottom-sheet placement: a fixed card, not the UA's centered dialog box.
-   No transform/filter is left on this element once the entry animation ends —
-   either would turn it into a containing block and strand the custom cursor
-   layer (reparented in here while the dialog is open) at the wrong offset. */
+   Never give this element a transform/filter/will-change, not even inside an
+   animation (a filling transform animation counts): any of them turns it into a
+   containing block, so the custom cursor layer (reparented in here while the
+   dialog is open) lands at the wrong offset and overflows the card into scrollbars.
+   The entry slide therefore animates margin-bottom instead of translate. */
 .consent-dialog {
   position: fixed;
   z-index: 100;
@@ -823,9 +825,15 @@ textarea.demo-field {
   margin: 0 auto;
   max-width: 42rem;
   max-height: calc(100dvh - 2rem);
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
   box-shadow: 0 24px 80px rgb(0 0 0 / 0.55), 0 0 0 1px rgb(0 240 255 / 0.08), 0 0 42px rgb(0 240 255 / 0.08);
-  animation: consent-dialog-in 420ms var(--ease-out-soft) both;
+  animation: consent-dialog-in 420ms var(--ease-out-soft) backwards;
+}
+.consent-dialog::-webkit-scrollbar {
+  display: none;
 }
 @media (min-width: 640px) {
   .consent-dialog {
@@ -840,8 +848,7 @@ textarea.demo-field {
   animation: consent-backdrop-in 420ms ease-out both;
 }
 @keyframes consent-dialog-in {
-  from { opacity: 0; transform: translateY(16px) scale(0.98); }
-  to { opacity: 1; }
+  from { opacity: 0; margin-bottom: -16px; }
 }
 @keyframes consent-backdrop-in {
   from { opacity: 0; }

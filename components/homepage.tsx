@@ -11,13 +11,13 @@ import { LogoMarquee } from "./ui/logo-marquee";
 import { FaqTabs } from "./faq-tabs";
 import { LampContainer } from "./ui/lamp";
 
-// Tools the automations connect to. Marks live in public/media/stack (svgl.app via 21st.dev, Simple Icons for
-// Airtable, HubSpot, Make and Zapier). Brand names stay untranslated in both locales.
+// Client-side tools the automations connect to, never our own build stack. Marks live in public/media/stack
+// (svgl.app via 21st.dev, Simple Icons for Airtable and HubSpot). Brand names stay untranslated in both locales.
 const stack = [
   ["meta", "Meta"], ["whatsapp", "WhatsApp"], ["instagram", "Instagram"], ["google-drive", "Google Drive"],
-  ["gmail", "Gmail"], ["google-calendar", "Google Calendar"], ["google-sheets", "Google Sheets"], ["airtable", "Airtable"],
-  ["hubspot", "HubSpot"], ["claude", "Claude"], ["openai", "OpenAI"], ["n8n", "n8n"], ["make", "Make"],
-  ["zapier", "Zapier"], ["slack", "Slack"], ["notion", "Notion"], ["twilio", "Twilio"],
+  ["gmail", "Gmail"], ["google-calendar", "Google Calendar"], ["google-sheets", "Google Sheets"], ["outlook", "Outlook"],
+  ["teams", "Microsoft Teams"], ["excel", "Excel"], ["airtable", "Airtable"], ["hubspot", "HubSpot"],
+  ["slack", "Slack"], ["notion", "Notion"],
 ] as const;
 
 // The integration line doubles as the strip's label, so the logos read as the answer to it
