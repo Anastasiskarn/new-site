@@ -8,7 +8,7 @@ import { ServiceLinks } from './marketing';
 export type RestoredSectionName = "process" | "services" | "consulting" | "voice" | "features" | "about" | "contact" | "faq" | "footer";
 export function RestoredSection({lang,section,children,cookieLabel='Cookie settings'}: {lang:Locale;section:RestoredSectionName;children?:ReactNode;cookieLabel?:string}) {
 if (lang === "en") { switch(section) {
-case "process": return (<><section id={"how-it-works"} className={"-mt-px bg-dark-800 py-24 md:py-32"} data-connector-section={""}>
+case "process": return (<><section id={"how-it-works"} className={"-mt-px bg-dark-800 py-16 sm:py-24 md:py-32"} data-connector-section={""}>
 <div className={"mx-auto max-w-8xl px-6"}>
 <div className={"reveal max-w-2xl"}>
 <h2 className={"font-display text-4xl font-bold tracking-tight text-white sm:text-5xl"}>
@@ -63,7 +63,7 @@ case "process": return (<><section id={"how-it-works"} className={"-mt-px bg-dar
 </div>
 </div>
 </section></>);
-case "services": return (<><section id={"services"} className={"relative overflow-hidden py-24 md:py-32"}>
+case "services": return (<><section id={"services"} className={"relative overflow-hidden py-16 sm:py-24 md:py-32"}>
 <div className={"pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(0,240,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,240,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]"}>
 
 </div>
@@ -545,7 +545,7 @@ case "services": return (<><section id={"services"} className={"relative overflo
 </div>
 <div className="mx-auto max-w-8xl px-6"><ServiceLinks lang={lang} /></div>
 </section></>);
-case "consulting": return (<><section id={"consulting"} className={"relative overflow-hidden bg-dark-800 py-24 md:py-32"} data-connector-section={""}>
+case "consulting": return (<><section id={"consulting"} className={"relative overflow-hidden bg-dark-800 py-16 sm:py-24 md:py-32"} data-connector-section={""}>
 <canvas className={"particle-bg absolute inset-0 h-full w-full pointer-events-none"} aria-hidden={"true"}>
 
 </canvas>
@@ -1262,7 +1262,7 @@ case "voice": return (<><section id={"voice-agent"} className={"relative overflo
 </div>
 </div>
 </section></>);
-case "features": return (<><section id={"features"} className={"py-24 md:py-32"}>
+case "features": return (<><section id={"features"} className={"py-16 sm:py-24 md:py-32"}>
 <div className={"mx-auto max-w-8xl px-6"}>
 <div className={"reveal max-w-2xl"}>
 <h2 className={"font-display text-4xl font-bold tracking-tight text-white sm:text-5xl"}>
@@ -1602,7 +1602,7 @@ case "features": return (<><section id={"features"} className={"py-24 md:py-32"}
 </div>
 <div className="mx-auto mt-8 max-w-8xl px-6 text-sm text-gray-300"><p>{"Self-serve signup is not available yet. We are preparing the AiAnchor Operations Platform, where you can see the systems we have implemented, their activity and the progress of our work together. Until then, book a free discovery call to discuss what you want to improve."}</p><a className="mt-4 inline-flex min-h-11 items-center text-primary underline" href="https://app.aianchor.online">{"Client Login"}</a></div>
 </section></>);
-case "about": return (<><section id={"about"} className={"relative overflow-hidden py-24 md:py-32"}>
+case "about": return (<><section id={"about"} className={"relative overflow-hidden py-16 sm:py-24 md:py-32"}>
 <canvas className={"particle-bg absolute inset-0 h-full w-full pointer-events-none"} aria-hidden={"true"}>
 
 </canvas>
@@ -1672,7 +1672,7 @@ case "about": return (<><section id={"about"} className={"relative overflow-hidd
 </div>
 <div className="mx-auto max-w-5xl px-6"><a href={pathFor(lang,'about')} className="mt-8 inline-flex min-h-11 items-center text-primary underline">{"Learn more"}</a></div>
 </section></>);
-case "contact": return (<><section id={"contact"} className={"-mt-px bg-dark-800 py-24 md:py-32"}>
+case "contact": return (<><section id={"contact"} className={"-mt-px bg-dark-800 py-16 sm:py-24 md:py-32"}>
 <div className={"mx-auto max-w-8xl px-6"}>
 <div className={"reveal mb-14 rounded-3xl border border-white/10 bg-gradient-to-br from-dark-700 to-dark-900 p-8 shadow-[0_0_40px_rgba(0,240,255,0.1)] md:p-10"}>
 <h2 className={"mb-4 max-w-4xl font-display text-3xl font-bold sm:text-5xl"}>
@@ -1775,7 +1775,7 @@ case "contact": return (<><section id={"contact"} className={"-mt-px bg-dark-800
 </div>
 </div>
 </section></>);
-case "faq": return (<><section id={"faq"} className={"py-24 md:py-32"}>
+case "faq": return (<><section id={"faq"} className={"py-16 sm:py-24 md:py-32"}>
 <div className={"mx-auto max-w-4xl px-6"}>
 <div className={"reveal max-w-2xl"}>
 <h2 className={"font-display text-4xl font-bold tracking-tight text-white sm:text-5xl"}>
@@ -2045,8 +2045,8 @@ case "faq": return (<><section id={"faq"} className={"py-24 md:py-32"}>
 </div>
 </section></>);
 case "footer": return (<><footer className={"border-t border-white/[0.06] bg-dark-900"}>
-<div className={"mx-auto max-w-8xl px-6 pb-10 pt-20"}>
-<div className={"grid gap-14 md:grid-cols-12"}>
+<div className={"mx-auto max-w-8xl px-6 pb-28 pt-16 sm:pb-10 sm:pt-20"}>
+<div className={"grid gap-12 md:grid-cols-12 md:gap-14"}>
 <div className={"md:col-span-5"}>
 <div className={"flex items-center gap-2.5"}>
 <span className={"rounded-lg bg-gradient-to-tr from-primary to-secondary p-1.5"}>
@@ -2101,7 +2101,7 @@ case "footer": return (<><footer className={"border-t border-white/[0.06] bg-dar
 </a>
 </div>
 </div>
-<div className={"grid gap-10 sm:grid-cols-3 md:col-span-7"}>
+<div className={"grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 md:col-span-7"}>
 <div>
 <h3 className={"text-sm font-medium text-white"}>
 {"Product"}
@@ -2156,11 +2156,11 @@ case "footer": return (<><footer className={"border-t border-white/[0.06] bg-dar
 </li>
 </ul>
 </div>
-<div>
+<div className={"col-span-2 sm:col-span-1"}>
 <h3 className={"text-sm font-medium text-white"}>
 {"Legal"}
 </h3>
-<ul className={"mt-3 text-sm text-gray-400"}>
+<ul className={"mt-3 grid grid-cols-2 gap-x-6 text-sm text-gray-400 sm:block"}>
 <li>
 <a href={"/en/terms/"} className={"link-hover inline-flex min-h-11 items-center hover:text-primary"}>
 {"Terms of Service"}
@@ -2205,7 +2205,7 @@ case "footer": return (<><footer className={"border-t border-white/[0.06] bg-dar
 </footer></>);
 } }
 if (lang === "gr") { switch(section) {
-case "process": return (<><section id={"how-it-works"} className={"-mt-px bg-dark-800 py-24 md:py-32"} data-connector-section={""}>
+case "process": return (<><section id={"how-it-works"} className={"-mt-px bg-dark-800 py-16 sm:py-24 md:py-32"} data-connector-section={""}>
 <div className={"mx-auto max-w-8xl px-6"}>
 <div className={"reveal max-w-2xl"}>
 <h2 className={"font-display text-4xl font-bold tracking-tight text-white sm:text-5xl"}>
@@ -2260,7 +2260,7 @@ case "process": return (<><section id={"how-it-works"} className={"-mt-px bg-dar
 </div>
 </div>
 </section></>);
-case "services": return (<><section id={"services"} className={"relative overflow-hidden py-24 md:py-32"}>
+case "services": return (<><section id={"services"} className={"relative overflow-hidden py-16 sm:py-24 md:py-32"}>
 <div className={"pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(0,240,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,240,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]"}>
 
 </div>
@@ -2742,7 +2742,7 @@ case "services": return (<><section id={"services"} className={"relative overflo
 </div>
 <div className="mx-auto max-w-8xl px-6"><ServiceLinks lang={lang} /></div>
 </section></>);
-case "consulting": return (<><section id={"consulting"} className={"relative overflow-hidden bg-dark-800 py-24 md:py-32"} data-connector-section={""}>
+case "consulting": return (<><section id={"consulting"} className={"relative overflow-hidden bg-dark-800 py-16 sm:py-24 md:py-32"} data-connector-section={""}>
 <canvas className={"particle-bg absolute inset-0 h-full w-full pointer-events-none"} aria-hidden={"true"}>
 
 </canvas>
@@ -3459,7 +3459,7 @@ case "voice": return (<><section id={"voice-agent"} className={"relative overflo
 </div>
 </div>
 </section></>);
-case "features": return (<><section id={"features"} className={"py-24 md:py-32"}>
+case "features": return (<><section id={"features"} className={"py-16 sm:py-24 md:py-32"}>
 <div className={"mx-auto max-w-8xl px-6"}>
 <div className={"reveal max-w-2xl"}>
 <h2 className={"font-display text-4xl font-bold tracking-tight text-white sm:text-5xl"}>
@@ -3799,7 +3799,7 @@ case "features": return (<><section id={"features"} className={"py-24 md:py-32"}
 </div>
 <div className="mx-auto mt-8 max-w-8xl px-6 text-sm text-gray-300"><p>{"Η αυτόματη εγγραφή δεν είναι ακόμη διαθέσιμη. Ετοιμάζουμε το AiAnchor Operations Platform, όπου θα βλέπεις τα συστήματα που έχουμε υλοποιήσει, τη δραστηριότητά τους και την πορεία της συνεργασίας. Μέχρι τότε, κλείσε ένα δωρεάν discovery call για να δούμε τι θέλεις να βελτιώσεις."}</p><a className="mt-4 inline-flex min-h-11 items-center text-primary underline" href="https://app.aianchor.online">{"Σύνδεση πελατών"}</a></div>
 </section></>);
-case "about": return (<><section id={"about"} className={"relative overflow-hidden py-24 md:py-32"}>
+case "about": return (<><section id={"about"} className={"relative overflow-hidden py-16 sm:py-24 md:py-32"}>
 <canvas className={"particle-bg absolute inset-0 h-full w-full pointer-events-none"} aria-hidden={"true"}>
 
 </canvas>
@@ -3869,7 +3869,7 @@ case "about": return (<><section id={"about"} className={"relative overflow-hidd
 </div>
 <div className="mx-auto max-w-5xl px-6"><a href={pathFor(lang,'about')} className="mt-8 inline-flex min-h-11 items-center text-primary underline">{"Μάθετε περισσότερα"}</a></div>
 </section></>);
-case "contact": return (<><section id={"contact"} className={"-mt-px bg-dark-800 py-24 md:py-32"}>
+case "contact": return (<><section id={"contact"} className={"-mt-px bg-dark-800 py-16 sm:py-24 md:py-32"}>
 <div className={"mx-auto max-w-8xl px-6"}>
 <div className={"reveal mb-14 rounded-3xl border border-white/10 bg-gradient-to-br from-dark-700 to-dark-900 p-8 shadow-[0_0_40px_rgba(0,240,255,0.1)] md:p-10"}>
 <h2 className={"mb-4 max-w-4xl font-display text-3xl font-bold sm:text-5xl"}>
@@ -3972,7 +3972,7 @@ case "contact": return (<><section id={"contact"} className={"-mt-px bg-dark-800
 </div>
 </div>
 </section></>);
-case "faq": return (<><section id={"faq"} className={"py-24 md:py-32"}>
+case "faq": return (<><section id={"faq"} className={"py-16 sm:py-24 md:py-32"}>
 <div className={"mx-auto max-w-4xl px-6"}>
 <div className={"reveal max-w-2xl"}>
 <h2 className={"font-display text-4xl font-bold tracking-tight text-white sm:text-5xl"}>
@@ -4242,8 +4242,8 @@ case "faq": return (<><section id={"faq"} className={"py-24 md:py-32"}>
 </div>
 </section></>);
 case "footer": return (<><footer className={"border-t border-white/[0.06] bg-dark-900"}>
-<div className={"mx-auto max-w-8xl px-6 pb-10 pt-20"}>
-<div className={"grid gap-14 md:grid-cols-12"}>
+<div className={"mx-auto max-w-8xl px-6 pb-28 pt-16 sm:pb-10 sm:pt-20"}>
+<div className={"grid gap-12 md:grid-cols-12 md:gap-14"}>
 <div className={"md:col-span-5"}>
 <div className={"flex items-center gap-2.5"}>
 <span className={"rounded-lg bg-gradient-to-tr from-primary to-secondary p-1.5"}>
@@ -4298,7 +4298,7 @@ case "footer": return (<><footer className={"border-t border-white/[0.06] bg-dar
 </a>
 </div>
 </div>
-<div className={"grid gap-10 sm:grid-cols-3 md:col-span-7"}>
+<div className={"grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 md:col-span-7"}>
 <div>
 <h3 className={"text-sm font-medium text-white"}>
 {"Προϊόν"}
@@ -4353,11 +4353,11 @@ case "footer": return (<><footer className={"border-t border-white/[0.06] bg-dar
 </li>
 </ul>
 </div>
-<div>
+<div className={"col-span-2 sm:col-span-1"}>
 <h3 className={"text-sm font-medium text-white"}>
 {"Νομικά"}
 </h3>
-<ul className={"mt-3 text-sm text-gray-400"}>
+<ul className={"mt-3 grid grid-cols-2 gap-x-6 text-sm text-gray-400 sm:block"}>
 <li>
 <a href={"/gr/terms/"} className={"link-hover inline-flex min-h-11 items-center hover:text-primary"}>
 {"Όροι Χρήσης"}

@@ -21,7 +21,7 @@ export function Section({
   lead,
   children,
   tone = false,
-  spacing = "py-20 md:py-28",
+  spacing = "py-16 md:py-28",
 }: {
   id?: string;
   title: string;

@@ -64,7 +64,7 @@ function column(robot: RobotSide) {
 // stand while this section owns the middle of the viewport ("off" once it has stopped at the dashboard);
 // `wide` renders full width underneath the section's column.
 function HomeSection({ id, robot, className = "", children, wide, decoration, connector = false }: { id: string; robot: RobotSide; className?: string; children: ReactNode; wide?: ReactNode; decoration?: ReactNode; connector?: boolean }) {
-  return <section id={id} data-robot={robot} className={`relative isolate py-24 md:py-32 ${className}`} {...(connector ? { "data-connector-section": "" } : {})}>
+  return <section id={id} data-robot={robot} className={`relative isolate py-16 sm:py-24 md:py-32 ${className}`} {...(connector ? { "data-connector-section": "" } : {})}>
     {decoration}
     <div className={`relative mx-auto max-w-8xl px-6 ${decoration ? "z-10" : ""}`}>
       <div className={column(robot)}>{children}</div>
@@ -82,12 +82,12 @@ function Hero({ lang }: { lang: Locale }) {
   return <section data-robot="right" className="relative isolate overflow-clip">
     <div className="hero-split-glow pointer-events-none absolute inset-0 -z-10" aria-hidden="true" />
     <div className="relative mx-auto flex min-h-[100svh] max-w-8xl items-center px-6 pb-20 pt-36 lg:pb-24 lg:pt-28">
-      <div className={`max-w-2xl lg:max-w-none ${column("right")}`}>
+      <div className={`w-full min-w-0 max-w-2xl lg:max-w-none ${column("right")}`}>
         <h1 style={delay(0)} className="scroll-hero-heading scroll-hero-enter font-display text-4xl font-semibold leading-[1.04] sm:text-6xl lg:text-[3.6rem] xl:text-7xl">{t.hero.title}</h1>
         <p style={delay(180)} className="scroll-hero-enter mt-7 max-w-xl text-base leading-relaxed text-gray-400 md:text-lg">{t.hero.body}</p>
         <div style={delay(260)} className="scroll-hero-enter mt-10 flex flex-wrap items-center gap-2">
           <DemoPill lang={lang} />
-          <a className="link-hover inline-flex min-h-12 items-center justify-center rounded-full px-6 text-base font-medium text-gray-300 hover:text-primary" href={lang === "gr" ? getContent(lang).hero.ctaSecondaryHref : "#how-it-works"}>{t.hero.secondary}</a>
+          <a className="link-hover inline-flex min-h-12 items-center justify-center rounded-full px-2 text-base font-medium text-gray-300 hover:text-primary sm:px-6" href={lang === "gr" ? getContent(lang).hero.ctaSecondaryHref : "#how-it-works"}>{t.hero.secondary}</a>
         </div>
         <div style={delay(340)} className="scroll-hero-enter mt-12">
           <p className="flex items-center gap-3 text-sm text-gray-400"><span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary shadow-[0_0_12px_#00f0ff]" aria-hidden="true" />{t.hero.integration}</p>

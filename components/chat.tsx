@@ -44,9 +44,38 @@ export function Chat({
   const launcher = useRef<HTMLButtonElement>(null);
   const textarea = useRef<HTMLTextAreaElement>(null);
   const log = useRef<HTMLDivElement>(null);
+  const panel = useRef<HTMLDivElement>(null);
   useEffect(() => () => controller.current?.abort(), []);
   useEffect(() => {
-    if (open) textarea.current?.focus();
+    if (!open) return;
+    // On phones, focusing the field raises the keyboard over the suggestions before they can be read
+    if (window.matchMedia("(max-width: 639px)").matches) panel.current?.focus();
+    else textarea.current?.focus();
+  }, [open]);
+  // Phones get a full-screen sheet: hold the page still behind it and track the visual viewport so the
+  // composer stays above the on-screen keyboard.
+  useEffect(() => {
+    const phone = window.matchMedia("(max-width: 639px)");
+    if (!open || !phone.matches) return;
+    const root = document.documentElement;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const viewport = window.visualViewport;
+    const fit = () => {
+      if (!viewport) return;
+      root.style.setProperty("--chat-viewport-height", `${viewport.height}px`);
+      root.style.setProperty("--chat-viewport-top", `${viewport.offsetTop}px`);
+    };
+    fit();
+    viewport?.addEventListener("resize", fit);
+    viewport?.addEventListener("scroll", fit);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      viewport?.removeEventListener("resize", fit);
+      viewport?.removeEventListener("scroll", fit);
+      root.style.removeProperty("--chat-viewport-height");
+      root.style.removeProperty("--chat-viewport-top");
+    };
   }, [open]);
   useEffect(() => {
     if (log.current) log.current.scrollTop = log.current.scrollHeight;
@@ -180,12 +209,18 @@ export function Chat({
         onClick={() => setOpen(!open)}
       >
         <span className="chat-launcher-icon" aria-hidden="true">
-          ✦
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 8V4H8" />
+            <rect width="16" height="12" x="4" y="8" rx="2" />
+            <path d="M2 14h2M20 14h2M15 13v2M9 13v2" />
+          </svg>
         </span>
         <span className="chat-launcher-label">{copy.launcher}</span>
       </button>
       <div
         id="chat-panel"
+        ref={panel}
+        tabIndex={-1}
         hidden={!open}
         className={`chat-panel ${open ? "is-visible" : ""}`}
         role="dialog"

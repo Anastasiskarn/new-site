@@ -864,6 +864,10 @@ textarea.demo-field {
   display: flex;
   flex-direction: column;
 }
+/* Phones move focus to the sheet itself (not the field) so the keyboard waits until asked for */
+.chat-panel:focus {
+  outline: none;
+}
 .chat-widget .chat-launcher {
   min-height: 3rem;
 }

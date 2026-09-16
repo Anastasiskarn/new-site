@@ -93,7 +93,7 @@ export function Pricing({
     contact: `mailto:${getContent(lang).footer.contactEmail}`,
   };
   return (
-    <section id="pricing" className="relative overflow-hidden py-24 md:py-32">
+    <section id="pricing" className="relative overflow-hidden py-16 sm:py-24 md:py-32">
       <div
         className="pointer-events-none absolute inset-0"
         aria-hidden="true"

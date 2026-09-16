@@ -26,7 +26,7 @@ export function FaqTabs({ categories, label = "FAQ categories" }: { categories: 
 
   return (
     <div className="mx-auto mt-12 max-w-4xl lg:mt-14">
-      <div className={`${enhanced ? "flex" : "hidden"} justify-center gap-2 overflow-x-auto px-1 pb-2`} role="tablist" aria-label={label} hidden={!enhanced}>
+      <div className={`${enhanced ? "flex" : "hidden"} -mx-6 snap-x scroll-px-6 gap-2 overflow-x-auto px-6 pb-2 [scrollbar-width:none] lg:mx-0 lg:justify-center lg:px-1 [&::-webkit-scrollbar]:hidden`} role="tablist" aria-label={label} hidden={!enhanced}>
         {categories.map((category, index) => (
           <button
             key={category.label}
@@ -36,7 +36,7 @@ export function FaqTabs({ categories, label = "FAQ categories" }: { categories: 
             tabIndex={activeIndex === index ? 0 : -1}
             aria-selected={activeIndex === index}
             aria-controls={`home-faq-panel-${index}`}
-            className={`group flex min-h-9 shrink-0 items-center rounded-lg border px-4 text-sm transition-colors ${activeIndex === index ? "border-white bg-white text-dark-900" : "border-white/10 text-gray-400 hover:border-white/25 hover:text-white"}`}
+            className={`group flex min-h-11 shrink-0 snap-start items-center rounded-lg border px-4 text-sm transition-colors ${activeIndex === index ? "border-white bg-white text-dark-900" : "border-white/10 text-gray-400 hover:border-white/25 hover:text-white"}`}
             onClick={() => setActiveIndex(index)}
             onKeyDown={(event) => moveTab(event, index)}
           >

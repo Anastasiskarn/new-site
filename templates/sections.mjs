@@ -217,7 +217,7 @@ export function renderServices(t) {
     </div>
   </div>`;
 
-  return `<section id="services" class="relative overflow-hidden py-24 md:py-32">
+  return `<section id="services" class="relative overflow-hidden py-16 sm:py-24 md:py-32">
     <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(0,240,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,240,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]"></div>
     <div class="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-[150px]"></div>
     <div class="relative mx-auto max-w-8xl px-6">
@@ -243,7 +243,7 @@ export function renderConsulting(t) {
     { text: 'text-purple-400', bg: 'bg-purple-500', icon: 'rocket' },
     { text: 'text-primary', bg: 'bg-primary', icon: 'trendingUp' },
   ];
-  return `<section id="consulting" class="relative overflow-hidden bg-dark-800 py-24 md:py-32" data-connector-section>
+  return `<section id="consulting" class="relative overflow-hidden bg-dark-800 py-16 sm:py-24 md:py-32" data-connector-section>
     <canvas class="particle-bg absolute inset-0 h-full w-full pointer-events-none" aria-hidden="true"></canvas>
     <div class="relative mx-auto max-w-8xl px-6">
       <div class="reveal mx-auto mb-20 max-w-3xl text-center">
@@ -425,7 +425,7 @@ export function renderAbout(t) {
   (a.leadBoldWords || []).forEach((w) => {
     lead = lead.replace(w, `<strong class="font-semibold text-white">${w}</strong>`);
   });
-  return `<section id="about" class="relative overflow-hidden py-24 md:py-32">
+  return `<section id="about" class="relative overflow-hidden py-16 sm:py-24 md:py-32">
     <canvas class="particle-bg absolute inset-0 h-full w-full pointer-events-none" aria-hidden="true"></canvas>
     <div class="relative mx-auto max-w-5xl px-6">
       <div class="reveal mb-16 text-center">
@@ -462,7 +462,7 @@ export function renderAbout(t) {
 export function renderContact(t) {
   const c = t.contact;
   const f = c.form;
-  return `<section id="contact" class="-mt-px bg-dark-800 py-24 md:py-32">
+  return `<section id="contact" class="-mt-px bg-dark-800 py-16 sm:py-24 md:py-32">
     <div class="mx-auto max-w-8xl px-6">
       <div class="reveal mb-14 rounded-3xl border border-white/10 bg-gradient-to-br from-dark-700 to-dark-900 p-8 shadow-[0_0_40px_rgba(0,240,255,0.1)] md:p-10">
         <h2 class="mb-4 max-w-4xl font-display text-3xl font-bold sm:text-5xl">${c.panelHeading}</h2>
@@ -574,7 +574,7 @@ export function renderSocialProof(t) {
 
 export function renderHowItWorks(t) {
   const h = t.howItWorks;
-  return `<section id="how-it-works" class="-mt-px bg-dark-800 py-24 md:py-32" data-connector-section>
+  return `<section id="how-it-works" class="-mt-px bg-dark-800 py-16 sm:py-24 md:py-32" data-connector-section>
     <div class="mx-auto max-w-8xl px-6">
       <div class="reveal max-w-2xl">
         <h2 class="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">${h.heading}</h2>
@@ -642,7 +642,7 @@ export function renderFeatures(t) {
   };
 
   // Bento: featured 2x2 + one wide 2x1 + six 1x1 = 12 cells = a gapless 4x3 grid on desktop.
-  return `<section id="features" class="py-24 md:py-32">
+  return `<section id="features" class="py-16 sm:py-24 md:py-32">
     <div class="mx-auto max-w-8xl px-6">
       <div class="reveal max-w-2xl">
         <h2 class="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">${f.heading}</h2>
@@ -768,7 +768,7 @@ export function renderPricing(t) {
     ctaLabel: p.ctaScale,
   });
 
-  return `<section id="pricing" class="relative overflow-hidden py-24 md:py-32">
+  return `<section id="pricing" class="relative overflow-hidden py-16 sm:py-24 md:py-32">
     <div class="pointer-events-none absolute inset-0" aria-hidden="true" style="background:radial-gradient(720px 480px at 38% 55%, rgba(0,240,255,0.04), transparent 70%)"></div>
     <div class="relative mx-auto max-w-8xl px-6">
       <div class="reveal max-w-2xl">
@@ -806,7 +806,7 @@ export function renderComparison(t) {
     if (v === false) return `<span class="inline-flex text-gray-600">${iconMarkup('minus', 'w-5 h-5')}</span>`;
     return `<span class="text-sm text-gray-300">${v}</span>`;
   };
-  return `<section class="border-y border-white/5 bg-dark-800 py-24 md:py-32">
+  return `<section class="border-y border-white/5 bg-dark-800 py-16 sm:py-24 md:py-32">
     <div class="mx-auto max-w-8xl px-6">
       <div class="reveal max-w-2xl">
         <h2 class="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">${c.heading}</h2>
@@ -864,7 +864,7 @@ export function renderComingSoon(t, lang) {
 
 export function renderFaq(t) {
   const f = t.faq;
-  return `<section id="faq" class="py-24 md:py-32">
+  return `<section id="faq" class="py-16 sm:py-24 md:py-32">
     <div class="mx-auto max-w-4xl px-6">
       <div class="reveal max-w-2xl">
         <h2 class="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">${f.heading}</h2>

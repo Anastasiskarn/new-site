@@ -119,8 +119,8 @@ export function renderFooter(content, lang) {
   const link = (href, label) =>
     `<li><a href="${href}" class="link-hover inline-flex min-h-11 items-center hover:text-primary">${label}</a></li>`;
   return `<footer class="border-t border-white/[0.06] bg-dark-900">
-    <div class="mx-auto max-w-8xl px-6 pb-10 pt-20">
-      <div class="grid gap-14 md:grid-cols-12">
+    <div class="mx-auto max-w-8xl px-6 pb-28 pt-16 sm:pb-10 sm:pt-20">
+      <div class="grid gap-12 md:grid-cols-12 md:gap-14">
         <div class="md:col-span-5">
           <div class="flex items-center gap-2.5">
             <span class="rounded-lg bg-gradient-to-tr from-primary to-secondary p-1.5">${iconMarkup('anchor', 'w-[18px] h-[18px] text-white')}</span>
@@ -133,7 +133,7 @@ export function renderFooter(content, lang) {
           </div>
         </div>
 
-        <div class="grid gap-10 sm:grid-cols-3 md:col-span-7">
+        <div class="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 md:col-span-7">
           <div>
             <h3 class="text-sm font-medium text-white">${f.columns.product}</h3>
             <ul class="mt-3 text-sm text-gray-400">
@@ -161,9 +161,9 @@ export function renderFooter(content, lang) {
             }
           </div>
 
-          <div>
+          <div class="col-span-2 sm:col-span-1">
             <h3 class="text-sm font-medium text-white">${f.columns.legal}</h3>
-            <ul class="mt-3 text-sm text-gray-400">
+            <ul class="mt-3 grid grid-cols-2 gap-x-6 text-sm text-gray-400 sm:block">
               ${link(`/${lang}/terms/`, f.legalLinks.terms)}
               ${link(`/${lang}/privacy/`, f.legalLinks.privacy)}
               ${link(`/${lang}/dpa/`, f.legalLinks.dpa)}
