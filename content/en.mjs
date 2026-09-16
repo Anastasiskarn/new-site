@@ -17,56 +17,56 @@ export default {
       description: 'Self-serve signup is almost ready. Until then, book a free demo and we will set everything up for you.',
     },
     bookDemo: {
-      title: 'Book a free demo | AiAnchor',
-      description: 'Tell us what is slipping through and we will run the AI agent live on a real call flow for your business, then walk you through AiAnchor’s Command Hub. No commitment, no card.',
+      title: 'Book a free workflow review | AiAnchor',
+      description: 'Tell us where your process feels slow, manual or disconnected. We will review the workflow, show you where it can improve, and explain what AiAnchor would implement.',
     },
   },
 
   comingSoon: {
     heading: 'Coming soon',
     body: 'Self-serve signup isn’t live yet. We’re still finishing AiAnchor’s Command Hub, the platform you log into. Until then, book a free demo and we’ll set your agents and automations up for you.',
-    ctaPrimary: 'Book a demo',
+    ctaPrimary: 'Book a discovery call',
     ctaSecondary: 'Back to plans',
   },
 
   // Standalone /en/book-demo/ page. Every "book a demo" CTA on the site points here;
   // the form posts to /api/book-demo, which sends the Resend confirmation.
   bookDemo: {
-    heading: 'Book your free demo',
+    heading: 'Let’s look at how your business actually works.',
     subhead:
-      'Tell us what’s slipping through — missed calls, unanswered chats, slow follow-ups, onboarding done by hand. We’ll run the agent live on a real call flow for your business and show you where AI actually pays.',
+      'Tell us where the process feels slow, manual or disconnected. We’ll review the workflow, show you where it can be improved, and explain what we would implement.',
     bullets: [
       {
-        icon: 'phone',
-        title: 'You hear a real call',
-        desc: 'Not a slide deck. The agent answers, qualifies and books in multiple languages (Greek and English by default), on a flow built around your business.',
-      },
-      {
         icon: 'workflow',
-        title: 'You see the automations',
-        desc: 'Chatbot capture, lead qualification, client onboarding and follow-up sequences, running end to end on your workflow.',
-      },
-      {
-        icon: 'chart',
-        title: 'You see the numbers',
-        desc: 'We walk you through AiAnchor’s Command Hub: calls answered, leads qualified, bookings made and what they’re worth.',
+        title: 'Your current workflow',
+        desc: 'We look at how the work moves through your team today.',
       },
       {
         icon: 'clock',
-        title: '30 minutes, and that’s it',
-        desc: 'No card, no commitment. If it isn’t a fit we’ll tell you straight and you’ve lost half an hour.',
+        title: 'What is slowing things down',
+        desc: 'Manual steps, repeated work, poor handoffs, missed follow-ups or disconnected tools.',
+      },
+      {
+        icon: 'chart',
+        title: 'What should change',
+        desc: 'We show you where automation, software or AI could make sense.',
+      },
+      {
+        icon: 'phone',
+        title: 'How AiAnchor would fit',
+        desc: 'We explain what we would build, manage and track through the AiAnchor Operations Platform.',
       },
     ],
-    // Shown on the demo page because the Growth trial CTA in the pricing table lands here.
-    trialNote:
-      'Coming from the 14-day free trial? Mention Growth in the form below. We set your agent up, the 14 days start once it goes live, and no card is needed.',
-    reassureTitle: 'What happens next',
-    reassureBody:
-      'You’ll get a confirmation email straight away. One of us reads every request personally and comes back to you within one business day to fix a time.',
+    nextSteps: [
+      { title: 'We review your setup', desc: 'We look at the information you send before the call.' },
+      { title: 'We map the problem', desc: 'We identify where the workflow is breaking down or creating unnecessary work.' },
+      { title: 'We show you the options', desc: 'We explain what could be improved and what we would actually implement.' },
+    ],
+    noPressureNote: 'No pressure to move forward. If we do not think there is a useful project there, we will tell you.',
     backLink: 'Back to the site',
     form: {
-      heading: 'Tell us what you need',
-      subheading: 'The more you give us, the more tailored the demo call is.',
+      heading: 'Tell us about the workflow',
+      subheading: 'A bit of context helps us make the call useful from the start.',
       firstName: 'First name',
       lastName: 'Last name',
       email: 'Work email',
@@ -77,29 +77,29 @@ export default {
       website: 'Website',
       websiteOptional: 'optional',
       websitePlaceholder: 'yourcompany.gr',
-      websiteHint: 'Helps us prep the agent with your real services before the call.',
-      interest: 'What do you need most?',
+      websiteHint: 'Helps us understand your workflow before the call.',
+      interest: 'What would you like to improve?',
       interestOptions: [
-        'AI consulting / AI audit',
-        'AI voice agents',
-        'Chatbot (website or WhatsApp)',
-        'Lead qualification',
-        'Client onboarding automation',
-        'Follow-up & CRM automation',
-        'Command Hub / ROI reporting',
-        'Custom build (CRM, internal tool or web app)',
-        'Other',
+        'Lead handling',
+        'Follow-up',
+        'CRM / integrations',
+        'Internal workflow',
+        'Client onboarding',
+        'Reporting / visibility',
+        'AI agents',
+        'Custom internal tool',
+        'Not sure yet',
       ],
-      message: 'What’s slipping through right now?',
+      message: 'What feels inefficient right now?',
       messagePlaceholder:
-        'e.g. we miss 20–30 calls a week after 6pm, nobody answers the website chat, and onboarding a new client takes us three emails.',
-      privacyNote: 'We use these details only to arrange your demo.',
+        'e.g. leads are followed up manually, information is spread across different tools, onboarding takes too many steps, or the team lacks visibility.',
+      privacyNote: 'We use these details only to arrange your workflow review.',
       privacyLink: 'Privacy Policy',
-      submit: 'Request my free demo',
+      submit: 'Book a Free Workflow Review',
       submitting: 'Sending...',
       successTitle: 'Request received!',
       successBody:
-        'Our team has received your free demo request. A confirmation is on its way to your inbox and we’ll contact you shortly to fix a time.',
+        'Our team has received your workflow review request. A confirmation is on its way to your inbox and we’ll contact you shortly to fix a time.',
       sendAnother: 'Send another request',
       errorMessage: 'Something went wrong. Please try again, or email us at info@aianchor.online.',
       endpoint: '/api/book-demo/',
@@ -118,7 +118,7 @@ export default {
     faq: 'FAQ',
     about: 'About',
     clientLogin: 'Client Login',
-    cta: 'Book a demo',
+    cta: 'Book a discovery call',
     // Accessible label for the compact lang-switch pill (visible text is just "GR"/"EN"):
     langSwitchLabel: 'Ελληνικά',
   },
@@ -217,7 +217,7 @@ export default {
     // for it, but the AI work above is what we lead with.
     alsoNote: 'If the roadmap needs something built to sit behind it — a custom CRM, an internal tool, a website or a web app — we build those too, quoted separately.',
     bannerHtml: 'Most roadmaps land in <strong>under a week</strong>, and the first system is live inside two. Built on your numbers, not a generic template.',
-    cta: 'Book a demo',
+    cta: 'Book a discovery call',
   },
 
   voiceSystems: {
@@ -345,136 +345,42 @@ export default {
     ],
   },
 
+  // Three ways to work with us. No usage limits or self-serve tiers: every engagement starts with the workflow.
+  // `cta.target` picks the destination in components/pricing.tsx (book = /book-demo/, contact = email).
   pricing: {
-    heading: 'Simple pricing, real ROI',
-    subhead: 'Every plan is done-for-you service: the AI audit that scopes it, the agents and automations we set up and run, and the minutes. AiAnchor’s Command Hub is included at every tier so you can see what it returns. Growth comes with 14 days free, no card. Prices are before VAT, and paying annually gives you 2 months free.',
-    toggle: { monthly: 'Monthly', annual: 'Annual', save: '2 months free' },
-    vatSuffix: '+ VAT',
-    perMonth: '/mo',
-    mostPopular: 'Most popular',
-    ctaTier: 'Book a free demo',
-    ctaScale: 'Talk to us',
-    overageLabel: 'Overage rate',
-    overageToggle: 'Overage rates',
-    tiers: [
+    heading: 'Pricing based on what you actually need',
+    subhead: 'We start with the workflow, then recommend the right level of support.',
+    vatNote: 'Prices before VAT.',
+    plans: [
       {
-        name: 'Starter',
-        priceMonthly: 149,
-        priceAnnual: 124,
-        tagline: 'For solo operators. We answer your calls and log every lead.',
-        featureGroups: [
-          {
-            label: 'Voice agents',
-            items: [
-              '1 AI voice agent (template wizard)',
-              '150 minutes / month',
-              '1 phone number',
-              'Call summaries & sentiment',
-            ],
-          },
-          {
-            label: 'Automations & Command Hub',
-            items: [
-              'Onboarding audit call',
-              'Command Hub (starter dashboard)',
-              'Knowledge base up to 20 entries',
-              '1 team seat',
-            ],
-          },
-        ],
-        overage: '€0.60 / min',
+        name: 'Workflow Review',
+        price: 'Free',
+        purpose: 'For companies that want to understand where their current processes could be improved.',
+        body: 'We look at how your team works today, find the friction, repetitive work and weak handoffs, then outline where better systems could help.',
+        items: ['Workflow review', 'Bottleneck identification', 'Improvement opportunities', 'Recommended next steps'],
+        cta: { label: 'Book a Free Call', target: 'book' },
       },
       {
-        name: 'Growth',
-        priceMonthly: 349,
-        priceAnnual: 289,
-        mostPopular: true,
-        tagline: 'We answer, qualify, book and follow up across phone and chat, with the full revenue pipeline in view.',
-        // Only tier with a trial. `trial` also switches this card's CTA to /book-demo/,
-        // since we set the trial up rather than running self-serve signup.
-        trial: {
-          badge: '14 days free',
-          cta: 'Try free for 14 days',
-          note: 'Growth only, on request — no card. We set your agent up, then you run Growth free for 14 days.',
-        },
-        featureGroups: [
-          {
-            label: 'Voice agents & chat',
-            items: [
-              '3 AI voice agents',
-              '400 minutes / month',
-              'Website chatbot',
-              'Booking integration',
-            ],
-          },
-          {
-            label: 'Automations & Command Hub',
-            items: [
-              'AI audit & roadmap session',
-              'Lead qualification & routing',
-              'CRM: every lead auto-logged and valued in your currency',
-              'Command Hub (revenue pipeline dashboard)',
-              'Listings / PDF import',
-              'Bookings calendar (see every booked lead)',
-              '3 team seats',
-              '2 automation templates (missed-call text-back, follow-up sequences)',
-            ],
-          },
-        ],
-        overage: '€0.45 / min',
+        name: 'Managed Systems',
+        pricePrefix: 'From',
+        price: '€349',
+        priceSuffix: '/month',
+        featured: true,
+        purpose: 'For businesses that want AiAnchor to build, manage and improve selected systems and workflows.',
+        body: 'Depending on what you need, that can mean automations, integrations, AI agents, reporting or the operational systems behind them.',
+        items: ['System setup and management', 'Automation and integrations', 'AI agents where useful', 'Monitoring and support', 'Ongoing improvements', 'AiAnchor platform access where relevant'],
+        cta: { label: 'Discuss Your Workflow', target: 'book' },
       },
       {
-        name: 'Pro',
-        priceMonthly: 699,
-        priceAnnual: 579,
-        tagline: 'We run your whole front desk in multiple languages, with client onboarding, custom automations and the full ROI suite.',
-        featureGroups: [
-          {
-            label: 'Voice agents & chat',
-            items: [
-              '8 AI voice agents',
-              '1,000 minutes / month',
-              'Website + WhatsApp chatbots',
-              'Multilingual support',
-            ],
-          },
-          {
-            label: 'Automations & Command Hub',
-            items: [
-              'Client onboarding automation',
-              'Up to 6 custom automations (text-back, follow-up sequences, review requests)',
-              'Command Hub (full ROI suite)',
-              'Bookings calendar (see every booked lead)',
-              '10 team seats',
-            ],
-          },
-        ],
-        extras: [
-          'Quarterly AI consulting review',
-          'Priority support',
-          'Guided onboarding',
-        ],
-        overage: '€0.35 / min',
+        name: 'Custom Projects',
+        price: 'Tailored to scope',
+        purpose: 'For larger or more specialised builds.',
+        body: 'Scoped and quoted separately once we understand the work involved.',
+        items: ['Internal tools and custom software', 'Custom dashboards and client portals', 'CRM improvements', 'Complex and multi-system workflows', 'Larger operational projects'],
+        cta: { label: 'Contact Us', target: 'contact' },
       },
     ],
-    scale: {
-      name: 'Scale',
-      priceFrom: 'from €1,500',
-      tagline: 'Multi-location operations with a dedicated AI consultant on the account. Quote-based, scoped to your footprint.',
-      features: [
-        'Unlimited AI voice agents',
-        'Multi-location support',
-        'Unlimited automations',
-        'Dedicated AI consultant',
-        'Monthly roadmap reviews',
-        'Custom integrations with your stack',
-        'Bookings calendar (see every booked lead)',
-        'Unlimited team seats',
-        'Custom builds on request (quoted separately)',
-      ],
-    },
-    setupNote: 'The 14-day Growth trial is free and needs no card — the setup fee and your first invoice only apply if you continue. Setup fee of €250–500 applies on Growth and above (waived on annual plans).',
-    overageNote: 'Overage minutes are billed at the rate shown for your plan once your monthly allowance is used.',
+    note: 'Every business works differently. We scope the work after understanding the process, so the solution fits what you actually need.',
   },
 
   comparison: {
@@ -498,73 +404,24 @@ export default {
   },
 
   faq: {
-    heading: 'Frequently asked questions',
+    heading: 'Frequently Asked Questions',
     subhead: 'Everything you were going to email us about anyway.',
     items: [
-      {
-        q: 'Can I hire you for the consulting on its own?',
-        a: 'Yes. The audit and roadmap stand alone: you get the lead-flow audit, the priced list of gaps and a ranked plan of what to automate first, and you are free to build it with whoever you like. Most clients ask us to run it because we already have the agents, chatbots and automations built.',
-      },
-      {
-        q: 'What exactly does the AI audit look at?',
-        a: 'Where your leads come from, what happens to each one, and where they die: calls that go unanswered, website and WhatsApp chats nobody replies to, qualification done on gut feel, onboarding handled by email, follow-ups that depend on someone remembering. Every gap gets a euro figure attached so the roadmap is ranked by money, not by novelty.',
-      },
-      {
-        q: 'What does the AI actually sound like on the phone?',
-        a: 'Natural and conversational, nothing like a robotic IVR menu. It uses a modern voice model, handles interruptions and follow-up questions, and stays on-brand. You can hear a live sample on a demo call.',
-      },
-      {
-        q: 'Can it use my own business phone number?',
-        a: 'Yes. We can port your existing number or forward calls to your AI agent’s number, so callers never notice a change on their end.',
-      },
-      {
-        q: 'What happens if it doesn’t know the answer to something?',
-        a: 'It says so, offers to take a message or book a callback, and can escalate to someone on your team when a call needs a person. It won’t invent an answer that isn’t in your knowledge base.',
-      },
-      {
-        q: 'What languages does it support?',
-        a: 'Your agent is multilingual and can be configured for multiple languages. Greek and English are the primary setup we use by default, and it can switch language mid-call.',
-      },
-      {
-        q: 'Can you put a chatbot on my website and WhatsApp as well?',
-        a: 'Yes, and it runs off the same knowledge base as the voice agent, so the answers match. It captures the lead, qualifies it, books appointments and hands off to a person when the conversation needs one. Website chat is included from Growth; WhatsApp is included on Pro.',
-      },
-      {
-        q: 'What does a lead qualification system actually do?',
-        a: 'It scores every enquiry against criteria you set — service needed, budget, timeline, location, whatever matters in your business — then routes it: the good ones straight to the right person with the context attached, the rest get a polite answer instead of your team’s time. Every score and decision is visible in the Command Hub.',
-      },
-      {
-        q: 'Can you automate client onboarding too?',
-        a: 'Yes. Once a client says yes, the automation collects the details you need, sends the documents or forms, books the kickoff, creates the record in your CRM and notifies the team — without anyone chasing a checklist. It is included on Pro and above, and we scope it around your existing steps rather than replacing them.',
-      },
-      {
-        q: 'Can I listen to the calls it takes?',
-        a: 'Yes. Every call gets an automatic summary and sentiment tag in AiAnchor’s Command Hub, and full recordings are available on request, subject to the retention settings on your account.',
-      },
-      {
-        q: 'Is this GDPR-compliant? Are calls recorded and disclosed?',
-        a: 'Yes. Callers are informed at the start of the call that they are speaking with an AI system and that the call is recorded. We sign a Data Processing Agreement (DPA) with business customers; see our DPA, AI Disclosure and Trust &amp; Security pages in the footer for full detail.',
-      },
-      {
-        q: 'How does pricing and overage actually work?',
-        a: 'Each plan includes a set number of minutes per month. If you go over, extra minutes are billed at your plan’s overage rate, shown in the pricing table. No surprise cutoffs and no forced upgrade.',
-      },
-      {
-        q: 'Is there a free trial?',
-        a: 'Yes — the Growth plan comes with 14 days free, and no card is required. It isn’t self-serve: you request it from the pricing table or the demo page, we set your agent up with your services, pricing and calendar, and the 14 days start once it goes live. If you stop at the end of the trial you pay nothing, and the setup fee and first invoice only apply if you continue. Starter, Pro and Scale don’t include a trial, but you can book a free demo on any of them and hear the agent run on a real call flow first.',
-      },
-      {
-        q: 'How long does setup take?',
-        a: 'The audit and roadmap usually take under a week. Most Starter and Growth setups then go live within a few business days once we have your services, pricing and calendar details. Pro and Scale onboarding is guided and scoped with you directly.',
-      },
-      {
-        q: 'Do you build custom systems, websites or web apps as well?',
-        a: 'Yes, when the roadmap calls for it — a custom CRM, an internal tool, a website or a web app to sit behind the agents and automations. It is not what we lead with: the AI consulting, agents, chatbots and automations are the core service, and custom builds are scoped and quoted separately once we know what the AI work actually needs.',
-      },
-      {
-        q: 'How is this different from a regular phone menu (IVR)?',
-        a: 'An IVR makes callers press buttons and follow a script. AiAnchor has a real conversation, understands what the caller wants, answers from your knowledge base and books the appointment. No menus, no dead ends.',
-      },
+      { q: 'What does AiAnchor actually do?', a: 'We map how your business currently works, find where time or opportunities are being lost, and implement the right solution using automation, software, AI or a mix of them.' },
+      { q: 'Do you only build AI solutions?', a: 'No. AI is one tool we use when it makes sense. Some problems are better solved with automation, integrations, dashboards or custom software.' },
+      { q: 'What does the workflow review include?', a: 'We look at how work moves through your team, which tools are involved, where handoffs break down, and which steps are taking unnecessary time.' },
+      { q: 'Do you work with the tools we already use?', a: 'Yes. We normally build around your existing CRM, calendar, communication tools and internal systems rather than replacing everything.' },
+      { q: 'What is the AiAnchor Operations Platform?', a: 'It gives you one place to track the systems we implement, including automations, AI agents, activity, leads, bookings and operational results.' },
+      { q: 'Can I see whether the systems are actually working?', a: 'Yes. The platform is designed to give you visibility into activity, progress and the results generated by the systems running in your business.' },
+      { q: 'Can you build custom systems as well?', a: 'Yes. Depending on the problem, that can include internal tools, dashboards, portals, integrations and custom workflows.' },
+      { q: 'Do you also build voice agents and chat assistants?', a: 'Yes, where they are useful for the workflow. They are part of the wider system rather than the entire offer.' },
+      { q: 'Can AiAnchor automate lead handling and follow-up?', a: 'Yes. Lead capture, qualification, follow-up, missed-call recovery and appointment booking are common use cases.' },
+      { q: 'Can you improve client onboarding and internal operations too?', a: 'Yes. The same process can be applied to onboarding, admin, reporting, handoffs and other repetitive workflows.' },
+      { q: 'How does pricing work?', a: 'It depends on the workflow and what needs to be implemented. We normally review the process first, then scope the right level of work and support.' },
+      { q: 'How long does setup take?', a: 'It depends on complexity. A focused workflow can be implemented much faster than a larger system involving several tools or departments.' },
+      { q: 'Do you offer ongoing support?', a: 'Yes. We can monitor, maintain and improve the systems after launch.' },
+      { q: 'Can we start with one workflow first?', a: 'Yes. In many cases, starting with one clear process is the best way to prove the value before expanding further.' },
+      { q: 'What happens if something needs a person?', a: 'We design the workflow so that human handoff happens at the right point, rather than trying to automate everything.' },
     ],
   },
 
@@ -618,7 +475,7 @@ export default {
     openLabel: 'Open the AiAnchor assistant',
     closeLabel: 'Close the assistant',
     subtitle: 'AiAnchor support',
-    status: 'Answers in seconds',
+    status: 'AI support',
     disclosure: 'Anchor is an AI assistant and answers from this website. For anything it can’t cover, it will hand you to the team.',
     greeting: 'Hi — I’m Anchor. Ask me anything about the AI audit, voice agents, chatbots, automations, pricing or the Command Hub.',
     suggestionsLabel: 'Or start with one of these',
@@ -634,7 +491,7 @@ export default {
     typing: 'Anchor is typing',
     transcriptLabel: 'Conversation with Anchor',
     reset: 'Clear chat',
-    demoCta: 'Book a free demo',
+    demoCta: 'Book a discovery call',
     errors: {
       generic: 'Something went wrong on our side. Try again, or email info@aianchor.online.',
       rateLimited: 'That’s a lot of questions at once — give it a minute, or email info@aianchor.online.',
@@ -645,7 +502,7 @@ export default {
   },
 
   footer: {
-    tagline: 'AI consulting, voice agents, chatbots and automations for lead qualification, client onboarding and follow-up. Every euro of value is proven live in AiAnchor’s Command Hub.',
+    tagline: 'Managed AI operations for real estate teams.',
     columns: {
       product: 'Product',
       company: 'Company',

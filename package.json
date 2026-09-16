@@ -3,22 +3,40 @@
   "private": true,
   "version": "2.0.0",
   "type": "module",
-  "description": "Static bilingual (EN/GR) marketing site for AIAnchor",
+  "description": "Bilingual AiAnchor marketing site - Next.js App Router and TypeScript",
   "scripts": {
-    "build:css": "tailwindcss -i ./assets/css/input.css -o ./dist/assets/css/styles.css --minify",
-    "build:site": "node build.mjs",
-    "build": "npm run build:site && npm run build:css",
-    "dev": "npm run build && node dev-server.mjs",
-    "dev:static": "npm run build && npx http-server dist -p 5173 -c-1"
+    "dev": "next dev --webpack -p 5174",
+    "build": "next build --webpack",
+    "start": "next start -p 5174",
+    "typecheck": "tsc --noEmit",
+    "lint": "node scripts/lint.mjs",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "test:preview": "node scripts/verify-preview.mjs",
+    "test:seo": "node --experimental-strip-types scripts/verify-seo.mjs",
+    "build:legacy": "node build.mjs && tailwindcss -i ./assets/css/input.css -o ./dist/assets/css/styles.css --minify",
+    "design:sync": "node scripts/restore-design.mjs",
+    "prebuild": "npm run design:sync",
+    "predev": "npm run design:sync"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.116.0",
-    "@vercel/analytics": "^2.0.1"
+    "@splinetool/react-spline": "^4.1.0",
+    "@splinetool/runtime": "^2.0.52",
+    "@vercel/analytics": "^2.0.1",
+    "framer-motion": "^13.4.0",
+    "motion": "^13.4.0",
+    "next": "16.3.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
   },
   "devDependencies": {
+    "@types/node": "22.19.17",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.3",
     "autoprefixer": "^10.4.16",
     "http-server": "^14.1.1",
     "postcss": "^8.4.32",
-    "tailwindcss": "^3.4.0"
+    "tailwindcss": "^3.4.0",
+    "typescript": "5.9.3"
   }
 }

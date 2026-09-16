@@ -1,0 +1,847 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+body {
+  overflow-wrap: break-word;
+}
+button,
+a,
+input,
+select,
+textarea,
+summary {
+  touch-action: manipulation;
+}
+:focus-visible {
+  outline: 2px solid #00f0ff;
+  outline-offset: 4px;
+}
+button:disabled {
+  cursor: wait;
+}
+.custom-cursor {
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  pointer-events: none;
+  transform: translate3d(-50%, -50%, 0);
+  background: #00f0ff;
+  box-shadow: 0 0 18px rgb(0 240 255 / 0.7);
+  opacity: 0;
+  transition: width 180ms ease-out, height 180ms ease-out, border-color 180ms ease-out, background-color 180ms ease-out;
+  will-change: transform;
+}
+.custom-cursor.is-visible { opacity: 1; }
+.custom-cursor::after {
+  display: none;
+}
+.custom-cursor.is-active {
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  box-shadow: 0 0 20px rgb(0 240 255 / 0.9);
+}
+.cursor-trail-particle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 199;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  pointer-events: none;
+  opacity: 0;
+  background: #00f0ff;
+  box-shadow: 0 0 12px rgb(0 240 255 / 0.55);
+  transform: translate3d(-50%, -50%, 0);
+  will-change: transform;
+}
+.cursor-trail-particle:nth-of-type(2) { width: 6.5px; height: 6.5px; opacity: 0.38; }
+.cursor-trail-particle:nth-of-type(3) { width: 6px; height: 6px; opacity: 0.34; }
+.cursor-trail-particle:nth-of-type(4) { width: 5.5px; height: 5.5px; opacity: 0.3; }
+.cursor-trail-particle:nth-of-type(5) { width: 5px; height: 5px; opacity: 0.26; }
+.cursor-trail-particle:nth-of-type(6) { width: 4.5px; height: 4.5px; opacity: 0.22; }
+.cursor-trail-particle:nth-of-type(7) { width: 4px; height: 4px; opacity: 0.18; }
+.cursor-trail-particle:nth-of-type(8) { width: 3.5px; height: 3.5px; opacity: 0.14; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .custom-cursor,
+  .cursor-trail-particle {
+    display: block;
+  }
+}
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .custom-cursor,
+  .cursor-trail-particle {
+    display: none;
+  }
+}
+[hidden] {
+  display: none !important;
+}
+.accent-heading {
+  color: #52e6f1;
+}
+.aether-hero-shade {
+  background: radial-gradient(
+    ellipse at center,
+    rgb(0 0 0 / 0.6),
+    transparent 75%
+  );
+}
+.aether-hero-heading {
+  background: linear-gradient(to bottom, #fff 15%, #a1a1aa 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-wrap: balance;
+}
+.aether-hero-enter {
+  animation: aether-fade-up 800ms var(--ease-out-soft) both;
+  animation-delay: var(--aether-delay, 0ms);
+}
+.dash-glow {
+  /* Sized in px from the box top so the ellipse fades out before reaching the edge of its own box */
+  background: radial-gradient(40rem 12rem at 50% 14rem, rgb(0 240 255 / 0.1), transparent);
+}
+.dash-stage {
+  background: linear-gradient(135deg, rgb(var(--tone) / 0.24), rgb(var(--tone) / 0.06));
+  box-shadow: inset 0 0 0 1px rgb(var(--tone) / 0.25);
+}
+@media (min-width: 640px) {
+  /* Chevron steps: each stage points into the next */
+  .dash-stage {
+    box-shadow: none;
+    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%, 14px 50%);
+    padding-inline: 1.5rem;
+  }
+  .dash-stage:first-child {
+    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+}
+.dash-bar {
+  transform-origin: bottom;
+}
+.in-view .dash-bar,
+.dash-preview:not(.reveal) .dash-bar {
+  animation: dash-grow 900ms var(--ease-out-soft) both;
+  animation-delay: calc(250ms + var(--bar-delay, 0ms));
+}
+.in-view .dash-spark-line,
+.dash-preview:not(.reveal) .dash-spark-line {
+  stroke-dasharray: 1;
+  animation: dash-draw 1400ms var(--ease-out-soft) 300ms both;
+}
+.in-view .dash-bar-x,
+.dash-preview:not(.reveal) .dash-bar-x {
+  transform-origin: left;
+  animation: dash-grow-x 1100ms var(--ease-out-soft) 400ms both;
+}
+@keyframes dash-grow-x {
+  from {
+    transform: scaleX(0);
+  }
+}
+.dash-live {
+  animation: dash-pulse 2s ease-in-out infinite;
+}
+@keyframes dash-grow {
+  from {
+    transform: scaleY(0);
+  }
+}
+@keyframes dash-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dash-pulse {
+  50% {
+    box-shadow: 0 0 0 4px rgb(52 211 153 / 0.2);
+  }
+}
+.horizon-hero {
+  /* Settles into the dark-800 of #how-it-works so the arc has no seam */
+  background: linear-gradient(to bottom, #000 55%, #0a0a12);
+}
+.horizon-hero-heading,
+.scroll-hero-heading {
+  background: linear-gradient(to bottom, #fff 30%, rgb(255 255 255 / 0.6));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+.horizon-hero-enter,
+.scroll-hero-enter {
+  animation: aether-fade-up 700ms var(--ease-out-soft) both;
+  animation-delay: var(--hero-delay, 0ms);
+}
+/* Constellation mesh: fades in below the fixed header; the horizon arc covers its lower edge */
+.horizon-hero-mesh {
+  mask-image: linear-gradient(to bottom, transparent, black 22%, black 80%, transparent);
+}
+/* Quiets the mesh behind the copy so body text keeps its contrast */
+.horizon-hero-scrim {
+  background: radial-gradient(ellipse 46rem 24rem at 50% 40%, rgb(0 0 0 / 0.62), transparent 72%);
+}
+.horizon-hero-cta,
+.scroll-hero-cta {
+  background-image: linear-gradient(to bottom, #fff, rgb(255 255 255 / 0.95) 45%, rgb(255 255 255 / 0.7));
+  box-shadow: inset 0 -1px 0 rgb(0 0 0 / 0.15), 0 0 0 1px rgb(255 255 255 / 0.1);
+}
+.horizon-hero-horizon {
+  height: 16rem;
+}
+/* Fades the arc and its halo out before the section edge */
+.horizon-hero-horizon::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 5rem;
+  background: linear-gradient(to bottom, transparent, #0a0a12);
+}
+/* Wide soft light rising from behind the arc, in brand violet and cyan */
+.horizon-hero-glow {
+  position: absolute;
+  left: 50%;
+  bottom: 6rem;
+  width: min(62rem, 110vw);
+  height: 12rem;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgb(0 240 255 / 0.4), rgb(112 0 255 / 0.3) 45%, transparent 72%);
+  filter: blur(48px);
+  animation: horizon-breathe 7s ease-in-out infinite;
+}
+/* The planet edge: a huge circle whose lit rim is the only visible part */
+.horizon-hero-arc {
+  position: absolute;
+  left: 50%;
+  top: 9rem;
+  width: max(170vw, 110rem);
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: #0a0a12;
+  border-top: 1px solid rgb(160 245 255 / 0.75);
+  box-shadow: 0 -2px 24px rgb(0 240 255 / 0.35), 0 -18px 90px rgb(112 0 255 / 0.35),
+    inset 0 18px 60px -30px rgb(0 240 255 / 0.35);
+}
+@media (min-width: 768px) {
+  .horizon-hero-horizon {
+    height: 22rem;
+  }
+  .horizon-hero-glow {
+    bottom: 10rem;
+  }
+  .horizon-hero-arc {
+    top: 11rem;
+  }
+}
+
+.cursor-trail-particle.is-visible { opacity: 1; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html,
+  html * {
+    cursor: none !important;
+  }
+}
+
+/* Scroll hero (components/ui/scroll-frame). The base rules are the settled, static layout: full-bleed copy with
+   the framed dashboard below, its lower part faded out. No-JS, reduced motion, short screens and phones all get
+   it. The media block further down pins the stage and hands its layers to the scrub. */
+.scroll-hero {
+  position: relative;
+  overflow: clip;
+  background: #050507;
+}
+.scroll-hero-pin {
+  position: relative;
+}
+.scroll-hero-stage {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  padding: 9rem 1.5rem 0;
+}
+.scroll-hero-layer {
+  transform-origin: 50% 0;
+}
+.scroll-hero-well {
+  position: relative;
+  width: 100%;
+  max-width: 75rem;
+  margin: 4rem auto 0;
+  transform-origin: 50% 0;
+}
+.scroll-hero-mock {
+  position: relative;
+  height: 22rem;
+  overflow: hidden;
+  border-radius: 1rem 1rem 0 0;
+  mask-image: linear-gradient(to bottom, black 55%, transparent);
+}
+/* The single cool horizon haze. It sits behind the window's top edge, so at rest it reads as light on the
+   horizon and, once the window has risen, as the ambient light around it */
+.scroll-hero-glow {
+  position: absolute;
+  left: 50%;
+  top: -9rem;
+  z-index: -1;
+  width: min(90rem, 160%);
+  height: 24rem;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background: radial-gradient(closest-side, rgb(0 240 255 / 0.16), rgb(0 240 255 / 0.05) 55%, transparent);
+}
+/* Lit frame edge drawn over the window: hairline, faint top highlight and the DESIGN.md product-frame shadow */
+.scroll-hero-edge {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border: 1px solid rgb(255 255 255 / 0.14);
+  border-radius: 1rem;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.08), 0 0 0 1px rgb(0 240 255 / 0.06);
+}
+.scroll-hero-edge::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  width: min(40rem, 60%);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgb(0 240 255 / 0.55), transparent);
+}
+.scroll-hero-well .app-window {
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25), 0 40px 120px -40px rgb(0 240 255 / 0.18);
+}
+.scroll-hero-handoff {
+  display: none;
+}
+@media (min-width: 640px) {
+  .scroll-hero-stage {
+    padding-top: 11rem;
+  }
+  .scroll-hero-mock {
+    height: 30rem;
+  }
+}
+@media (min-width: 1024px) {
+  .scroll-hero-mock {
+    height: 38rem;
+  }
+}
+/* Pinned scrub. Must match SCRUB in components/ui/scroll-frame.tsx. Every value here is the entry state,
+   so the page paints correctly before hydration and the script only ever adds transforms and opacity. */
+@media (min-width: 768px) and (min-height: 600px) and (prefers-reduced-motion: no-preference) and (scripting: enabled) {
+  .scroll-hero {
+    height: 200svh;
+    overflow: visible;
+  }
+  .scroll-hero-pin {
+    position: sticky;
+    top: 0;
+    height: 100svh;
+    overflow: hidden;
+  }
+  .scroll-hero-stage {
+    height: 100%;
+    padding-top: 12rem;
+  }
+  .scroll-hero-well {
+    position: absolute;
+    top: calc(100% - 5rem);
+    left: 0;
+    right: 0;
+    margin-top: 0;
+    padding-inline: 1.5rem;
+    transform: scale(0.92);
+    will-change: transform;
+  }
+  .scroll-hero-mock {
+    height: auto;
+    border-radius: 1rem;
+    mask-image: none;
+  }
+  .scroll-hero-glow {
+    opacity: 0.6;
+  }
+  .scroll-hero-edge {
+    left: 0;
+    right: 0;
+    opacity: 0;
+  }
+  .scroll-hero-handoff {
+    display: block;
+    position: absolute;
+    inset: auto 0 0;
+    z-index: 2;
+    height: 10rem;
+    opacity: 0;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent, #050507 85%);
+  }
+}
+@media (min-width: 1024px) and (min-height: 600px) and (prefers-reduced-motion: no-preference) and (scripting: enabled) {
+  .scroll-hero-stage {
+    padding-top: 13rem;
+  }
+}
+
+/* Split hero (components/homepage). One glow: centered above the copy on phones, behind the robot's half on lg+ */
+.hero-split-glow {
+  background: radial-gradient(ellipse 40rem 26rem at 50% 18%, rgb(0 240 255 / 0.09), transparent 70%);
+}
+@media (min-width: 1024px) {
+  .hero-split-glow {
+    background: radial-gradient(ellipse 34rem 30rem at 22% 55%, rgb(0 240 255 / 0.05), transparent 70%);
+  }
+}
+
+/* Robot companion (components/robot-companion). A fixed stage the width of half the viewport, drawn behind the
+   sections (it comes first in <main>). data-side glides it between halves; the homepage sections leave that half
+   empty from lg up, so the layout never depends on the scene having loaded. --robot-lift is written from scroll
+   once the dashboard image reaches the bottom of the screen: the robot stops there and scrolls away with the page. */
+.robot-stage {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .robot-stage {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 50%;
+    height: 100vh;
+    height: 100svh;
+    pointer-events: none;
+    transform: translate3d(100%, 0, 0);
+    translate: 0 var(--robot-lift, 0px);
+    transition: transform 1100ms cubic-bezier(0.65, 0, 0.35, 1);
+    will-change: transform, translate;
+  }
+  .robot-stage[data-side="left"] {
+    transform: translate3d(0, 0, 0);
+  }
+  /* Below the fixed header, so the robot's head is never tucked under the nav */
+  .robot-stage-body {
+    position: absolute;
+    inset: 4.5rem 0 0;
+    transition: opacity 700ms var(--ease-out-soft), transform 1100ms var(--ease-out-soft);
+  }
+  /* Mid-glide it steps back slightly, so the crossing reads as a move rather than a slide */
+  .robot-stage[data-moving] .robot-stage-body {
+    transform: scale(0.94);
+  }
+  .robot-stage[data-side="off"] .robot-stage-body {
+    opacity: 0;
+    transform: translateY(3rem) scale(0.9);
+  }
+  /* The scene crops the legs at the canvas edge; the fade keeps that from reading as a hard line once the robot
+     has stopped above the dashboard and the edge is on screen */
+  .robot-canvas {
+    position: absolute;
+    inset: 0;
+    mask-image: linear-gradient(to bottom, black 78%, transparent);
+    opacity: 0;
+    transition: opacity 1200ms var(--ease-out-soft);
+  }
+  .robot-stage[data-ready] .robot-canvas {
+    opacity: 1;
+  }
+}
+/* Shown by components/ui/splite while the runtime chunk downloads */
+.spline-loader {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 2px solid rgb(255 255 255 / 0.1);
+  border-top-color: #00f0ff;
+  animation: spline-spin 900ms linear infinite;
+}
+@keyframes spline-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Homepage system (components/homepage, components/ui/editorial) */
+.section-title {
+  background: linear-gradient(to bottom, #fff 35%, rgb(255 255 255 / 0.68));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+/* Word brighten. --reveal defaults to 1 (resting, full contrast); section-motion lowers it only when motion is
+   allowed. Each word ramps over roughly four words' worth of progress so the sweep reads as a soft edge. */
+.text-reveal {
+  --reveal: 1;
+  color: #fff;
+  text-wrap: pretty;
+}
+.text-reveal-word {
+  --w: clamp(0, calc((var(--reveal) * (var(--n) + 4) - var(--i)) / 4), 1);
+  color: #fff;
+  color: color-mix(in srgb, #fff calc(var(--w) * 100%), #4b5563);
+}
+.editorial-row::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 3rem;
+  height: 1px;
+  background: #00f0ff;
+  transform-origin: left;
+  transition: transform var(--dur-entrance) var(--ease-out-soft) 200ms;
+}
+.js .editorial-row.reveal:not(.in-view)::before {
+  transform: scaleX(0);
+}
+.section-glow {
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(0 240 255 / 0.07), transparent);
+}
+.section-glow-top {
+  transform: translate(-50%, -45%);
+}
+/* Keep marketing copy readable for renderers that do not scroll or finish hydration.
+   Registered reveals still arrive through movement, without hiding or blurring text. */
+.js .operations-home .reveal {
+  opacity: 1;
+  filter: none;
+}
+.js .operations-home .reveal:not([data-reveal-pending]) {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+/* The workflow reads as one ordered sequence: a small, one-time arrival with
+   short sibling delays. Reuse the observer and keep the no-JS state visible. */
+@media (prefers-reduced-motion: no-preference) {
+  .js .operations-home #how-it-works .reveal {
+    filter: none;
+    transition: opacity 450ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: 0ms;
+  }
+  .js .operations-home #how-it-works .reveal[data-reveal-pending] {
+    opacity: 1;
+    transform: translateY(8px);
+  }
+  .js .operations-home #how-it-works .editorial-row:nth-child(2) { transition-delay: 60ms; }
+  .js .operations-home #how-it-works .editorial-row:nth-child(3) { transition-delay: 120ms; }
+  .js .operations-home #how-it-works .editorial-row:nth-child(4) { transition-delay: 180ms; }
+  .operations-home #how-it-works .editorial-row::before {
+    transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: inherit;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .operations-home #how-it-works .editorial-row::before {
+    transform: none;
+    transition: none;
+  }
+}
+/* A single downward beam lights setup without changing layout or blocking controls.
+   Soft gradients avoid animating large blur filters. */
+.lamp-container {
+  --lamp-power: 1;
+  --lamp-spread: 1;
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+.lamp-container.absolute { position: absolute; }
+.lamp-light {
+  position: absolute;
+  inset: 0;
+  overflow: clip;
+  pointer-events: none;
+  opacity: var(--lamp-power);
+}
+.lamp-light > div {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+.lamp-beam {
+  top: 3rem;
+  height: min(38rem, 85%);
+  clip-path: polygon(34% 0, 66% 0, 100% 100%, 0 100%);
+  background: radial-gradient(ellipse 38% 100% at 50% 0%, rgb(0 240 255 / 0.1), transparent 80%);
+  transform: scaleX(var(--lamp-spread));
+  transform-origin: 50% 0%;
+}
+.lamp-light > .lamp-source {
+  left: 50%;
+  top: 3rem;
+  width: min(30rem, 68%);
+  height: 2px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, transparent, #00f0ff 15%, #fff 50%, #00f0ff 85%, transparent);
+  box-shadow: 0 0 8px 1px rgb(0 240 255 / 0.2);
+  transform: translateX(-50%) scaleX(var(--lamp-spread));
+}
+@media (prefers-reduced-motion: reduce) {
+  .lamp-container { --lamp-power: 1 !important; --lamp-spread: 1 !important; }
+}
+.final-glow {
+  background: radial-gradient(ellipse 60% 55% at 50% 0%, rgb(0 240 255 / 0.13), transparent 70%);
+}
+.final-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(32rem, 70%);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgb(0 240 255 / 0.5), transparent);
+}
+.product-frame {
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+@keyframes horizon-breathe {
+  0%,
+  100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes aether-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.form-field {
+  width: 100%;
+  min-height: 3rem;
+  border: 1px solid #505064;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  background: #050507;
+  color: #fff;
+  font-size: 1rem;
+}
+.demo-page {
+  isolation: isolate;
+}
+.demo-panel {
+  background: linear-gradient(155deg, rgb(18 18 31 / 0.88), rgb(5 5 7 / 0.92));
+  box-shadow: 0 24px 60px rgb(0 0 0 / 0.22);
+}
+.demo-panel form,
+.demo-page main,
+.demo-page fieldset,
+.demo-page label {
+  min-width: 0;
+}
+.demo-field {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 2.75rem;
+  border: 1px solid rgb(255 255 255 / 0.14);
+  border-radius: 0.5rem;
+  padding: 0.7rem 0.8rem;
+  background: rgb(5 5 7 / 0.72);
+  color: #fff;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  transition: border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+}
+.demo-field::placeholder {
+  color: #6b7280;
+  opacity: 1;
+}
+.demo-field:hover {
+  border-color: rgb(255 255 255 / 0.24);
+}
+.demo-field:focus {
+  border-color: rgb(0 240 255 / 0.75);
+  background: rgb(10 10 18 / 0.9);
+  box-shadow: 0 0 0 3px rgb(0 240 255 / 0.12);
+  outline: none;
+}
+textarea.demo-field {
+  min-height: 7rem;
+}
+.demo-chip {
+  display: inline-flex;
+  min-width: 0;
+  max-width: 100%;
+  align-items: center;
+  border: 1px solid rgb(255 255 255 / 0.13);
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  color: #d1d5db;
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+.demo-chip span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.demo-chip:hover,
+.demo-chip:has(input:checked) {
+  border-color: rgb(0 240 255 / 0.55);
+  background: rgb(0 240 255 / 0.1);
+  color: #fff;
+}
+.demo-select {
+  position: relative;
+  min-width: 0;
+}
+.demo-select-trigger {
+  display: flex;
+  width: 100%;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border: 1px solid rgb(255 255 255 / 0.14);
+  border-radius: 0.5rem;
+  padding: 0.7rem 0.8rem;
+  background: rgb(5 5 7 / 0.72);
+  color: #fff;
+  font-size: 0.875rem;
+  text-align: left;
+  transition: border-color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+}
+.demo-select-trigger:hover,
+.demo-select-trigger[aria-expanded="true"] {
+  border-color: rgb(0 240 255 / 0.65);
+  background: rgb(10 10 18 / 0.9);
+}
+.demo-select-dialog {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  left: 0;
+  z-index: 30;
+  max-height: min(22rem, 60vh);
+  overflow-y: auto;
+  border: 1px solid rgb(255 255 255 / 0.16);
+  border-radius: 0.75rem;
+  background: #0a0a12;
+  box-shadow: 0 20px 50px rgb(0 0 0 / 0.5), 0 0 0 1px rgb(0 240 255 / 0.06);
+}
+.demo-select-dialog .demo-chip {
+  width: 100%;
+}
+.demo-agenda,
+.demo-agenda li {
+  min-width: 0;
+}
+@media (max-width: 639px) {
+  .demo-panel {
+    padding: 1.25rem;
+  }
+}
+.pricing-card-toggle {
+  display: inline-flex;
+}
+.pricing-react-panel:not([hidden]) {
+  animation: aether-fade-up 240ms var(--ease-out) both;
+}
+.honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.consent-dialog::backdrop {
+  background: rgb(5 5 7 / 0.8);
+}
+.consent-dialog {
+  z-index: 100;
+  max-width: min(32rem, calc(100% - 2rem));
+  max-height: calc(100dvh - 2rem);
+  overflow: auto;
+}
+.consent-dialog::backdrop {
+  background: rgb(5 5 7 / 0.78);
+  backdrop-filter: blur(4px);
+}
+.chat-widget .chat-panel {
+  display: flex;
+  flex-direction: column;
+}
+.chat-widget .chat-launcher {
+  min-height: 3rem;
+}
+.chat-icon-btn {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+}
+.chat-streaming {
+  margin-top: 1rem;
+}
+.chat-waiting {
+  min-height: 1.5rem;
+}
+.chat-typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 0.2rem;
+  vertical-align: -0.12em;
+  background: #00f0ff;
+  animation: chat-cursor-blink 900ms step-end infinite;
+}
+@keyframes chat-cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.chat-widget:not(.is-open) .chat-typing span,
+.chat-widget:not(.is-open) .chat-typing-cursor {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .chat-typing-cursor {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Stack strip (components/ui/logo-marquee): chips dissolve at both ends instead of hitting a hard edge */
+.logo-marquee {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}

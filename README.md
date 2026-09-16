@@ -1,20 +1,13 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# AiAnchor Next.js website
 
-# Run and deploy your AI Studio app
+Bilingual React / Next.js App Router and TypeScript migration.
 
-This contains everything you need to run your app locally.
+Run `npm ci` and `npm run dev`, then open http://localhost:5174/en/ or http://localhost:5174/gr/.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1j0r9Gq9fmP0KijDJyqpeLZ2BbsaBocSj
+See [MIGRATION.md](MIGRATION.md) for the audit, routes and verification, and [OPERATIONS.md](OPERATIONS.md) for environment configuration, deployment, rollback and factual gaps.
 
-## Run Locally
+`npm run build`, `npm run typecheck`, `npm run lint`, `npm test` and `npm run test:preview` provide local checks. No production deployment was performed.
 
-**Prerequisites:**  Node.js
+Run `npm run test:seo` to check the raw HTML, complete FAQ content, metadata, bilingual canonical/hreflang links, crawler responses, sitemap and robots. Set `PREVIEW_URL` to check a different local server. See [SEO.md](SEO.md) for the findings and production verification.
 
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Next.js generates HTML during the build: the homepages are `.next/server/app/en.html` and `.next/server/app/gr.html`, with detail pages in their corresponding locale directories. These are generated artifacts; edit the source components. The SEO check also saves copies with scripts removed in `validation/seo/en.html` and `validation/seo/gr.html` so the actual HTML content is easy to inspect.

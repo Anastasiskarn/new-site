@@ -4,6 +4,8 @@
 |---|---|---|---|
 | `hero-dashboard.webp` | Hero, right-hand visual | 1280×800 (16:10) | **Real** — "AI Operations Overview" dashboard |
 
+The Next.js homepage and Platform page render the dashboard as a coded component (`components/dashboard-preview.tsx`) instead of an image. The older `hero-dashboard.webp` is retained for legacy references. The screenshot remains uncropped on mobile and links to the complete image. The homepage retains the original particle hero.
+
 To swap any file, **replace it with the same filename and same aspect ratio** —
 no HTML/CSS changes needed.
 

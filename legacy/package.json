@@ -1,0 +1,24 @@
+{
+  "name": "aianchor-website",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "description": "Static bilingual (EN/GR) marketing site for AIAnchor",
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/input.css -o ./dist/assets/css/styles.css --minify",
+    "build:site": "node build.mjs",
+    "build": "npm run build:site && npm run build:css",
+    "dev": "npm run build && node dev-server.mjs",
+    "dev:static": "npm run build && npx http-server dist -p 5173 -c-1"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.116.0",
+    "@vercel/analytics": "^2.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "http-server": "^14.1.1",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0"
+  }
+}

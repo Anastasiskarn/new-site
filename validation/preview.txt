@@ -1,0 +1,1 @@
+Preview verified: 30 indexable pages, 26 parsed schemas, localized initial HTML, canonical/alternates/social metadata, sitemap, robots, internal links, 404s, redirects and safe API rejection. No external submissions.

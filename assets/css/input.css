@@ -705,6 +705,17 @@
     }
   }
 
+    .about-method-card {
+      transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out), background-color var(--dur-base) var(--ease-out);
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .about-method-card:hover,
+      .about-method-card:focus-within {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 36px rgba(0, 240, 255, 0.1);
+      }
+    }
+
   /* Live-agent waveform (featured + analytics tiles). Bars breathe on a staggered loop. */
   .wave-bar {
     width: 3px;
@@ -1577,6 +1588,10 @@
     }
     .btn-interactive {
       transition: none !important;
+    }
+    /* Only the white CTAs carry the cyan sweep; collapsing every button's background
+       would also erase gradient-filled CTAs such as the horizon hero's. */
+    .btn-interactive.bg-white {
       background-size: 0% 100% !important;
     }
     .nav-link::after {

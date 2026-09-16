@@ -1,0 +1,192 @@
+{
+  "checkedAt": "2026-09-16T15:04:41.159Z",
+  "base": "http://localhost:5175",
+  "routes": [
+    {
+      "path": "/en/",
+      "title": "AiAnchor | AI operations for real estate teams",
+      "mainTextCharacters": 8577,
+      "faqQuestions": 15
+    },
+    {
+      "path": "/en/book-demo/",
+      "title": "Book a free workflow review | AiAnchor",
+      "mainTextCharacters": 1453,
+      "faqQuestions": 0
+    },
+    {
+      "path": "/en/terms/",
+      "title": "Terms of Service | AiAnchor",
+      "mainTextCharacters": 7541,
+      "faqQuestions": 0
+    },
+    {
+      "path": "/en/privacy/",
+      "title": "Privacy Policy | AiAnchor",
+      "mainTextCharacters": 7319,
+      "faqQuestions": 0
+    },
+    {
+      "path": "/en/dpa/",
+      "title": "Data Processing Agreement (DPA) | AiAnchor",
+      "mainTextCharacters": 7268,
+      "faqQuestions": 0
+    },
+    {
+      "path": "/en/cookies/",
+      "title": "Cookie Policy | AiAnchor",
+      "mainTextCharacters": 2299,
+      "faqQuestions": 0
+    },
+    {
+      "path": "/en/ai-policy/",
+      "title": "AI Disclosure Policy | AiAnchor",
+      "mainTextCharacters": 5167,
+      "faqQuestions": 0
+    },
+    {
+      "path": "/en/trust/",
+      "title": "Trust & Security | AiAnchor",
+      "mainTextCharacters": 4202,
+      "faqQuestions": 0
+    },
+    {
+      "path": "/en/platform/",
+      "title": "Platform | AiAnchor",
+      "mainTextCharacters": 4633,
+      "faqQuestions": 15
+    },
+    {
+      "path": "/en/ai-consulting/",
+      "title": "AI consulting for service businesses | AiAnchor",
+      "mainTextCharacters": 2030,
+      "faqQuestions": 3
+    },
+    {
+      "path": "/en/ai-voice-agents/",
+      "title": "AI voice agents for calls, qualification and booking | AiAnchor",
+      "mainTextCharacters": 2135,
+      "faqQuestions": 3
+    },
+    {
+      "path": "/en/chatbots/",
+      "title": "Website and WhatsApp chatbots | AiAnchor",
+      "mainTextCharacters": 1905,
+      "faqQuestions": 2
+    },
+    {
+      "path": "/en/crm-automation/",
+      "title": "CRM and workflow automation | AiAnchor",
+      "mainTextCharacters": 1867,
+      "faqQuestions": 2
+    },
+    {
+      "path": "/en/about/",
+      "title": "About AiAnchor | AiAnchor",
+      "mainTextCharacters": 1732,
+      "faqQuestions": 2
+    },
+    {
+      "path": "/en/pricing/",
+      "title": "AiAnchor pricing — voice agents, chatbots & automation",
+      "mainTextCharacters": 2458,
+      "faqQuestions": 0
+    },
+    {
+      "path": "/gr/",
+      "title": "AiAnchor | Λειτουργίες AI για ομάδες ακινήτων",
+      "mainTextCharacters": 9771,
+      "faqQuestions": 15
+    },
+    {
+      "path": "/gr/book-demo/",
+      "title": "Κλείστε δωρεάν αξιολόγηση ροής εργασίας | AiAnchor",
+      "mainTextCharacters": 1606,
+      "faqQuestions": 0
+    },
+    {
+      "path": "/gr/terms/",
+      "title": "Όροι Χρήσης | AiAnchor",
+      "mainTextCharacters": 8007,
+      "faqQuestions": 0
+    },
+    {
+      "path": "/gr/privacy/",
+      "title": "Πολιτική Απορρήτου | AiAnchor",
+      "mainTextCharacters": 7699,
+      "faqQuestions": 0
+    },
+    {
+      "path": "/gr/dpa/",
+      "title": "Σύμβαση Επεξεργασίας Δεδομένων (DPA) | AiAnchor",
+      "mainTextCharacters": 7932,
+      "faqQuestions": 0
+    },
+    {
+      "path": "/gr/cookies/",
+      "title": "Πολιτική Cookies | AiAnchor",
+      "mainTextCharacters": 2446,
+      "faqQuestions": 0
+    },
+    {
+      "path": "/gr/ai-policy/",
+      "title": "Πολιτική Γνωστοποίησης AI | AiAnchor",
+      "mainTextCharacters": 5612,
+      "faqQuestions": 0
+    },
+    {
+      "path": "/gr/trust/",
+      "title": "Εμπιστοσύνη & Ασφάλεια | AiAnchor",
+      "mainTextCharacters": 4820,
+      "faqQuestions": 0
+    },
+    {
+      "path": "/gr/platform/",
+      "title": "Πλατφόρμα | AiAnchor",
+      "mainTextCharacters": 5302,
+      "faqQuestions": 15
+    },
+    {
+      "path": "/gr/ai-consulting/",
+      "title": "Συμβουλευτική AI για επιχειρήσεις υπηρεσιών | AiAnchor",
+      "mainTextCharacters": 2130,
+      "faqQuestions": 3
+    },
+    {
+      "path": "/gr/ai-voice-agents/",
+      "title": "AI φωνητικοί agents για κλήσεις και ραντεβού | AiAnchor",
+      "mainTextCharacters": 2240,
+      "faqQuestions": 3
+    },
+    {
+      "path": "/gr/chatbots/",
+      "title": "Chatbots για website και WhatsApp | AiAnchor",
+      "mainTextCharacters": 1965,
+      "faqQuestions": 2
+    },
+    {
+      "path": "/gr/crm-automation/",
+      "title": "Αυτοματισμοί CRM και επιχειρησιακών ροών | AiAnchor",
+      "mainTextCharacters": 1977,
+      "faqQuestions": 2
+    },
+    {
+      "path": "/gr/about/",
+      "title": "Σχετικά με την AiAnchor | AiAnchor",
+      "mainTextCharacters": 1861,
+      "faqQuestions": 2
+    },
+    {
+      "path": "/gr/pricing/",
+      "title": "Τιμές AiAnchor — φωνητικοί agents, chatbots και αυτοματισμοί",
+      "mainTextCharacters": 2951,
+      "faqQuestions": 0
+    }
+  ],
+  "userAgents": {
+    "browser": "Mozilla/5.0",
+    "google": "Googlebot",
+    "aiSearch": "OAI-SearchBot"
+  },
+  "passed": true
+}

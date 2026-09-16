@@ -1,0 +1,282 @@
+﻿{
+    "schemaVersion":  2,
+    "generatedAt":  "2026-09-16T11:22:58.307Z",
+    "title":  "Design System: AiAnchor",
+    "extensions":  {
+                       "colorMeta":  {
+                                         "primary":  {
+                                                         "role":  "primary",
+                                                         "displayName":  "Cyan",
+                                                         "tonalRamp":  [
+                                                                           "oklch(15% 0.16 195)",
+                                                                           "oklch(26% 0.16 195)",
+                                                                           "oklch(38% 0.16 195)",
+                                                                           "oklch(49% 0.16 195)",
+                                                                           "oklch(61% 0.16 195)",
+                                                                           "oklch(72% 0.16 195)",
+                                                                           "oklch(84% 0.16 195)",
+                                                                           "oklch(95% 0.16 195)"
+                                                                       ]
+                                                     },
+                                         "secondary":  {
+                                                           "role":  "secondary",
+                                                           "displayName":  "Purple",
+                                                           "tonalRamp":  [
+                                                                             "oklch(15% 0.23 290)",
+                                                                             "oklch(26% 0.23 290)",
+                                                                             "oklch(38% 0.23 290)",
+                                                                             "oklch(49% 0.23 290)",
+                                                                             "oklch(61% 0.23 290)",
+                                                                             "oklch(72% 0.23 290)",
+                                                                             "oklch(84% 0.23 290)",
+                                                                             "oklch(95% 0.23 290)"
+                                                                         ]
+                                                       },
+                                         "background":  {
+                                                            "role":  "neutral",
+                                                            "displayName":  "Background",
+                                                            "tonalRamp":  [
+                                                                              "oklch(15% 0.008 285)",
+                                                                              "oklch(26% 0.008 285)",
+                                                                              "oklch(38% 0.008 285)",
+                                                                              "oklch(49% 0.008 285)",
+                                                                              "oklch(61% 0.008 285)",
+                                                                              "oklch(72% 0.008 285)",
+                                                                              "oklch(84% 0.008 285)",
+                                                                              "oklch(95% 0.008 285)"
+                                                                          ]
+                                                        },
+                                         "surface":  {
+                                                         "role":  "neutral",
+                                                         "displayName":  "Surface",
+                                                         "tonalRamp":  [
+                                                                           "oklch(15% 0.015 285)",
+                                                                           "oklch(26% 0.015 285)",
+                                                                           "oklch(38% 0.015 285)",
+                                                                           "oklch(49% 0.015 285)",
+                                                                           "oklch(61% 0.015 285)",
+                                                                           "oklch(72% 0.015 285)",
+                                                                           "oklch(84% 0.015 285)",
+                                                                           "oklch(95% 0.015 285)"
+                                                                       ]
+                                                     },
+                                         "raised":  {
+                                                        "role":  "neutral",
+                                                        "displayName":  "Raised",
+                                                        "tonalRamp":  [
+                                                                          "oklch(15% 0.025 285)",
+                                                                          "oklch(26% 0.025 285)",
+                                                                          "oklch(38% 0.025 285)",
+                                                                          "oklch(49% 0.025 285)",
+                                                                          "oklch(61% 0.025 285)",
+                                                                          "oklch(72% 0.025 285)",
+                                                                          "oklch(84% 0.025 285)",
+                                                                          "oklch(95% 0.025 285)"
+                                                                      ]
+                                                    },
+                                         "text":  {
+                                                      "role":  "neutral",
+                                                      "displayName":  "Text",
+                                                      "tonalRamp":  [
+                                                                        "oklch(15% 0 0)",
+                                                                        "oklch(26% 0 0)",
+                                                                        "oklch(38% 0 0)",
+                                                                        "oklch(49% 0 0)",
+                                                                        "oklch(61% 0 0)",
+                                                                        "oklch(72% 0 0)",
+                                                                        "oklch(84% 0 0)",
+                                                                        "oklch(95% 0 0)"
+                                                                    ]
+                                                  },
+                                         "body":  {
+                                                      "role":  "neutral",
+                                                      "displayName":  "Body",
+                                                      "tonalRamp":  [
+                                                                        "oklch(15% 0.008 260)",
+                                                                        "oklch(26% 0.008 260)",
+                                                                        "oklch(38% 0.008 260)",
+                                                                        "oklch(49% 0.008 260)",
+                                                                        "oklch(61% 0.008 260)",
+                                                                        "oklch(72% 0.008 260)",
+                                                                        "oklch(84% 0.008 260)",
+                                                                        "oklch(95% 0.008 260)"
+                                                                    ]
+                                                  },
+                                         "muted":  {
+                                                       "role":  "neutral",
+                                                       "displayName":  "Muted",
+                                                       "tonalRamp":  [
+                                                                         "oklch(15% 0.015 260)",
+                                                                         "oklch(26% 0.015 260)",
+                                                                         "oklch(38% 0.015 260)",
+                                                                         "oklch(49% 0.015 260)",
+                                                                         "oklch(61% 0.015 260)",
+                                                                         "oklch(72% 0.015 260)",
+                                                                         "oklch(84% 0.015 260)",
+                                                                         "oklch(95% 0.015 260)"
+                                                                     ]
+                                                   },
+                                         "border":  {
+                                                        "role":  "neutral",
+                                                        "displayName":  "Border",
+                                                        "tonalRamp":  [
+                                                                          "oklch(15% 0 0)",
+                                                                          "oklch(26% 0 0)",
+                                                                          "oklch(38% 0 0)",
+                                                                          "oklch(49% 0 0)",
+                                                                          "oklch(61% 0 0)",
+                                                                          "oklch(72% 0 0)",
+                                                                          "oklch(84% 0 0)",
+                                                                          "oklch(95% 0 0)"
+                                                                      ]
+                                                    }
+                                     },
+                       "typographyMeta":  {
+                                              "display":  {
+                                                              "displayName":  "Hero display",
+                                                              "purpose":  "Centered hero; responsive 36/60/72/96px ramp."
+                                                          },
+                                              "headline":  {
+                                                               "displayName":  "Section headline",
+                                                               "purpose":  "Homepage headings; responsive 36/48px ramp."
+                                                           },
+                                              "title":  {
+                                                            "displayName":  "Card title",
+                                                            "purpose":  "Capability and dashboard card titles."
+                                                        },
+                                              "body":  {
+                                                           "displayName":  "Reading text",
+                                                           "purpose":  "Practical supporting paragraphs."
+                                                       },
+                                              "supporting":  {
+                                                                 "displayName":  "Supporting text",
+                                                                 "purpose":  "Card details and notes."
+                                                             }
+                                          },
+                       "shadows":  [
+                                       {
+                                           "name":  "action-hover",
+                                           "value":  "0 0 0 1px rgba(0,240,255,0.3), 0 6px 16px rgba(0,240,255,0.18)",
+                                           "purpose":  "Shared fine-pointer action hover."
+                                       },
+                                       {
+                                           "name":  "product-frame",
+                                           "value":  "0 25px 50px -12px rgb(0 0 0 / 0.25)",
+                                           "purpose":  "Dashboard frame."
+                                       }
+                                   ],
+                       "motion":  [
+                                      {
+                                          "name":  "dur-fast",
+                                          "value":  "180ms",
+                                          "purpose":  "Shared action/link feedback."
+                                      },
+                                      {
+                                          "name":  "dur-base",
+                                          "value":  "240ms",
+                                          "purpose":  "Spotlight transitions."
+                                      },
+                                      {
+                                          "name":  "ease-out",
+                                          "value":  "cubic-bezier(0.23,1,0.32,1)",
+                                          "purpose":  "Shared interactive easing."
+                                      },
+                                      {
+                                          "name":  "ease-out-soft",
+                                          "value":  "cubic-bezier(0.16,1,0.3,1)",
+                                          "purpose":  "Hero entrance."
+                                      },
+                                      {
+                                          "name":  "hero-enter",
+                                          "value":  "800ms",
+                                          "purpose":  "Existing fade-up sequence."
+                                      }
+                                  ],
+                       "breakpoints":  [
+                                           {
+                                               "name":  "sm",
+                                               "value":  "640px"
+                                           },
+                                           {
+                                               "name":  "md",
+                                               "value":  "768px"
+                                           },
+                                           {
+                                               "name":  "lg",
+                                               "value":  "1024px"
+                                           },
+                                           {
+                                               "name":  "xl",
+                                               "value":  "1280px"
+                                           }
+                                       ]
+                   },
+    "components":  [
+                       {
+                           "name":  "Primary action",
+                           "kind":  "button",
+                           "refersTo":  "button-primary",
+                           "description":  "White demo action with cyan sweep and press feedback.",
+                           "html":  "\u003ca class=\"ds-primary\" href=\"#demo\"\u003eBook a Demo \u003csvg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"\u003e\u003cpath d=\"M4 12h16m-6-6 6 6-6 6\" /\u003e\u003c/svg\u003e\u003c/a\u003e",
+                           "css":  ".ds-primary{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:44px;padding:12px 24px;border-radius:8px;background:#fff;color:#050507;font:600 16px/24px \"DM Sans\",sans-serif;text-decoration:none;background-image:linear-gradient(90deg,#00d8f5 0%,#00f0ff 55%,#00d8f5 100%);background-repeat:no-repeat;background-size:0% 100%;transition:transform var(--dur-fast,180ms) var(--ease-out,cubic-bezier(0.23,1,0.32,1)),box-shadow var(--dur-fast,180ms) var(--ease-out,cubic-bezier(0.23,1,0.32,1)),background-size 380ms var(--ease-out,cubic-bezier(0.23,1,0.32,1));}.ds-primary:active{transform:scale(.97)}@media(hover:hover) and (pointer:fine){.ds-primary:hover{transform:scale(1.01);background-size:100% 100%;color:#021115;box-shadow:0 0 0 1px rgba(0,240,255,.3),0 6px 16px rgba(0,240,255,.18)}.ds-primary:active:hover{transform:scale(.97)}}.ds-primary:focus-visible,.ds-secondary:focus-visible,.ds-nav a:focus-visible,.ds-card a:focus-visible{outline:2px solid #00f0ff;outline-offset:4px}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none!important;transform:none!important;background-size:0% 100%!important}}"
+                       },
+                       {
+                           "name":  "Secondary action",
+                           "kind":  "button",
+                           "refersTo":  "button-secondary",
+                           "description":  "Bordered platform action.",
+                           "html":  "\u003ca class=\"ds-secondary\" href=\"#platform\"\u003eExplore the Platform\u003c/a\u003e",
+                           "css":  ".ds-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:12px 24px;background:transparent;color:white;font:400 16px/24px \"DM Sans\",sans-serif;text-decoration:none;transition:transform var(--dur-fast,180ms) var(--ease-out,cubic-bezier(0.23,1,0.32,1)),box-shadow var(--dur-fast,180ms) var(--ease-out,cubic-bezier(0.23,1,0.32,1)),background-size 380ms var(--ease-out,cubic-bezier(0.23,1,0.32,1));}.ds-secondary:hover{border-color:rgba(0,240,255,.6);background:rgba(0,240,255,.1)}.ds-secondary:active{transform:scale(.97)}.ds-primary:focus-visible,.ds-secondary:focus-visible,.ds-nav a:focus-visible,.ds-card a:focus-visible{outline:2px solid #00f0ff;outline-offset:4px}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none;transform:none}}"
+                       },
+                       {
+                           "name":  "Capability card",
+                           "kind":  "card",
+                           "refersTo":  "capability-card",
+                           "description":  "Dark rounded spotlight card; pointer coordinates supplied by runtime on the site.",
+                           "html":  "\u003carticle class=\"ds-card\"\u003e\u003ch3\u003eCRM Sync\u003c/h3\u003e\u003cp\u003eKeep your records updated.\u003c/p\u003e\u003csmall\u003eSend lead details, conversation notes and next steps to your CRM.\u003c/small\u003e\u003c/article\u003e",
+                           "css":  ".ds-card{position:relative;overflow:hidden;padding:24px;border:1px solid rgba(255,255,255,.1);border-radius:16px;background:rgba(10,10,18,.4);color:white;transition:border-color var(--dur-base,240ms) var(--ease-out,cubic-bezier(.23,1,.32,1))}.ds-card:before{content:\"\";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(240px circle at var(--mx,50%) var(--my,50%),rgba(0,240,255,.1),transparent 60%);opacity:0;pointer-events:none;transition:opacity var(--dur-base,240ms)}.ds-card h3{position:relative;font:600 18px/28px \"Space Grotesk\",sans-serif;margin:0}.ds-card p{position:relative;margin:12px 0 8px;font:400 16px/26px \"DM Sans\",sans-serif;color:#e5e7eb}.ds-card small{position:relative;font:400 14px/22.75px \"DM Sans\",sans-serif;color:#9ca3af}@media(hover:hover) and (pointer:fine){.ds-card:hover{border-color:rgba(0,240,255,.28)}.ds-card:hover:before{opacity:1}}@media(prefers-reduced-motion:reduce){.ds-card,.ds-card:before{transition:none}}"
+                       },
+                       {
+                           "name":  "Navigation link",
+                           "kind":  "nav",
+                           "description":  "Cyan hover with growing underline; excerpt of fixed navigation.",
+                           "html":  "\u003cnav class=\"ds-nav\" aria-label=\"Primary\"\u003e\u003ca href=\"#platform\"\u003ePlatform\u003c/a\u003e\u003ca href=\"#process\"\u003eHow It Works\u003c/a\u003e\u003c/nav\u003e",
+                           "css":  ".ds-nav{display:flex;gap:24px;padding:24px;background:rgba(5,5,7,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.1)}.ds-nav a{position:relative;color:#d1d5db;font:400 13px/19.5px \"DM Sans\",sans-serif;text-decoration:none;transition:color var(--dur-fast,180ms)}.ds-nav a:after{content:\"\";position:absolute;left:50%;bottom:-4px;width:100%;height:1px;background:#00f0ff;transform:translateX(-50%) scaleX(0);transition:transform var(--dur-fast,180ms)}.ds-nav a:hover{color:#00f0ff}@media(hover:hover) and (pointer:fine){.ds-nav a:hover:after{transform:translateX(-50%) scaleX(1)}}.ds-primary:focus-visible,.ds-secondary:focus-visible,.ds-nav a:focus-visible,.ds-card a:focus-visible{outline:2px solid #00f0ff;outline-offset:4px}@media(prefers-reduced-motion:reduce){.ds-nav a,.ds-nav a:after{transition:none}}"
+                       },
+                       {
+                           "name":  "Ordered process card",
+                           "kind":  "custom",
+                           "description":  "Reused numbered dark process treatment.",
+                           "html":  "\u003col class=\"ds-process\"\u003e\u003cli\u003e\u003cspan\u003e01\u003c/span\u003e\u003ch3\u003eCapture\u003c/h3\u003e\u003cp\u003eBring enquiries into one process.\u003c/p\u003e\u003c/li\u003e\u003c/ol\u003e",
+                           "css":  ".ds-process{list-style:none;margin:0;padding:0}.ds-process li{border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:32px;background:rgba(10,10,18,.4)}.ds-process span{font:700 48px/48px \"Space Grotesk\",sans-serif;color:rgba(255,255,255,.1)}.ds-process h3{margin:16px 0 0;color:white;font:600 20px/28px \"DM Sans\",sans-serif}.ds-process p{margin:12px 0 0;color:#9ca3af;font:400 16px/26px \"DM Sans\",sans-serif}"
+                       }
+                   ],
+    "narrative":  {
+                      "northStar":  "Existing luminous dark identity",
+                      "overview":  "Preserve the established near-black, cyan and purple identity. The centered particle hero, gradient display text, translucent cards and rounded action panel remain the visual authority. The current work changes positioning and content within that aesthetic.\n\nThis record is grounded in source: `components/homepage.tsx`, `components/aether-flow-hero.tsx`, navigation and marketing components, `components/ui.tsx`, `templates/layout.mjs`, `assets/css/input.css`, `app/globals.css` and `tailwind.config.js`. Scope covers homepage, shared navigation/footer and reused Platform patterns. It does not establish a new system for pricing, legal pages, forms, consent or chat. Desktop/mobile screenshot review remains outstanding; source inspection is not a visual approval pass.",
+                      "keyCharacteristics":  [
+                                                 "Near-black layers with luminous cyan and purple accents.",
+                                                 "Bold display type and compact, practical supporting copy.",
+                                                 "Spacious sections and rounded translucent cards.",
+                                                 "Particle, spotlight, waveform and connector motion retained from the existing identity."
+                                             ],
+                      "rules":  [
+                                    {
+                                        "name":  "The Existing Identity Rule",
+                                        "body":  "Preserve the cyan/purple and near-black vocabulary when changing content; a new palette requires an explicit identity change.",
+                                        "section":  "colors"
+                                    }
+                                ],
+                      "dos":  [
+                                  "Do preserve the established cyan/purple dark identity when updating content.",
+                                  "Do reuse rounded cards, gradient icon wells and existing interaction feedback.",
+                                  "Do keep actual product imagery legible and link to its complete image.",
+                                  "Do retain keyboard focus and reduced-motion behavior."
+                              ],
+                      "donts":  [
+                                    "Don\u0027t substitute the discarded navy palette or new typography system.",
+                                    "Don\u0027t treat dashboard example figures as guaranteed results.",
+                                    "Don\u0027t claim desktop/mobile visual approval without screenshot review."
+                                ]
+                  }
+}

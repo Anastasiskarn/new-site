@@ -46,8 +46,6 @@ export function renderHead({ title, description, canonical, urlPathByLang, ogIma
 
     <link rel="stylesheet" href="/assets/css/styles.css${assetVersion ? `?v=${assetVersion}` : ''}" />
 
-    <!-- Search console verification: uncomment and paste real value when available -->
-    <!-- <meta name="google-site-verification" content="REPLACE_ME" /> -->
     ${jsonLd}
     ${extraHead}`;
 }
@@ -118,63 +116,69 @@ export function renderNav(content, lang, appUrl, otherLangHref) {
 export function renderFooter(content, lang) {
   const f = content.footer;
   const year = 2026;
-  return `<footer class="border-t border-white/10 bg-dark-800">
-    <div class="reveal-stagger mx-auto max-w-8xl px-6 py-16 grid gap-12 md:grid-cols-4">
-      <div class="reveal md:col-span-1">
-        <div class="flex items-center gap-2">
-          <span class="rounded-lg bg-gradient-to-tr from-primary to-secondary p-2">${iconMarkup('anchor', 'w-5 h-5 text-white')}</span>
-          <span class="font-display font-bold tracking-wider text-white">AI <span class="text-primary">ANCHOR</span></span>
+  const link = (href, label) =>
+    `<li><a href="${href}" class="link-hover inline-flex min-h-11 items-center hover:text-primary">${label}</a></li>`;
+  return `<footer class="border-t border-white/[0.06] bg-dark-900">
+    <div class="mx-auto max-w-8xl px-6 pb-10 pt-20">
+      <div class="grid gap-14 md:grid-cols-12">
+        <div class="md:col-span-5">
+          <div class="flex items-center gap-2.5">
+            <span class="rounded-lg bg-gradient-to-tr from-primary to-secondary p-1.5">${iconMarkup('anchor', 'w-[18px] h-[18px] text-white')}</span>
+            <span class="font-display text-sm font-bold tracking-wider text-white">AI <span class="text-primary">ANCHOR</span></span>
+          </div>
+          <p class="mt-5 max-w-xs text-sm leading-relaxed text-gray-400">${f.tagline}</p>
+          <div class="mt-6 flex gap-2 text-gray-400">
+            <a href="${f.socials.instagram}" aria-label="Instagram" class="link-hover inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 hover:border-primary/40 hover:text-primary">${iconMarkup('instagram', 'w-[18px] h-[18px]')}</a>
+            <a href="${f.socials.linkedin}" aria-label="LinkedIn" class="link-hover inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 hover:border-primary/40 hover:text-primary">${iconMarkup('linkedin', 'w-[18px] h-[18px]')}</a>
+          </div>
         </div>
-        <p class="mt-4 text-sm text-gray-400">${f.tagline}</p>
-        <div class="mt-5 flex gap-4 text-gray-400">
-          <a href="${f.socials.instagram}" aria-label="Instagram" class="link-hover hover:text-primary">${iconMarkup('instagram', 'w-5 h-5')}</a>
-          <a href="${f.socials.linkedin}" aria-label="LinkedIn" class="link-hover hover:text-primary">${iconMarkup('linkedin', 'w-5 h-5')}</a>
+
+        <div class="grid gap-10 sm:grid-cols-3 md:col-span-7">
+          <div>
+            <h3 class="text-sm font-medium text-white">${f.columns.product}</h3>
+            <ul class="mt-3 text-sm text-gray-400">
+              ${link(`/${lang}/#services`, lang === 'en' ? 'Platform' : 'Πλατφόρμα')}
+              ${link(`/${lang}/ai-consulting/`, f.productLinks.consulting)}
+              ${link(`/${lang}/ai-voice-agents/`, f.productLinks.voiceAgent)}
+              ${link(`/${lang}/#features`, f.productLinks.commandHub)}
+              ${link(`/${lang}/#pricing`, f.productLinks.pricing)}
+              ${link(`/${lang}/#faq`, f.productLinks.faq)}
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-medium text-white">${f.columns.company}</h3>
+            <ul class="mt-3 text-sm text-gray-400">
+              ${link(`/${lang}/#about`, f.companyLinks.about)}
+              ${link(`/${lang}/#contact`, f.companyLinks.contact)}
+            </ul>
+            ${
+              f.companyDetails.lines.length
+                ? `<div class="mt-6 space-y-1 text-xs leading-relaxed text-gray-400">
+              ${f.companyDetails.lines.map((l) => `<p>${l}</p>`).join('\n              ')}
+            </div>`
+                : ''
+            }
+          </div>
+
+          <div>
+            <h3 class="text-sm font-medium text-white">${f.columns.legal}</h3>
+            <ul class="mt-3 text-sm text-gray-400">
+              ${link(`/${lang}/terms/`, f.legalLinks.terms)}
+              ${link(`/${lang}/privacy/`, f.legalLinks.privacy)}
+              ${link(`/${lang}/dpa/`, f.legalLinks.dpa)}
+              ${link(`/${lang}/cookies/`, f.legalLinks.cookies)}
+              ${link(`/${lang}/ai-policy/`, f.legalLinks.aiPolicy)}
+              ${link(`/${lang}/trust/`, f.legalLinks.trust)}
+              <!-- Consent must be as easy to withdraw as it was to give. Hidden without JS
+                   (see .cookie-settings-item) since there is nothing to reopen in that case. -->
+              <li class="cookie-settings-item"><button type="button" data-cookie-settings class="link-hover inline-flex min-h-11 items-center text-left hover:text-primary">${f.legalLinks.cookieSettings}</button></li>
+            </ul>
+          </div>
         </div>
       </div>
-
-      <div class="reveal">
-        <h3 class="text-sm font-semibold text-white">${f.columns.product}</h3>
-        <ul class="mt-4 space-y-3 text-sm text-gray-400">
-          <li><a href="/${lang}/#services" class="link-hover hover:text-white">${f.productLinks.services}</a></li>
-          <li><a href="/${lang}/#consulting" class="link-hover hover:text-white">${f.productLinks.consulting}</a></li>
-          <li><a href="/${lang}/#voice-agent" class="link-hover hover:text-white">${f.productLinks.voiceAgent}</a></li>
-          <li><a href="/${lang}/#features" class="link-hover hover:text-white">${f.productLinks.commandHub}</a></li>
-          <li><a href="/${lang}/#pricing" class="link-hover hover:text-white">${f.productLinks.pricing}</a></li>
-          <li><a href="/${lang}/#faq" class="link-hover hover:text-white">${f.productLinks.faq}</a></li>
-        </ul>
-      </div>
-
-      <div class="reveal">
-        <h3 class="text-sm font-semibold text-white">${f.columns.company}</h3>
-        <ul class="mt-4 space-y-3 text-sm text-gray-400">
-          <li><a href="/${lang}/#about" class="link-hover hover:text-white">${f.companyLinks.about}</a></li>
-          <li><a href="/${lang}/#contact" class="link-hover hover:text-white">${f.companyLinks.contact}</a></li>
-        </ul>
-        ${
-          f.companyDetails.lines.length
-            ? `<div class="mt-6 space-y-1 text-xs text-gray-400">
-          ${f.companyDetails.lines.map((l) => `<p>${l}</p>`).join('\n          ')}
-        </div>`
-            : ''
-        }
-      </div>
-
-      <div class="reveal">
-        <h3 class="text-sm font-semibold text-white">${f.columns.legal}</h3>
-        <ul class="mt-4 space-y-3 text-sm text-gray-400">
-          <li><a href="/${lang}/terms/" class="link-hover hover:text-white">${f.legalLinks.terms}</a></li>
-          <li><a href="/${lang}/privacy/" class="link-hover hover:text-white">${f.legalLinks.privacy}</a></li>
-          <li><a href="/${lang}/dpa/" class="link-hover hover:text-white">${f.legalLinks.dpa}</a></li>
-          <li><a href="/${lang}/cookies/" class="link-hover hover:text-white">${f.legalLinks.cookies}</a></li>
-          <li><a href="/${lang}/ai-policy/" class="link-hover hover:text-white">${f.legalLinks.aiPolicy}</a></li>
-          <li><a href="/${lang}/trust/" class="link-hover hover:text-white">${f.legalLinks.trust}</a></li>
-          <!-- Consent must be as easy to withdraw as it was to give. Hidden without JS
-               (see .cookie-settings-item) since there is nothing to reopen in that case. -->
-          <li class="cookie-settings-item"><button type="button" data-cookie-settings class="link-hover text-left hover:text-white">${f.legalLinks.cookieSettings}</button></li>
-        </ul>
-      </div>
+      <div class="mt-16 border-t border-white/[0.06] pt-8 text-xs text-gray-400">${f.copyright(year)}</div>
     </div>
-    <div class="border-t border-white/5 py-6 text-center text-xs text-gray-400">${f.copyright(year)}</div>
   </footer>`;
 }
 

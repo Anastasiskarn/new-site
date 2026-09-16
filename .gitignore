@@ -3,3 +3,8 @@ dist/
 .env
 .env.local
 *.log
+
+.next/
+*.tsbuildinfo
+.env.local
+.env.*.local
