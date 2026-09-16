@@ -22,11 +22,18 @@ export function SectionMotion() {
       document.body.append(particle);
       return particle;
     });
+    const syncCursorLayer = () => {
+      const dialog = document.querySelector<HTMLDialogElement>(".consent-dialog[open]");
+      const parent = dialog || document.body;
+      if (cursor.parentElement !== parent) parent.append(cursor);
+      for (const particle of trail) if (particle.parentElement !== parent) parent.append(particle);
+    };
     const pointer = { x: -100, y: -100 };
     const positions = trail.map(() => ({ x: pointer.x, y: pointer.y }));
     let trailFrame = 0;
     const moveCursor = (event: PointerEvent) => {
       if (!finePointer.matches || media.matches) return;
+      syncCursorLayer();
       pointer.x = event.clientX;
       pointer.y = event.clientY;
       cursor.classList.add("is-visible");
@@ -50,6 +57,7 @@ export function SectionMotion() {
     };
     const updateCursorTarget = (event: PointerEvent) => {
       if (!finePointer.matches || media.matches) return;
+      syncCursorLayer();
       const target = event.target instanceof Element
         ? event.target.closest("a, button, summary, input, textarea, select")
         : null;

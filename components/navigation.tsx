@@ -124,10 +124,19 @@ export function Navigation({
         </div>
       </nav>
       <div
+        aria-hidden={!open}
+        onClick={() => setOpen(false)}
+        className={`fixed inset-0 z-40 bg-black/70 backdrop-blur-sm transition-opacity duration-300 xl:hidden ${
+          open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      />
+      <div
         id="mobile-menu"
         ref={panel}
-        hidden={!open}
-        className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-white/[0.06] bg-dark-900 px-6 pb-8 xl:hidden"
+        aria-hidden={!open}
+        className={`fixed inset-y-0 right-0 z-50 flex w-[85vw] max-w-sm flex-col overflow-y-auto border-l border-white/[0.06] bg-dark-900 px-6 pb-8 pt-24 shadow-2xl transition-transform duration-300 ease-out xl:hidden ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
       >
         <div className="flex flex-col">
           {entries.map(([href, label]) => (

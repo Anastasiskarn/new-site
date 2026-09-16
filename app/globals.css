@@ -810,14 +810,32 @@ textarea.demo-field {
   background: rgb(5 5 7 / 0.8);
 }
 .consent-dialog {
+  position: relative;
   z-index: 100;
   max-width: min(32rem, calc(100% - 2rem));
   max-height: calc(100dvh - 2rem);
   overflow: auto;
+  box-shadow: 0 24px 80px rgb(0 0 0 / 0.55), 0 0 0 1px rgb(0 240 255 / 0.08), 0 0 42px rgb(0 240 255 / 0.08);
+  animation: consent-dialog-in 420ms var(--ease-out-soft) both;
 }
 .consent-dialog::backdrop {
   background: rgb(5 5 7 / 0.78);
   backdrop-filter: blur(4px);
+  animation: consent-backdrop-in 420ms ease-out both;
+}
+@keyframes consent-dialog-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes consent-backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .consent-dialog,
+  .consent-dialog::backdrop {
+    animation: none;
+  }
 }
 .chat-widget .chat-panel {
   display: flex;
