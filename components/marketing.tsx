@@ -1,9 +1,9 @@
-import type { CSSProperties, ReactNode } from "react";
+import type { ReactNode } from "react";
 import { getContent, labels, plain, type Content } from "../lib/content";
 import { getDetail } from "../lib/details";
 import { APP_URL, detailSlugs, pathFor, type Locale } from "../lib/routes";
 import { Action, Section } from "./ui";
-import { LeadForm } from "./forms";
+import { DiscoveryForm } from "./discovery-form";
 import { OperationsHome, CapabilityCards, DemoAction, AboutSection, FaqSection } from "./homepage";
 import { Pricing } from "./pricing";
 import { DashboardPreview } from "./dashboard-preview";
@@ -184,89 +184,72 @@ export function BookingPage({ lang }: { lang: Locale }) {
   const t = getContent(lang);
   return (
     <main id="main" className="demo-page relative overflow-hidden">
-      <div className="demo-page-glow pointer-events-none absolute inset-x-0 top-0 h-[60rem]" aria-hidden="true" />
-      <div className="relative mx-auto grid max-w-8xl gap-x-12 gap-y-10 px-6 pb-24 pt-32 md:pt-40 lg:grid-cols-12 xl:gap-x-16">
-        <header className="min-w-0 lg:col-span-7">
-          <h1 className="demo-enter max-w-3xl font-display text-[2.75rem] font-bold leading-[1.02] tracking-[-0.03em] text-white text-balance sm:text-6xl xl:text-7xl">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[56rem] bg-hero-glow" aria-hidden="true" />
+      <div className="relative mx-auto grid max-w-8xl gap-x-12 gap-y-10 px-6 pb-20 pt-32 md:pt-40 lg:grid-cols-12 xl:gap-x-16">
+        <header className="min-w-0 lg:col-span-5">
+          <h1 className="max-w-3xl font-display text-[2.5rem] font-bold leading-[1.04] tracking-[-0.03em] text-white text-balance sm:text-5xl xl:text-6xl">
             {t.bookDemo.heading}
           </h1>
-          <p className="demo-enter mt-6 max-w-2xl text-lg leading-relaxed text-gray-300 md:text-xl" style={{ "--demo-delay": "80ms" } as CSSProperties}>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-300">
             {t.bookDemo.subhead}
           </p>
-          <a
-            href="#demo-form"
-            className="btn-interactive mt-8 inline-flex min-h-12 items-center gap-2 rounded-lg bg-white px-6 font-semibold text-dark-900 hover:bg-primary lg:hidden"
-          >
-            {t.bookDemo.form.submit}
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M12 5v14M6 13l6 6 6-6" />
-            </svg>
-          </a>
         </header>
 
-        <aside
+        <section
           id="demo-form"
           aria-labelledby="demo-form-heading"
-          className="min-w-0 scroll-mt-24 lg:col-span-5 lg:col-start-8 lg:row-span-3 lg:row-start-1"
+          className="min-w-0 scroll-mt-24 lg:col-span-7 lg:row-span-2"
         >
-          <div className="demo-panel demo-enter relative rounded-3xl border border-white/10 p-6 sm:p-8 lg:sticky lg:top-28" style={{ "--demo-delay": "160ms" } as CSSProperties}>
-            <h2 id="demo-form-heading" className="font-display text-2xl font-bold tracking-tight text-white">
-              {t.bookDemo.form.heading}
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-gray-400">{t.bookDemo.form.subheading}</p>
-            <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 border-b border-white/10 pb-6 text-sm text-gray-200">
-              <li className="inline-flex items-center gap-2">
-                <DemoIcon name="clock" />
-                {lang === "en" ? "30 minutes" : "30 λεπτά"}
-              </li>
-              <li className="inline-flex items-center gap-2">
-                <DemoIcon name="card" />
-                {lang === "en" ? "No card, no commitment" : "Χωρίς κάρτα, χωρίς δέσμευση"}
-              </li>
-            </ul>
-            <div className="mt-6">
-              <LeadForm
-                lang={lang}
-                copy={t.bookDemo.form}
-                privacyLabel={t.footer.legalLinks.privacy}
-                booking
-              />
-            </div>
+          <div className="lg:sticky lg:top-28">
+            <DiscoveryForm
+              lang={lang}
+              copy={t.bookDemo.form}
+              privacyLabel={t.footer.legalLinks.privacy}
+            />
           </div>
-        </aside>
+        </section>
 
-        <div className="min-w-0 lg:col-span-7">
-          <h2 className="font-display text-2xl font-bold tracking-tight text-white md:text-3xl">
-            {lang === "en" ? "What we’ll cover" : "Τι θα καλύψουμε"}
+        <div className="min-w-0 lg:col-span-5">
+          <h2 className="font-display text-lg font-semibold text-white">
+            {lang === "en" ? "What happens next" : "Τι γίνεται μετά"}
           </h2>
-          <ol className="demo-agenda relative mt-8 grid gap-8">
-            {t.bookDemo.bullets.map((item) => (
-              <li key={item.title} className="relative grid grid-cols-[2.75rem_1fr] gap-x-5">
-                <span className="demo-agenda-node relative z-10 grid size-11 place-items-center rounded-xl text-primary" aria-hidden="true">
-                  <DemoIcon name={item.icon} size={20} />
+          <ol className="mt-6 grid gap-6">
+            {t.bookDemo.nextSteps.map((step, index) => (
+              <li key={step.title} className="grid grid-cols-[2rem_1fr] gap-x-4">
+                <span className="grid size-8 place-items-center rounded-full border border-primary/30 text-sm font-semibold tabular-nums text-primary" aria-hidden="true">
+                  {index + 1}
                 </span>
                 <div className="pt-1">
-                  <h3 className="font-display text-lg font-semibold text-white">{item.title}</h3>
-                  <p className="mt-2 max-w-xl leading-relaxed text-gray-300">{item.desc}</p>
+                  <h3 className="font-display font-semibold text-white">{step.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-gray-300">{step.desc}</p>
                 </div>
               </li>
             ))}
           </ol>
-          <div className="mt-14 border-t border-white/10 pt-10">
-            <h2 className="font-display text-lg font-semibold text-white">{lang === "en" ? "What happens next" : "Τι γίνεται μετά"}</h2>
-            <ol className="mt-6 grid gap-6 md:grid-cols-3">
-              {t.bookDemo.nextSteps.map((step, index) => (
-                <li key={step.title}>
-                  <span className="text-sm font-semibold text-primary">{index + 1}.</span>
-                  <h3 className="mt-2 font-display font-semibold text-white">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-300">{step.desc}</p>
-                </li>
-              ))}
-            </ol>
-            <p className="mt-8 max-w-2xl text-sm leading-relaxed text-gray-400">{t.bookDemo.noPressureNote}</p>
-          </div>
+          <p className="mt-8 max-w-md border-l-2 border-primary/40 pl-4 text-sm leading-relaxed text-gray-400">
+            {t.bookDemo.noPressureNote}
+          </p>
         </div>
       </div>
+
+      <section className="relative border-t border-white/10" aria-labelledby="demo-agenda-heading">
+        <div className="mx-auto max-w-8xl px-6 py-16 md:py-24">
+          <h2 id="demo-agenda-heading" className="font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
+            {lang === "en" ? "What we’ll cover" : "Τι θα καλύψουμε"}
+          </h2>
+          <ol className="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+            {t.bookDemo.bullets.map((item) => (
+              <li key={item.title} className="min-w-0">
+                <span className="grid size-11 place-items-center rounded-xl border border-white/10 bg-dark-800 text-primary" aria-hidden="true">
+                  <DemoIcon name={item.icon} size={20} />
+                </span>
+                <h3 className="mt-5 font-display text-lg font-semibold text-white">{item.title}</h3>
+                <p className="mt-2 leading-relaxed text-gray-300">{item.desc}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
       <SectionMotion />
     </main>
   );

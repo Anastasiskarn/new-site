@@ -108,6 +108,30 @@ test("booking reports notification failure and distinguishes confirmation failur
     else process.env.RESEND_API_KEY = previous;
   }
 });
+test("booking lists every selected interest area in the lead notification", async () => {
+  const previous = process.env.RESEND_API_KEY,
+    fetchOriginal = globalThis.fetch;
+  process.env.RESEND_API_KEY = "local-test-only";
+  const sent = [];
+  globalThis.fetch = async (url, options) => {
+    sent.push(JSON.parse(options.body));
+    return new Response(JSON.stringify({ id: "mock" }), { status: 200 });
+  };
+  try {
+    const res = response();
+    await booking(
+      { method: "POST", body: { ...lead, interest: ["Leads & follow-up", " ", "Disconnected tools"] } },
+      res,
+    );
+    assert.equal(res.code, 200);
+    const notification = sent.find((email) => email.to.includes("info@aianchor.online"));
+    assert.match(notification.text, /Areas: Leads & follow-up, Disconnected tools/);
+  } finally {
+    globalThis.fetch = fetchOriginal;
+    if (previous === undefined) delete process.env.RESEND_API_KEY;
+    else process.env.RESEND_API_KEY = previous;
+  }
+});
 test("chat rejects invalid payloads and enforces existing per-instance rate limit without inference", async () => {
   const previous = process.env.ANTHROPIC_API_KEY,
     fetchOriginal = globalThis.fetch;

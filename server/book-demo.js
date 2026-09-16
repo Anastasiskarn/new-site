@@ -1,5 +1,5 @@
 /*
- * POST /api/book-demo — free-demo request handler (Vercel serverless function).
+ * POST /api/book-demo — discovery-call request handler (Vercel serverless function).
  *
  * Two emails go out per submission, both through Resend:
  *   1. an internal lead notification to the team inbox,
@@ -16,32 +16,47 @@ const RESEND_ENDPOINT = 'https://api.resend.com/emails';
 const FROM = 'AiAnchor <info@aianchor.online>';
 const NOTIFY_TO = process.env.DEMO_NOTIFY_EMAIL || 'info@aianchor.online';
 
-const MAX = { name: 100, email: 200, phone: 60, company: 150, website: 300, interest: 120, message: 4000 };
+const MAX = { name: 100, email: 200, phone: 60, company: 150, website: 300, interest: 400, message: 4000 };
 
 const COPY = {
   en: {
-    subject: 'We received your free demo request — AiAnchor',
-    heading: 'Your demo request is in',
+    subject: 'Your discovery call request is in — AiAnchor',
+    heading: 'Your discovery call request is in',
     greeting: (name) => `Hi ${name},`,
-    body: 'Our team has received your request for a free demo. We will contact you shortly to arrange a time that suits you.',
-    body2:
-      'On the call we run the AI agent live on a real call flow for your business, so you hear exactly how it answers, qualifies and books — and what Command Hub reports back.',
+    body: 'Thanks for telling us where your team is losing time. We’ll be in touch shortly to arrange a free 30-minute discovery call at a time that suits you.',
+    nextLabel: 'What happens next',
+    next: [
+      ['We review your setup', 'We read what you sent before the call.'],
+      ['We map the problem', 'Together we find where the workflow breaks down or creates unnecessary work.'],
+      ['We show you the options', 'We explain what could be improved and what we would actually implement.'],
+    ],
     recapLabel: 'What you sent us',
+    recap: { company: 'Company', interest: 'Areas', message: 'What slows you down' },
+    replyNote: 'Want to add something before the call? Just reply to this email.',
+    noPressure: 'No pressure to move forward. If we don’t see a useful project, we’ll tell you.',
     signoff: 'Talk soon,',
     team: 'The AiAnchor team',
-    footer: 'You are receiving this because you requested a demo at aianchor.online.',
+    footer: 'You’re receiving this because you requested a discovery call at aianchor.online.',
   },
   gr: {
-    subject: 'Λάβαμε το αίτημά σας για δωρεάν demo — AiAnchor',
-    heading: 'Το αίτημά σας καταχωρήθηκε',
-    greeting: (name) => `Γεια σας ${name},`,
-    body: 'Η ομάδα μας έλαβε το αίτημά σας για δωρεάν demo. Θα επικοινωνήσουμε μαζί σας σύντομα για να κανονίσουμε μια ώρα που σας βολεύει.',
-    body2:
-      'Στην κλήση τρέχουμε τον AI agent ζωντανά σε πραγματικό σενάριο για την επιχείρησή σας, ώστε να ακούσετε πώς απαντά, προκρίνει και κλείνει ραντεβού — και τι αναφέρει το Command Hub.',
-    recapLabel: 'Τι μας στείλατε',
+    subject: 'Λάβαμε το αίτημά σου για discovery call — AiAnchor',
+    heading: 'Λάβαμε το αίτημά σου για discovery call',
+    greeting: (name) => `Γεια σου ${name},`,
+    body: 'Ευχαριστούμε που μας είπες πού χάνει χρόνο η ομάδα σου. Θα επικοινωνήσουμε σύντομα για να κανονίσουμε μια δωρεάν κλήση 30 λεπτών σε ώρα που σε βολεύει.',
+    // Greek capitals drop accents; some clients keep them under text-transform, so write them out.
+    nextLabel: 'ΤΙ ΓΙΝΕΤΑΙ ΜΕΤΑ',
+    next: [
+      ['Διαβάζουμε όσα μας στέλνεις', 'Ερχόμαστε στην κλήση με μια πρώτη εικόνα της δουλειάς σου.'],
+      ['Βρίσκουμε πού κολλάει η ροή', 'Εντοπίζουμε καθυστερήσεις, διπλή δουλειά και βήματα που δεν χρειάζονται.'],
+      ['Συζητάμε τα επόμενα βήματα', 'Σου εξηγούμε τις επιλογές και τι θα χρειαζόταν για να υλοποιηθούν.'],
+    ],
+    recapLabel: 'ΤΙ ΜΑΣ ΕΣΤΕΙΛΕΣ',
+    recap: { company: 'Επιχείρηση', interest: 'Τομείς', message: 'Τι σε καθυστερεί' },
+    replyNote: 'Θέλεις να προσθέσεις κάτι πριν την κλήση; Απλώς απάντησε σε αυτό το email.',
+    noPressure: 'Η κλήση δεν σε δεσμεύει. Αν δεν βλέπουμε κάτι που αξίζει να φτιάξουμε, θα σου το πούμε.',
     signoff: 'Τα λέμε σύντομα,',
     team: 'Η ομάδα της AiAnchor',
-    footer: 'Λαμβάνετε αυτό το email επειδή ζητήσατε demo στο aianchor.online.',
+    footer: 'Λαμβάνεις αυτό το email επειδή ζήτησες discovery call στο aianchor.online.',
   },
 };
 
@@ -125,9 +140,9 @@ function notificationEmail(lead) {
     from: FROM,
     to: [NOTIFY_TO],
     reply_to: lead.email,
-    subject: `New free demo request — ${lead.firstName} ${lead.lastName}${lead.company ? ` (${lead.company})` : ''}`,
+    subject: `New discovery call request — ${lead.firstName} ${lead.lastName}${lead.company ? ` (${lead.company})` : ''}`,
     html: `<div style="font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;max-width:640px;">
-      <h2 style="margin:0 0 4px;font-size:18px;color:#0f1117;">New free demo request</h2>
+      <h2 style="margin:0 0 4px;font-size:18px;color:#0f1117;">New discovery call request</h2>
       <p style="margin:0 0 20px;color:#8b93a7;font-size:13px;">Submitted from the ${escapeHtml(lead.lang.toUpperCase())} site${lead.pagePath ? ` (${escapeHtml(lead.pagePath)})` : ''}.</p>
       <table style="border-collapse:collapse;width:100%;">
         ${row('Name', escapeHtml(`${lead.firstName} ${lead.lastName}`))}
@@ -135,21 +150,21 @@ function notificationEmail(lead) {
         ${row('Phone', escapeHtml(lead.phone))}
         ${row('Company', escapeHtml(lead.company))}
         ${row('Website', websiteCell)}
-        ${row('Interest', escapeHtml(lead.interest))}
-        ${row('Needs', escapeHtml(lead.message).replace(/\n/g, '<br />'))}
+        ${row('Areas', escapeHtml(lead.interest))}
+        ${row('What slows them down', escapeHtml(lead.message).replace(/\n/g, '<br />'))}
       </table>
     </div>`,
     text: [
-      'New free demo request',
+      'New discovery call request',
       `Site: ${lead.lang.toUpperCase()}${lead.pagePath ? ` (${lead.pagePath})` : ''}`,
       `Name: ${lead.firstName} ${lead.lastName}`,
       `Email: ${lead.email}`,
       lead.phone ? `Phone: ${lead.phone}` : '',
       lead.company ? `Company: ${lead.company}` : '',
       lead.website ? `Website: ${lead.website}` : '',
-      lead.interest ? `Interest: ${lead.interest}` : '',
+      lead.interest ? `Areas: ${lead.interest}` : '',
       '',
-      'Needs:',
+      'What slows them down:',
       lead.message,
     ]
       .filter(Boolean)
@@ -157,12 +172,20 @@ function notificationEmail(lead) {
   };
 }
 
+// Long descriptions are trimmed in the prospect's recap; the team email keeps the full text.
+function excerpt(value, max = 280) {
+  return value.length > max ? `${value.slice(0, max).trimEnd()}…` : value;
+}
+
 function confirmationEmail(lead) {
   const c = COPY[lead.lang] || COPY.en;
   const recap = [
-    lead.company ? ['—', lead.company] : null,
-    lead.interest ? ['—', lead.interest] : null,
-  ].filter(Boolean);
+    [c.recap.company, lead.company],
+    [c.recap.interest, lead.interest],
+    [c.recap.message, lead.message && excerpt(lead.message)],
+  ].filter(([, value]) => value);
+  const p = 'margin:0 0 16px;font-size:15px;line-height:1.6;color:#3a3f4d;';
+  const label = 'margin:0 0 12px;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#8b93a7;';
   return {
     from: FROM,
     to: [lead.email],
@@ -175,17 +198,39 @@ function confirmationEmail(lead) {
         </div>
         <div style="padding:32px;">
           <h1 style="margin:0 0 20px;font-size:22px;line-height:1.3;color:#0f1117;">${escapeHtml(c.heading)}</h1>
-          <p style="margin:0 0 16px;font-size:15px;line-height:1.6;color:#3a3f4d;">${escapeHtml(c.greeting(lead.firstName))}</p>
-          <p style="margin:0 0 16px;font-size:15px;line-height:1.6;color:#3a3f4d;">${escapeHtml(c.body)}</p>
-          <p style="margin:0 0 24px;font-size:15px;line-height:1.6;color:#3a3f4d;">${escapeHtml(c.body2)}</p>
+          <p style="${p}">${escapeHtml(c.greeting(lead.firstName))}</p>
+          <p style="${p}margin-bottom:28px;">${escapeHtml(c.body)}</p>
+          <p style="${label}">${escapeHtml(c.nextLabel)}</p>
+          <table role="presentation" style="border-collapse:collapse;width:100%;margin:0 0 28px;">
+            ${c.next
+              .map(
+                ([title, desc], i) => `<tr>
+              <td style="width:28px;padding:0 12px 14px 0;vertical-align:top;">
+                <span style="display:inline-block;width:24px;height:24px;border-radius:12px;border:1px solid #00c8d7;color:#0092a0;font-size:12px;font-weight:700;line-height:24px;text-align:center;">${i + 1}</span>
+              </td>
+              <td style="padding:2px 0 14px;vertical-align:top;">
+                <p style="margin:0;font-size:15px;font-weight:600;color:#0f1117;">${escapeHtml(title)}</p>
+                <p style="margin:2px 0 0;font-size:14px;line-height:1.5;color:#5a6070;">${escapeHtml(desc)}</p>
+              </td>
+            </tr>`,
+              )
+              .join('')}
+          </table>
           ${
             recap.length
-              ? `<div style="border-left:3px solid #00c8d7;padding:4px 0 4px 16px;margin:0 0 24px;">
-            <p style="margin:0 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#8b93a7;">${escapeHtml(c.recapLabel)}</p>
-            ${recap.map(([, v]) => `<p style="margin:0;font-size:14px;color:#3a3f4d;">${escapeHtml(v)}</p>`).join('')}
+              ? `<div style="border-left:3px solid #00c8d7;padding:4px 0 4px 16px;margin:0 0 28px;">
+            <p style="${label}margin-bottom:10px;">${escapeHtml(c.recapLabel)}</p>
+            ${recap
+              .map(
+                ([name, value]) =>
+                  `<p style="margin:0 0 8px;font-size:14px;line-height:1.5;color:#3a3f4d;"><span style="color:#8b93a7;">${escapeHtml(name)}:</span> ${escapeHtml(value).replace(/\n/g, '<br />')}</p>`,
+              )
+              .join('')}
           </div>`
               : ''
           }
+          <p style="${p}">${escapeHtml(c.replyNote)}</p>
+          <p style="${p}margin-bottom:24px;font-size:14px;color:#5a6070;">${escapeHtml(c.noPressure)}</p>
           <p style="margin:0;font-size:15px;line-height:1.6;color:#3a3f4d;">${escapeHtml(c.signoff)}<br /><strong>${escapeHtml(c.team)}</strong></p>
         </div>
         <div style="padding:18px 32px;background:#fafbfc;border-top:1px solid #e4e6ed;">
@@ -200,7 +245,12 @@ function confirmationEmail(lead) {
       '',
       c.body,
       '',
-      c.body2,
+      `${c.nextLabel}:`,
+      ...c.next.map(([title, desc], i) => `${i + 1}. ${title}: ${desc}`),
+      '',
+      ...(recap.length ? [`${c.recapLabel}:`, ...recap.map(([name, value]) => `${name}: ${value}`), ''] : []),
+      c.replyNote,
+      c.noPressure,
       '',
       c.signoff,
       c.team,
@@ -229,6 +279,8 @@ export default async function handler(req, res) {
   // Honeypot: bots fill every field they find. Answer 200 so they don't retry,
   // but send nothing.
   if (clean(body.companyUrl, 200)) {
+    // Logged so a real visitor tripping the trap (e.g. via browser autofill) is visible.
+    console.warn('[book-demo] honeypot filled; no emails sent', { pagePath: clean(body.pagePath, 200) });
     return res.status(200).json({ ok: true });
   }
 
@@ -239,7 +291,8 @@ export default async function handler(req, res) {
     phone: clean(body.phone, MAX.phone),
     company: clean(body.company, MAX.company),
     website: normalizeWebsite(body.website),
-    interest: clean(body.interest, MAX.interest),
+    // The discovery form sends several areas as an array; older clients send one string.
+    interest: clean(Array.isArray(body.interest) ? body.interest.map((v) => clean(v, 120)).filter(Boolean).join(", ") : body.interest, MAX.interest),
     message: clean(body.message, MAX.message),
     lang: body.lang === 'gr' ? 'gr' : 'en',
     pagePath: clean(body.pagePath, 200),
