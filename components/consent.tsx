@@ -9,6 +9,20 @@ declare global {
     AiAnchorConsent?: { categories: Categories; open: () => void };
   }
 }
+function ShieldIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z" />
+    </svg>
+  );
+}
+function BackIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M19 12H5m0 0 7 7m-7-7 7-7" />
+    </svg>
+  );
+}
 export function Consent({
   lang,
   copy,
@@ -99,86 +113,135 @@ export function Consent({
           event.preventDefault();
         }}
         aria-labelledby="consent-title"
-        className="consent-dialog w-[calc(100%-2rem)] max-w-xl rounded-2xl border border-white/20 bg-dark-800 p-6 text-white"
+        aria-describedby="consent-desc"
+        className="consent-dialog w-full rounded-2xl border border-white/10 bg-dark-800/95 p-6 text-white sm:p-7"
       >
-        <p className="text-primary text-sm">{copy.intro.eyebrow}</p>
-        <h2 id="consent-title" className="mt-2 text-2xl font-display font-bold">
-          {custom ? copy.prefs.heading : copy.intro.heading}
-        </h2>
-        <p className="mt-4 text-gray-200 leading-relaxed">
-          {custom ? copy.prefs.body : copy.intro.body}
-        </p>
-        <a
-          className="mt-4 inline-block min-h-11 text-primary underline"
-          href={pathFor(lang, "cookies")}
-        >
-          {copy.intro.policyLink}
-        </a>
-        {custom && (
-          <div className="my-4 space-y-4">
-            {copy.prefs.categories.map((category) => (
-              <label
-                key={category.id}
-                className="flex items-start gap-4 rounded-lg border border-white/15 p-4"
+        {!custom ? (
+          <div>
+            <div className="flex items-start gap-4">
+              <span className="hidden shrink-0 rounded-xl bg-gradient-to-tr from-primary to-secondary p-2.5 sm:block">
+                <ShieldIcon />
+              </span>
+              <div className="min-w-0">
+                <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
+                  {copy.intro.eyebrow}
+                </p>
+                <h2 id="consent-title" className="mt-1.5 font-display text-lg font-bold text-white">
+                  {copy.intro.heading}
+                </h2>
+                <p id="consent-desc" className="mt-2 text-sm leading-relaxed text-gray-400">
+                  {copy.intro.body}{" "}
+                  <a
+                    className="link-hover font-medium text-primary underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
+                    href={pathFor(lang, "cookies")}
+                  >
+                    {copy.intro.policyLink}
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div className="mt-6 flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-end">
+              <button
+                type="button"
+                className="btn-interactive btn-no-fill min-h-11 rounded-full border border-white/15 px-5 text-sm font-semibold text-gray-300 hover:border-primary/50 hover:text-white"
+                onClick={() => setCustom(true)}
               >
-                <input
-                  type="checkbox"
-                  className="mt-1 h-5 w-5 accent-cyan-400"
-                  checked={categories[category.id as "analytics" | "marketing"]}
-                  onChange={(event) =>
-                    setCategories({
-                      ...categories,
-                      [category.id]: event.target.checked,
-                    })
-                  }
-                />
-                <span>
-                  <span className="block font-semibold">{category.title}</span>
-                  <span className="mt-1 block text-sm text-gray-300">
-                    {category.desc}
-                  </span>
-                </span>
-              </label>
-            ))}
+                {copy.intro.customize}
+              </button>
+              <button
+                type="button"
+                className="btn-interactive btn-no-fill min-h-11 rounded-full border border-white/15 px-5 text-sm font-semibold text-gray-300 hover:border-primary/50 hover:text-white"
+                onClick={() =>
+                  save({ necessary: true, analytics: false, marketing: false })
+                }
+              >
+                {copy.intro.rejectAll}
+              </button>
+              <button
+                type="button"
+                className="btn-interactive min-h-11 rounded-full bg-white px-5 text-sm font-semibold text-dark-900 hover:bg-gray-100"
+                onClick={() =>
+                  save({ necessary: true, analytics: true, marketing: true })
+                }
+              >
+                {copy.intro.acceptAll}
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div>
+            <div className="flex items-start gap-4">
+              <button
+                type="button"
+                aria-label={copy.prefs.back}
+                className="btn-interactive btn-no-fill mt-0.5 shrink-0 rounded-lg border border-white/10 p-2 text-gray-300 hover:border-primary/50 hover:text-white"
+                onClick={() => setCustom(false)}
+              >
+                <BackIcon />
+              </button>
+              <div className="min-w-0">
+                <h2 id="consent-title" className="font-display text-lg font-bold text-white">
+                  {copy.prefs.heading}
+                </h2>
+                <p id="consent-desc" className="mt-1.5 text-sm leading-relaxed text-gray-400">
+                  {copy.prefs.body}
+                </p>
+              </div>
+            </div>
+            <div className="mt-5 space-y-2.5">
+              {copy.prefs.categories.map((category) => (
+                <div
+                  key={category.id}
+                  className="flex items-start justify-between gap-4 rounded-xl border border-white/10 bg-dark-900/60 p-4"
+                >
+                  <div className="min-w-0">
+                    <h4 className="text-sm font-semibold text-white">{category.title}</h4>
+                    <p className="mt-1 text-xs leading-relaxed text-gray-400">{category.desc}</p>
+                  </div>
+                  {category.locked ? (
+                    <span className="shrink-0 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wide text-primary">
+                      {copy.prefs.alwaysOn}
+                    </span>
+                  ) : (
+                    <button
+                      type="button"
+                      role="switch"
+                      aria-checked={categories[category.id as "analytics" | "marketing"]}
+                      aria-label={category.title}
+                      className="cookie-switch shrink-0"
+                      onClick={() =>
+                        setCategories({
+                          ...categories,
+                          [category.id]: !categories[category.id as "analytics" | "marketing"],
+                        })
+                      }
+                    >
+                      <span className="cookie-switch-thumb" />
+                    </button>
+                  )}
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-end">
+              <button
+                type="button"
+                className="btn-interactive btn-no-fill min-h-11 rounded-full border border-white/15 px-5 text-sm font-semibold text-gray-300 hover:border-primary/50 hover:text-white"
+                onClick={() => save({ ...categories, necessary: true })}
+              >
+                {copy.prefs.save}
+              </button>
+              <button
+                type="button"
+                className="btn-interactive min-h-11 rounded-full bg-white px-5 text-sm font-semibold text-dark-900 hover:bg-gray-100"
+                onClick={() =>
+                  save({ necessary: true, analytics: true, marketing: true })
+                }
+              >
+                {copy.prefs.acceptAll}
+              </button>
+            </div>
           </div>
         )}
-        <div className="mt-4 grid gap-3 sm:grid-cols-2">
-          <button
-            type="button"
-            className="min-h-12 rounded-lg border border-white/30 px-4 py-3"
-            onClick={() =>
-              save({ necessary: true, analytics: false, marketing: false })
-            }
-          >
-            {copy.intro.rejectAll}
-          </button>
-          <button
-            type="button"
-            className="min-h-12 rounded-lg border border-white/30 px-4 py-3"
-            onClick={() =>
-              save({ necessary: true, analytics: true, marketing: true })
-            }
-          >
-            {copy.intro.acceptAll}
-          </button>
-          {custom ? (
-            <button
-              type="button"
-              className="sm:col-span-2 min-h-12 rounded-lg bg-primary px-4 py-3 text-dark-900 font-semibold"
-              onClick={() => save({ ...categories, necessary: true })}
-            >
-              {copy.prefs.save}
-            </button>
-          ) : (
-            <button
-              type="button"
-              className="sm:col-span-2 min-h-12 rounded-lg text-primary underline"
-              onClick={() => setCustom(true)}
-            >
-              {copy.intro.customize}
-            </button>
-          )}
-        </div>
       </dialog>
     </>
   );
