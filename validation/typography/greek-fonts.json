@@ -1,0 +1,9 @@
+{
+  "checkedRoutes": 32,
+  "distinctGreekCharactersCovered": 60,
+  "greekFamily": "Manrope",
+  "greekFontBytes": 9360,
+  "variableWeight": "200 800",
+  "passed": true,
+  "browserVisualReview": "Unavailable: no connected browser"
+}

@@ -115,11 +115,13 @@ The palette places luminous accents over near-black surfaces and white-to-gray t
 
 ## Typography
 
-**Display Font:** Space Grotesk with the fallback stack in the frontmatter.
+**Display Font:** Space Grotesk on English pages, with the fallback stack in the frontmatter.
 
-**Body Font:** DM Sans with the fallback stack in the frontmatter.
+**Body Font:** DM Sans on English pages, with the fallback stack in the frontmatter.
 
-**Character:** Bold geometric headings contrast with straightforward sans-serif reading text. Font families are configured in Tailwind; the template loads Google Fonts. There are no new self-hosted font declarations. Unsupported glyphs or unavailable webfonts use fallback.
+**Greek typography:** Greek pages use variable Manrope for both heading and body roles, including embedded Latin terms, controls and labels. This prevents mixed glyph fallbacks: the English pair does not include Greek glyphs. Greek h1/h2 use 1.18 line height and -0.015em tracking to give tonos and dialytika room; existing font sizes and smaller headings keep their established hierarchy. Role tokens `--font-body` and `--font-heading` select the Greek face under `html:lang(el)`.
+
+**Character:** Bold geometric headings contrast with straightforward sans-serif reading text. Tailwind defines the role stacks; the Next.js layout self-hosts the fonts through `next/font/google` with `display: swap` and metric-adjusted fallbacks. Only Greek pages apply Manrope's font variable, and it is not preloaded on English pages. The legacy template still uses its own Google Fonts link. Browser screenshot confirmation of the Greek change remains outstanding.
 
 ### Hierarchy
 

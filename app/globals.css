@@ -5,6 +5,17 @@ html {
 body {
   overflow-wrap: break-word;
 }
+html:lang(el) {
+  --font-body: var(--font-greek, "Manrope");
+  --font-heading: var(--font-greek, "Manrope");
+}
+/* Greek tonos and dialytika need more room than the Latin display settings.
+   Keep the existing type sizes and hierarchy, with locale-specific spacing. */
+html:lang(el) h1,
+html:lang(el) h2 {
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+}
 button,
 a,
 input,
@@ -107,6 +118,24 @@ button:disabled {
 .dash-glow {
   /* Sized in px from the box top so the ellipse fades out before reaching the edge of its own box */
   background: radial-gradient(40rem 12rem at 50% 14rem, rgb(0 240 255 / 0.1), transparent);
+}
+.feature-wave {
+  height: 1.25rem;
+}
+.feature-wave .wave-bar {
+  display: block;
+  width: 3px;
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(to top, #00f0ff, #7000ff);
+  transform: scaleY(0.28);
+  transform-origin: bottom;
+  animation: feature-wave-live 1.2s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes feature-wave-live {
+  0%, 100% { transform: scaleY(0.28); }
+  50% { transform: scaleY(1); }
 }
 .dash-stage {
   background: linear-gradient(135deg, rgb(var(--tone) / 0.24), rgb(var(--tone) / 0.06));
@@ -430,7 +459,7 @@ button:disabled {
     pointer-events: none;
     transform: translate3d(100%, 0, 0);
     translate: 0 var(--robot-lift, 0px);
-    transition: transform 1100ms cubic-bezier(0.65, 0, 0.35, 1);
+    transition: transform 1800ms cubic-bezier(0.45, 0, 0.35, 1);
     will-change: transform, translate;
   }
   .robot-stage[data-side="left"] {
@@ -440,7 +469,7 @@ button:disabled {
   .robot-stage-body {
     position: absolute;
     inset: 4.5rem 0 0;
-    transition: opacity 700ms var(--ease-out-soft), transform 1100ms var(--ease-out-soft);
+    transition: opacity 900ms var(--ease-out-soft), transform 1800ms var(--ease-out-soft);
   }
   /* Mid-glide it steps back slightly, so the crossing reads as a move rather than a slide */
   .robot-stage[data-moving] .robot-stage-body {
@@ -457,7 +486,7 @@ button:disabled {
     inset: 0;
     mask-image: linear-gradient(to bottom, black 78%, transparent);
     opacity: 0;
-    transition: opacity 1200ms var(--ease-out-soft);
+    transition: opacity 250ms var(--ease-out-soft);
   }
   .robot-stage[data-ready] .robot-canvas {
     opacity: 1;

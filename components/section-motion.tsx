@@ -175,20 +175,20 @@ export function SectionMotion() {
     window.addEventListener("resize", scroll, { passive: true });
     media.addEventListener("change", update);
     update();
-    for (const card of document.querySelectorAll<HTMLElement>(
-      ".spotlight-card, .pricing-card",
-    )) {
-      const move = (event: PointerEvent) => {
-        if (media.matches || event.pointerType === "touch") return;
-        const bounds = card.getBoundingClientRect();
-        card.style.setProperty("--mx", `${event.clientX - bounds.left}px`);
-        card.style.setProperty("--my", `${event.clientY - bounds.top}px`);
-        card.style.setProperty("--px", `${event.clientX - bounds.left}px`);
-        card.style.setProperty("--py", `${event.clientY - bounds.top}px`);
-      };
-      card.addEventListener("pointermove", move);
-      cleanups.push(() => card.removeEventListener("pointermove", move));
-    }
+    const moveSpotlight = (event: PointerEvent) => {
+      if (event.pointerType === "touch") return;
+      const target = event.target instanceof Element
+        ? event.target.closest<HTMLElement>(".spotlight-card, .pricing-card")
+        : null;
+      if (!target) return;
+      const bounds = target.getBoundingClientRect();
+      target.style.setProperty("--mx", `${event.clientX - bounds.left}px`);
+      target.style.setProperty("--my", `${event.clientY - bounds.top}px`);
+      target.style.setProperty("--px", `${event.clientX - bounds.left}px`);
+      target.style.setProperty("--py", `${event.clientY - bounds.top}px`);
+    };
+    document.addEventListener("pointermove", moveSpotlight, { passive: true });
+    cleanups.push(() => document.removeEventListener("pointermove", moveSpotlight));
     for (const canvas of document.querySelectorAll<HTMLCanvasElement>(
       "canvas.particle-bg",
     )) {

@@ -18,8 +18,8 @@ export function metadataFor(lang: Locale, slug: Slug): Metadata {
   const title =
     slug === "pricing"
       ? lang === "en"
-        ? "AiAnchor pricing — voice agents, chatbots & automation"
-        : "Τιμές AiAnchor — φωνητικοί agents, chatbots και αυτοματισμοί"
+        ? "AiAnchor pricing | Implementation and ongoing support"
+        : "Τιμές AiAnchor | Συστήματα AI και αυτοματισμοί"
       : detail
         ? `${detail.title} | AiAnchor`
         : slug === "" ? homepageCopy(lang).meta.title
@@ -27,9 +27,7 @@ export function metadataFor(lang: Locale, slug: Slug): Metadata {
         : known?.title;
   const description =
     slug === "pricing"
-      ? lang === "en"
-        ? "Compare Starter, Growth, Pro and Scale service plans, included minutes, overage, annual billing, setup fees and the Growth trial. Prices before VAT."
-        : "Συγκρίνετε Starter, Growth, Pro και Scale: λεπτά, επιπλέον χρεώσεις, ετήσια τιμολόγηση, εγκατάσταση και δοκιμή Growth. Τιμές χωρίς ΦΠΑ."
+      ? [t.pricing.subhead, t.pricing.note, t.pricing.vatNote].join(" ")
       : slug === "" ? homepageCopy(lang).meta.description
       : slug === "platform" ? homepageCopy(lang).platform.body
       : detail?.description || known?.description;

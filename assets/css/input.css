@@ -690,11 +690,13 @@
     content: '';
     position: absolute;
     inset: 0;
+    z-index: 0;
     border-radius: inherit;
-    background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 50%), rgba(0, 240, 255, 0.1), transparent 60%);
+    background: radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), rgba(0, 240, 255, 0.2), transparent 65%);
     opacity: 0;
     transition: opacity var(--dur-base) var(--ease-out);
     pointer-events: none;
+    will-change: background;
   }
   @media (hover: hover) and (pointer: fine) {
     .spotlight-card:hover {
@@ -726,6 +728,7 @@
     transform: scaleY(0.28);
     transform-origin: bottom;
     animation: feature-wave 1.2s ease-in-out infinite;
+    will-change: transform;
   }
   @keyframes feature-wave {
     0%, 100% { transform: scaleY(0.28); }

@@ -83,7 +83,7 @@ export function LeadForm({
           {booking && !confirmed
             ? lang === "en"
               ? "Your request was received, but the confirmation email could not be sent. The team will follow up."
-              : "Το αίτημα παραλήφθηκε, αλλά το email επιβεβαίωσης δεν στάλθηκε. Η ομάδα θα επικοινωνήσει μαζί σας."
+              : "Λάβαμε το αίτημά σου, αλλά δεν στάλθηκε το email επιβεβαίωσης. Η ομάδα μας θα επικοινωνήσει μαζί σου."
             : f.successBody}
         </p>
         <button
@@ -172,7 +172,7 @@ export function LeadForm({
             onClick={() => setInterestOpen((open) => !open)}
           >
             <span className={interest ? "text-gray-100" : "text-gray-400"}>
-              {interest || (lang === "en" ? "Select an area" : "Επιλέξτε τομέα")}
+              {interest || (lang === "en" ? "Select an area" : "Διάλεξε τομέα")}
             </span>
             <svg className={`h-4 w-4 shrink-0 transition-transform ${interestOpen ? "rotate-180" : ""}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="m6 9 6 6 6-6" />
@@ -181,7 +181,7 @@ export function LeadForm({
           {interestOpen && (
             <div className="demo-select-dialog" role="dialog" aria-label={f.interest}>
               <div className="flex items-center justify-between gap-3 border-b border-white/10 px-3 py-2.5">
-                <p className="text-xs text-gray-400">{lang === "en" ? "Choose one area" : "Επιλέξτε έναν τομέα"}</p>
+                <p className="text-xs text-gray-400">{lang === "en" ? "Choose one area" : "Διάλεξε έναν τομέα"}</p>
                 {interest && <button type="button" className="text-xs text-primary hover:text-white" onClick={() => { setInterest(""); setInterestOpen(false); }}>{lang === "en" ? "Clear" : "Καθαρισμός"}</button>}
               </div>
               <div className="grid gap-1.5 p-2">
@@ -265,7 +265,7 @@ export function LeadForm({
             ? bookingCopy.privacyNote
             : lang === "en"
               ? "We use these details to respond to your enquiry."
-              : "Χρησιμοποιούμε τα στοιχεία για να απαντήσουμε στο ερώτημά σας."}{" "}
+              : "Χρησιμοποιούμε τα στοιχεία σου για να απαντήσουμε στο ερώτημά σου."}{" "}
           <a
             href={pathFor(lang, "privacy")}
             className="text-gray-200 underline decoration-primary/60 underline-offset-2 hover:text-primary"

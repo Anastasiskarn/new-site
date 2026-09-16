@@ -55,7 +55,8 @@ for (const { lang, slug, path } of indexableRoutes) {
   if (!slug) {
     const copy = lang === "en" ? en : gr;
     assert.equal(questions, copy.faq.items.length, path + " all homepage FAQ items");
-    assert.equal((main.match(/<summary\b/g) || []).length, copy.faq.items.length, path + " native FAQ controls");
+    const faqSection = main.match(/<section\b[^>]*\bid="faq"[^>]*>([\s\S]*?)<\/section>/i)?.[1] || "";
+    assert.equal((faqSection.match(/<summary\b/g) || []).length, copy.faq.items.length, path + " native FAQ controls");
     for (const [name, agent] of Object.entries(agents)) {
       const crawlerMain = clean(await request(path, agent)).match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1] || "";
       assert.equal(text(crawlerMain), text(main), path + " same readable content for " + name);

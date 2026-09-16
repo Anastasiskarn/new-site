@@ -4,8 +4,13 @@ import { Suspense, lazy } from "react";
 import type { Application } from "@splinetool/runtime";
 
 // Spline Scene by serafimcloud on 21st.dev (https://21st.dev/@serafimcloud/components/splite).
-// The runtime is lazy-loaded, so the ~1MB WebGL bundle never ships to pages or viewports that don't mount this.
-const Spline = lazy(() => import("@splinetool/react-spline"));
+// Keep one shared import so desktop callers can warm the chunk before mounting.
+// Other routes and mobile viewports still skip the WebGL runtime.
+let splineImport: Promise<typeof import("@splinetool/react-spline")> | undefined;
+export function preloadSpline() {
+  return splineImport ??= import("@splinetool/react-spline");
+}
+const Spline = lazy(preloadSpline);
 
 type SplineSceneProps = {
   scene: string;

@@ -37,6 +37,7 @@ export function ProductIcon({ name }: { name: string }) {
     phone: <><path d="M16 3h5v5m0-5-6 6M9 3H5a2 2 0 0 0-2 2c0 9 7 16 16 16a2 2 0 0 0 2-2v-4l-5-2-2 3a13 13 0 0 1-6-6l3-2-2-5Z" /></>,
     book: <><path d="M12 5v16M3 3h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5v16h-5a4 4 0 0 0-4 2 4 4 0 0 0-4-2H3V3Z" /></>,
     calendar: <><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M16 3v4M8 3v4M3 11h18m-13 5 3 3 5-5" /></>,
+    chart: <path d="M3 3v18h18M7 14l4-4 4 3 6-7" />,
     arrow: <path d="M4 12h16m-6-6 6 6-6 6" />,
   };
   return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[name] || paths.arrow}</svg>;
@@ -86,7 +87,7 @@ function Hero({ lang }: { lang: Locale }) {
         <p style={delay(180)} className="scroll-hero-enter mt-7 max-w-xl text-base leading-relaxed text-gray-400 md:text-lg">{t.hero.body}</p>
         <div style={delay(260)} className="scroll-hero-enter mt-10 flex flex-wrap items-center gap-2">
           <DemoPill lang={lang} />
-          <a className="link-hover inline-flex min-h-12 items-center justify-center rounded-full px-6 text-base font-medium text-gray-300 hover:text-primary" href="#how-it-works">{t.hero.secondary}</a>
+          <a className="link-hover inline-flex min-h-12 items-center justify-center rounded-full px-6 text-base font-medium text-gray-300 hover:text-primary" href={lang === "gr" ? getContent(lang).hero.ctaSecondaryHref : "#how-it-works"}>{t.hero.secondary}</a>
         </div>
         <div style={delay(340)} className="scroll-hero-enter mt-12">
           <p className="flex items-center gap-3 text-sm text-gray-400"><span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary shadow-[0_0_12px_#00f0ff]" aria-hidden="true" />{t.hero.integration}</p>
@@ -113,7 +114,7 @@ function ManagedSteps({ steps }: { steps: { title: string; body: string }[] }) {
   return <div className="relative mt-16 md:mt-20">
     <div className="connector-track absolute inset-x-0 top-4 hidden h-px lg:block" />
     <div className="connector-fill absolute inset-x-0 top-4 hidden h-px lg:block" data-connector-fill="" />
-    <ol className="reveal-stagger relative grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">{steps.map((step, i) => <li key={step.title} className="reveal border-t border-white/10 pt-8 lg:border-0 lg:pt-0">
+    <ol className={`reveal-stagger relative grid gap-x-8 gap-y-10 sm:grid-cols-2 ${steps.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>{steps.map((step, i) => <li key={step.title} className="reveal border-t border-white/10 pt-8 lg:border-0 lg:pt-0">
       <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-dark-900 font-display text-sm font-medium tabular-nums text-white">{i + 1}</span>
       <h3 className="mt-6 font-display text-xl font-semibold text-white lg:mt-8">{step.title}</h3>
       <p className="mt-3 max-w-xs text-base leading-relaxed text-gray-400">{step.body}</p>
@@ -123,14 +124,21 @@ function ManagedSteps({ steps }: { steps: { title: string; body: string }[] }) {
 
 // `compact` fits the grid to half the page (two columns at most) for the homepage split layout
 export function CapabilityCards({ lang, linked = false, compact = false }: { lang: Locale; linked?: boolean; compact?: boolean }) {
+  const items = lang === "gr" && linked
+    ? getContent(lang).voiceSystems.automations.map((item, i) => ({
+        icon: ["book", "follow", "sync", "phone", "follow", "calendar"][i],
+        title: item.title, lead: "", body: item.desc,
+        slug: ["chatbots", "crm-automation", "crm-automation", "ai-voice-agents", "crm-automation", "crm-automation"][i],
+      }))
+    : homepageCopy(lang).capabilities.items;
   // Hairline grid: cells share one 1px seam instead of each drawing its own box
-  return <div className={`home-capabilities reveal mt-16 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2 md:mt-20 ${compact ? "" : "lg:grid-cols-3"}`}>{homepageCopy(lang).capabilities.items.map((item, i) => <article key={item.title} className={`spotlight-card relative flex flex-col bg-dark-900 ${compact ? "p-7 xl:p-8" : "p-8 md:p-10"}`}>
+  return <div className={`home-capabilities reveal mt-16 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2 md:mt-20 ${compact ? "" : "lg:grid-cols-3"}`}>{items.map((item, i) => <article key={item.title} className={`spotlight-card relative flex flex-col bg-dark-900 ${compact ? "p-7 xl:p-8" : "p-8 md:p-10"}`}>
     <div className="relative flex items-center justify-between gap-4">
       <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-primary"><ProductIcon name={item.icon} /></span>
       {i === 0 && <span className="feature-wave flex h-5 items-end gap-[3px] opacity-60" aria-hidden="true">{Array.from({ length: 12 }, (_, n) => <span key={n} className="wave-bar" style={{ animationDelay: `${n % 7 * 90}ms` }} />)}</span>}
     </div>
     <h3 className={`relative font-display text-xl font-semibold text-white ${compact ? "mt-6" : "mt-8"}`}>{linked ? <a className="link-hover inline-flex min-h-11 items-center gap-3 hover:text-primary" href={pathFor(lang, item.slug)}>{item.title}<ProductIcon name="arrow" /></a> : item.title}</h3>
-    <p className="relative mt-3 text-base leading-relaxed text-gray-200">{item.lead}</p>
+    {item.lead && <p className="relative mt-3 text-base leading-relaxed text-gray-200">{item.lead}</p>}
     <p className="relative mt-2 text-sm leading-relaxed text-gray-400">{item.body}</p>
   </article>)}</div>;
 }
@@ -141,6 +149,7 @@ function Statement({ text, wide = false }: { text: string; wide?: boolean }) {
 }
 
 export function AboutSection({ lang }: { lang: Locale }) {
+  const t = getContent(lang);
   const copy = lang === "en" ? {
     eyebrow: "About AiAnchor",
     title: "We improve the way your business operates.",
@@ -153,16 +162,12 @@ export function AboutSection({ lang }: { lang: Locale }) {
       ["Track the impact", "Use the AiAnchor Operations Platform to see activity, results and how the system is performing over time."],
     ],
   } : {
-    eyebrow: "Σχετικά με την AiAnchor",
-    title: "Βελτιώνουμε τον τρόπο λειτουργίας της επιχείρησής σας.",
-    intro: "Ξεκινάμε χαρτογραφώντας τον τρόπο με τον οποίο κινείται η εργασία στην επιχείρησή σας και εντοπίζοντας πού χάνονται χρόνος, ορατότητα ή ευκαιρίες.",
-    bridge: "Στη συνέχεια σχεδιάζουμε και υλοποιούμε τη σωστή λύση με αυτοματισμούς, λογισμικό, AI ή συνδυασμό τους.",
-    platform: "Το AiAnchor Operations Platform σάς δίνει ένα σημείο για να παρακολουθείτε τα συστήματα που υλοποιούμε, τη δραστηριότητα που δημιουργούν και την πρόοδό τους.",
-    steps: [
-      ["Κατανοούμε τη ροή εργασίας", "Εξετάζουμε τη διαδικασία πριν αποφασίσουμε τι πρέπει να αλλάξει."],
-      ["Χτίζουμε το σωστό σύστημα", "Σχεδιάζουμε και υλοποιούμε τη λύση γύρω από τον πραγματικό τρόπο εργασίας της επιχείρησής σας."],
-      ["Παρακολουθούμε τον αντίκτυπο", "Χρησιμοποιείτε το AiAnchor Operations Platform για να βλέπετε δραστηριότητα, αποτελέσματα και την απόδοση του συστήματος στον χρόνο."],
-    ],
+    eyebrow: t.nav.about,
+    title: t.about.heading,
+    intro: t.about.lead,
+    bridge: t.about.tagline,
+    platform: t.about.mission,
+    steps: t.consulting.steps.map(step => [step.title, step.deliverables]),
   };
   return <HomeSection id="about" robot="off" className="overflow-hidden">
     <div className="section-glow pointer-events-none absolute right-0 top-1/3 -z-10 h-[32rem] w-[min(48rem,100vw)] translate-x-1/3 -translate-y-1/2" aria-hidden="true" />
@@ -209,14 +214,14 @@ export function FaqSection({ lang }: { lang: Locale }) {
     { label: "Systems we build", note: "The tools, agents and custom systems that can support your operation.", items: faq.items.slice(6, 8) },
     { label: "Working together", note: "Common use cases, scope, timing, support and human handoff.", items: faq.items.slice(8) },
   ] : [
-    { label: "Η μεγάλη εικόνα", note: "Τι κάνει η AiAnchor και πώς σκεφτόμαστε τις λύσεις.", items: faq.items.slice(0, 2) },
-    { label: "Ανάλυση διαδικασίας", note: "Πώς κατανοούμε την εργασία πριν αποφασίσουμε τι θα αλλάξει.", items: faq.items.slice(2, 4) },
-    { label: "Η πλατφόρμα", note: "Πώς παρακολουθείτε τα συστήματα, τη δραστηριότητα και τα αποτελέσματα.", items: faq.items.slice(4, 6) },
-    { label: "Τα συστήματα που φτιάχνουμε", note: "Τα εργαλεία, οι agents και τα custom συστήματα που μπορούν να υποστηρίξουν τη λειτουργία σας.", items: faq.items.slice(6, 8) },
-    { label: "Η συνεργασία", note: "Συνηθισμένες χρήσεις, εύρος, χρόνος, υποστήριξη και ανθρώπινη μεταβίβαση.", items: faq.items.slice(8) },
+    { label: "Τι κάνουμε", note: "Τι αναλαμβάνει η AiAnchor και από πού ξεκινάμε.", items: faq.items.slice(0, 2) },
+    { label: "Η διαδικασία σου", note: "Πώς βλέπουμε τη δουλειά σου πριν προτείνουμε αλλαγές.", items: faq.items.slice(2, 4) },
+    { label: "Η πλατφόρμα", note: "Πώς βλέπεις τα συστήματά σου και τη δραστηριότητά τους.", items: faq.items.slice(4, 6) },
+    { label: "Τι χτίζουμε", note: "Οι agents, οι αυτοματισμοί και τα συστήματα που μπορούμε να στήσουμε.", items: faq.items.slice(6, 8) },
+    { label: "Η συνεργασία", note: "Τι συμφωνούμε, πόσο διαρκεί και πώς συνεχίζουμε μετά την έναρξη.", items: faq.items.slice(8) },
   ];
   return <HomeSection id="faq" robot="off">
-    <p className="mb-5 text-center text-sm font-medium text-gray-400">{lang === "en" ? "Let's answer some questions" : "Ας απαντήσουμε σε μερικές ερωτήσεις"}</p>
+    <p className="mb-5 text-center text-sm font-medium text-gray-400">{lang === "en" ? "Let's answer some questions" : faq.subhead}</p>
     <div className="mx-auto max-w-4xl text-center">
       <h2 className="section-title font-display text-4xl font-semibold leading-[1.06] tracking-tight text-white sm:text-5xl lg:text-6xl">{faq.heading}</h2>
     </div>
@@ -227,12 +232,13 @@ export function FaqSection({ lang }: { lang: Locale }) {
 // The robot swaps sides section by section: hero R, process L, capabilities R, dashboard intro L.
 export function OperationsHome({ lang, children }: { lang: Locale; children?: ReactNode }) {
   const t = homepageCopy(lang);
-  const pointIcons = ["sync", "phone", "calendar", "follow"];
+  const pointIcons = ["voice", "follow", "sync", "calendar", "chart", "book"];
   return <main id="main" className="operations-home">
     <RobotCompanion />
     <Hero lang={lang} />
 
     <HomeSection id="how-it-works" robot="left">
+      {lang === "gr" && <span id="consulting" className="absolute top-0 scroll-mt-24" aria-hidden="true" />}
       <SectionIntro title={t.process.title} body={t.process.body} from="left" />
       <StageRows steps={t.process.steps} />
       <Statement text={t.process.close} />
@@ -240,7 +246,7 @@ export function OperationsHome({ lang, children }: { lang: Locale; children?: Re
 
     <HomeSection id="services" robot="right" className="overflow-hidden">
       <div className="section-glow pointer-events-none absolute left-1/4 top-1/2 -z-10 h-[36rem] w-[min(48rem,120vw)] -translate-x-1/2 -translate-y-1/3" aria-hidden="true" />
-      <SectionIntro title={t.capabilities.title} from="right" />
+      <SectionIntro title={t.capabilities.title} body={lang === "gr" ? getContent(lang).services.subhead : undefined} from="right" />
       <CapabilityCards lang={lang} compact />
     </HomeSection>
 

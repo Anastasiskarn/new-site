@@ -83,7 +83,7 @@ export function knowledgeBase(lang) {
 
     section('The problems we solve', t.services.items.map((i) => `- ${plain(i.problemTitle)}: ${plain(i.problem)} Our fix — ${plain(i.solutionTitle)}: ${plain(i.solution)} Result: ${plain(i.result)}`)),
 
-    section('AI consulting (audit, roadmap, deploy)', [
+    section(plain(t.consulting.heading), [
       plain(t.consulting.lead),
       ...t.consulting.steps.map((s) => `${s.n}. ${plain(s.title)} (${plain(s.timeline)}) — ${plain(s.desc)} Deliverables: ${plain(s.deliverables)}`),
       `We consult on: ${t.consulting.focus.map(plain).join(', ')}.`,
@@ -98,7 +98,7 @@ export function knowledgeBase(lang) {
       `Works with: ${t.voiceSystems.stack.map(plain).join(', ')}.`,
     ]),
 
-    section('Command Hub (the dashboard clients log into)', [
+    section(plain(t.features.heading), [
       plain(t.features.subhead),
       ...t.features.items.map((i) => `- ${plain(i.title)}: ${plain(i.desc)}`),
     ]),
@@ -129,8 +129,8 @@ export function knowledgeBase(lang) {
       `CRM and workflow automation: ${home}crm-automation/`,
       `About: ${home}about/`,
       `FAQ section: ${home}#faq`,
-      `Command Hub section: ${home}#features`,
-      `Client login: the Command Hub app (self-serve signup is not open yet — access is set up by the team).`,
+      `Operations Platform section: ${home}#features`,
+      `Client login: the AiAnchor Operations Platform app (self-serve signup is not open yet — access is set up by the team).`,
     ]),
 
     section('Legal and compliance (link, do not paraphrase in detail)', [

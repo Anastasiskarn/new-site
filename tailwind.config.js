@@ -15,8 +15,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-dm-sans, DM Sans)', 'DM Sans', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
-        display: ['var(--font-space-grotesk, Space Grotesk)', 'Space Grotesk', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+        sans: ['var(--font-body, var(--font-dm-sans, "DM Sans"))', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        display: ['var(--font-heading, var(--font-space-grotesk, "Space Grotesk"))', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
       },
       colors: {
         primary: {

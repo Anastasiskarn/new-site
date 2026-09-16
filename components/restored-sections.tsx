@@ -2100,7 +2100,7 @@ case "process": return (<><section id={"how-it-works"} className={"-mt-px bg-dar
 {"Πώς λειτουργεί"}
 </h2>
 <p className={"mt-4 text-lg text-gray-400"}>
-{"Από το AI audit μέχρι την αποδεδειγμένη απόδοση, σε τρία βήματα."}
+{"Από το πρώτο πρόβλημα μέχρι ένα σύστημα που δουλεύει στην πράξη."}
 </p>
 </div>
 <div className={"relative mt-16"}>
@@ -2116,10 +2116,10 @@ case "process": return (<><section id={"how-it-works"} className={"-mt-px bg-dar
 {"01"}
 </span>
 <h3 className={"mt-4 text-xl font-semibold text-white"}>
-{"Ελέγχουμε τη ροή των leads σας και συμφωνούμε το σχέδιο"}
+{"Μας δείχνεις πώς δουλεύεις"}
 </h3>
 <p className={"mt-3 text-gray-400"}>
-{"Πρώτα η συμβουλευτική. Χαρτογραφούμε από πού έρχονται τα leads και πού χάνονται, κοστολογούμε κάθε κενό, και ιεραρχούμε ποιοι agents, chatbots και αυτοματισμοί φτιάχνονται πρώτοι."}
+{"Εξετάζουμε από πού έρχονται τα leads και τι γίνεται μετά. Χαρτογραφούμε τη διαδικασία, εκτιμούμε το κόστος τους και συμφωνούμε τι θα φτιάξουμε πρώτο."}
 </p>
 </div>
 <div className={"reveal relative rounded-2xl border border-white/10 bg-dark-800/40 p-8"}>
@@ -2127,10 +2127,10 @@ case "process": return (<><section id={"how-it-works"} className={"-mt-px bg-dar
 {"02"}
 </span>
 <h3 className={"mt-4 text-xl font-semibold text-white"}>
-{"Φτιάχνουμε και τρέχουμε τους agents & τους αυτοματισμούς"}
+{"Σχεδιάζουμε και υλοποιούμε"}
 </h3>
 <p className={"mt-3 text-gray-400"}>
-{"Done-for-you. Φωνητικοί agents και chatbots απαντούν σε πολλές γλώσσες (με Ελληνικά και Αγγλικά ως βασική ρύθμιση), η πρόκριση βαθμολογεί και δρομολογεί κάθε lead, και το onboarding, τα text-backs και οι ακολουθίες follow-up τρέχουν μέσα στο CRM σας."}
+{"Σχεδιάζουμε τη λύση γύρω από τη δική σου δουλειά και τη συνδέουμε με τα συστήματα που ήδη χρησιμοποιείς. Automation, AI ή custom software, ανάλογα με το τι χρειάζεται."}
 </p>
 </div>
 <div className={"reveal relative rounded-2xl border border-white/10 bg-dark-800/40 p-8"}>
@@ -2138,10 +2138,10 @@ case "process": return (<><section id={"how-it-works"} className={"-mt-px bg-dar
 {"03"}
 </span>
 <h3 className={"mt-4 text-xl font-semibold text-white"}>
-{"Παρακολουθείτε αποτελέσματα και ROI ζωντανά στο Command Hub της AiAnchor"}
+{"Παρακολουθείς τι γίνεται στο Operations Platform"}
 </h3>
 <p className={"mt-3 text-gray-400"}>
-{"Το Command Hub είναι η πλατφόρμα στην οποία συνδέεστε. Κάθε κλήση, chat, lead και ραντεβού καταγράφεται εκεί τη στιγμή που συμβαίνει, με νούμερα που αποδεικνύουν την αξία του."}
+{"Βλέπεις τι έχει υλοποιηθεί, ποια συστήματα τρέχουν, τη δραστηριότητά τους και τα βασικά αποτελέσματα. Έτσι η συνεργασία δεν μένει σε ένα project που παραδόθηκε και ξεχάστηκε."}
 </p>
 </div>
 </div>
@@ -2158,10 +2158,10 @@ case "services": return (<><section id={"services"} className={"relative overflo
 <div className={"relative mx-auto max-w-8xl px-6"}>
 <div className={"reveal mx-auto mb-20 max-w-4xl text-center"}>
 <h2 className={"mb-6 font-display text-4xl font-bold tracking-tight text-white md:text-6xl"}>
-{"Βρείτε τα κενά. Τα καλύπτουμε εμείς."}
+{"Πού κολλάει η καθημερινή δουλειά;"}
 </h2>
 <p className={"mx-auto max-w-3xl text-lg text-gray-300"}>
-{"Χαμένες κλήσεις, αναπάντητα chat, πρόκριση και onboarding στο χέρι, νούμερα σκορπισμένα σε πέντε εργαλεία. Σας λέμε τι να διορθώσετε πρώτο και μετά το τρέχουμε εμείς — και το βλέπετε να γίνεται στο Command Hub της AiAnchor."}
+{"Διπλές καταχωρίσεις, πληροφορίες σε διαφορετικά εργαλεία, follow-up που ξεχνιούνται, διαδικασίες που εξαρτώνται από copy-paste. Βρίσκουμε τι αξίζει να αλλάξει πρώτο και το κάνουμε να δουλεύει καλύτερα."}
 </p>
 </div>
 <div className={"reveal-stagger space-y-12"}>
@@ -2181,7 +2181,7 @@ case "services": return (<><section id={"services"} className={"relative overflo
 </svg>
 </span>
 <span className={"font-mono text-xs uppercase tracking-widest text-red-400"}>
-{"Επιχειρηματικό Κενό 01"}
+{"Σημείο 01"}
 </span>
 </div>
 <svg className={"w-5 h-5 text-red-500/40 animate-pulse"} xmlns={"http://www.w3.org/2000/svg"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.75"} strokeLinecap={"round"} strokeLinejoin={"round"} aria-hidden={"true"} focusable={"false"}>
@@ -2195,10 +2195,10 @@ case "services": return (<><section id={"services"} className={"relative overflo
 </div>
 <div className={"relative z-10 flex flex-1 flex-col justify-center"}>
 <h3 className={"mb-4 font-display text-2xl font-bold leading-tight text-white md:text-3xl lg:text-4xl"}>
-{"Χαμένα Leads"}
+{"Η πληροφορία χάνεται στη διαδρομή"}
 </h3>
 <p className={"mb-6 border-l-2 border-red-500/20 pl-4 text-base leading-relaxed text-gray-300 lg:text-lg lg:leading-relaxed"}>
-{"\"Κλήσεις, chat, μηνύματα και φόρμες χάνονται όταν η ομάδα σας είναι απασχολημένη, εκτός σύνδεσης, ή αλλάζει μεταξύ εργαλείων.\""}
+{"\"Ένα αίτημα ξεκινά από email, περνά σε Excel, μετά στο CRM και κάπου στη μέση χρειάζεται κάποιος να θυμηθεί το επόμενο βήμα. Όσο περισσότερες χειροκίνητες μεταβιβάσεις, τόσο πιο εύκολα κάτι μένει πίσω.\""}
 </p>
 <div className={"inline-flex items-center gap-2 self-start font-mono text-xs text-red-400/70 lg:text-sm"}>
 <svg className={"w-3 h-3"} xmlns={"http://www.w3.org/2000/svg"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.75"} strokeLinecap={"round"} strokeLinejoin={"round"} aria-hidden={"true"} focusable={"false"}>
@@ -2206,7 +2206,7 @@ case "services": return (<><section id={"services"} className={"relative overflo
 
 </path>
 </svg>
-{" ΕΠΙΠΤΩΣΗ: Χαμένα έσοδα και πιο αργοί χρόνοι απόκρισης"}
+{" ΤΟ ΑΠΟΤΕΛΕΣΜΑ: Καθυστερήσεις, λάθη και χαμένη εικόνα"}
 </div>
 </div>
 </div>
@@ -2254,10 +2254,10 @@ case "services": return (<><section id={"services"} className={"relative overflo
 </div>
 <div className={"mb-8"}>
 <h4 className={"mb-3 text-xl font-bold text-white"}>
-{"Φωνητικοί Agents & Chatbots"}
+{"Διασυνδέσεις & έξυπνες ροές"}
 </h4>
 <p className={"text-lg font-light leading-relaxed text-gray-100"}>
-{"Ένας φωνητικός agent απαντά σε κάθε κλήση, 24/7, σε πολλές γλώσσες (με Ελληνικά και Αγγλικά ως βασική ρύθμιση), ενώ τα chatbots αναλαμβάνουν την ιστοσελίδα και το WhatsApp. Κάνουν τις ερωτήσεις πρόκρισης, κλείνουν το ραντεβού και στέλνουν το lead στο σωστό άτομο πριν κρυώσει."}
+{"Συνδέουμε τα εργαλεία που ήδη χρησιμοποιείς και σχεδιάζουμε τη ροή ώστε η πληροφορία να πηγαίνει εκεί που πρέπει, χωρίς περιττά ενδιάμεσα βήματα."}
 </p>
 </div>
 <div className={"flex items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-4"}>
@@ -2273,7 +2273,7 @@ case "services": return (<><section id={"services"} className={"relative overflo
 {"ΑΠΟΤΕΛΕΣΜΑ"}
 </span>
 <p className={"text-sm font-medium text-white"}>
-{"Κάθε κλήση και chat απαντημένο, προκριμένο και ορατό στο Command Hub τη στιγμή που μπαίνει."}
+{"Βλέπεις τη δραστηριότητα και την πορεία των συστημάτων σου από το AiAnchor Operations Platform."}
 </p>
 </div>
 </div>
@@ -2300,7 +2300,7 @@ case "services": return (<><section id={"services"} className={"relative overflo
 </svg>
 </span>
 <span className={"font-mono text-xs uppercase tracking-widest text-red-400"}>
-{"Επιχειρηματικό Κενό 02"}
+{"Σημείο 02"}
 </span>
 </div>
 <svg className={"w-5 h-5 text-red-500/40 animate-pulse"} xmlns={"http://www.w3.org/2000/svg"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.75"} strokeLinecap={"round"} strokeLinejoin={"round"} aria-hidden={"true"} focusable={"false"}>
@@ -2314,10 +2314,10 @@ case "services": return (<><section id={"services"} className={"relative overflo
 </div>
 <div className={"relative z-10 flex flex-1 flex-col justify-center"}>
 <h3 className={"mb-4 font-display text-2xl font-bold leading-tight text-white md:text-3xl lg:text-4xl"}>
-{"Πολλή Χειρωνακτική Δουλειά"}
+{"Η ομάδα επαναλαμβάνει την ίδια δουλειά"}
 </h3>
 <p className={"mb-6 border-l-2 border-red-500/20 pl-4 text-base leading-relaxed text-gray-300 lg:text-lg lg:leading-relaxed"}>
-{"\"Η πρόκριση leads, το κυνήγι των follow-ups, το onboarding νέων πελατών και οι ενημερώσεις αρχείων τρώνε τη μέρα της ομάδας σας, ένα copy-paste τη φορά.\""}
+{"\"Μεταφέρεις στοιχεία, στέλνεις τις ίδιες υπενθυμίσεις, ενημερώνεις αρχεία και κυνηγάς εκκρεμότητες. Μικρές δουλειές που μόνες τους φαίνονται ασήμαντες, αλλά μαζί τρώνε ώρες.\""}
 </p>
 <div className={"inline-flex items-center gap-2 self-start font-mono text-xs text-red-400/70 lg:text-sm"}>
 <svg className={"w-3 h-3"} xmlns={"http://www.w3.org/2000/svg"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.75"} strokeLinecap={"round"} strokeLinejoin={"round"} aria-hidden={"true"} focusable={"false"}>
@@ -2325,7 +2325,7 @@ case "services": return (<><section id={"services"} className={"relative overflo
 
 </path>
 </svg>
-{" ΕΠΙΠΤΩΣΗ: Λιγότερος χρόνος για πωλήσεις, εξυπηρέτηση και ανάπτυξη"}
+{" ΤΟ ΑΠΟΤΕΛΕΣΜΑ: Ώρες χαμένες σε δουλειά που μπορεί να τρέχει μόνη της"}
 </div>
 </div>
 </div>
@@ -2367,10 +2367,10 @@ case "services": return (<><section id={"services"} className={"relative overflo
 </div>
 <div className={"mb-8"}>
 <h4 className={"mb-3 text-xl font-bold text-white"}>
-{"Αυτοματισμοί Πρόκρισης & Onboarding"}
+{"Αυτοματισμοί γύρω από τη δική σου ροή"}
 </h4>
 <p className={"text-lg font-light leading-relaxed text-gray-100"}>
-{"Η πρόκριση leads βαθμολογεί και δρομολογεί κάθε ερώτημα. Το onboarding πελατών συλλέγει τα στοιχεία, στέλνει τα έγγραφα και κλείνει το kickoff μόνο του. Text-back αναπάντητης κλήσης, ακολουθίες follow-up και υπενθυμίσεις τρέχουν μέσα στο CRM και το ημερολόγιό σας."}
+{"Αυτοματοποιούμε τα επαναλαμβανόμενα βήματα με τους κανόνες της επιχείρησής σου. Από follow-up και onboarding μέχρι ενημερώσεις CRM, έγγραφα, ειδοποιήσεις και εσωτερικές εγκρίσεις."}
 </p>
 </div>
 <div className={"flex items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-4"}>
@@ -2386,7 +2386,7 @@ case "services": return (<><section id={"services"} className={"relative overflo
 {"ΑΠΟΤΕΛΕΣΜΑ"}
 </span>
 <p className={"text-sm font-medium text-white"}>
-{"Λιγότερη χειρωνακτική δουλειά, τίποτα ξεχασμένο και κάθε ενέργεια καταγεγραμμένη στο Command Hub."}
+{"Λιγότερο copy-paste και καθαρή εικόνα για το τι εκτελείται και πότε."}
 </p>
 </div>
 </div>
@@ -2413,7 +2413,7 @@ case "services": return (<><section id={"services"} className={"relative overflo
 </svg>
 </span>
 <span className={"font-mono text-xs uppercase tracking-widest text-red-400"}>
-{"Επιχειρηματικό Κενό 03"}
+{"Σημείο 03"}
 </span>
 </div>
 <svg className={"w-5 h-5 text-red-500/40 animate-pulse"} xmlns={"http://www.w3.org/2000/svg"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.75"} strokeLinecap={"round"} strokeLinejoin={"round"} aria-hidden={"true"} focusable={"false"}>
@@ -2427,10 +2427,10 @@ case "services": return (<><section id={"services"} className={"relative overflo
 </div>
 <div className={"relative z-10 flex flex-1 flex-col justify-center"}>
 <h3 className={"mb-4 font-display text-2xl font-bold leading-tight text-white md:text-3xl lg:text-4xl"}>
-{"Καμία Εικόνα Για Το Τι Αξίζει Το AI"}
+{"Δεν ξέρεις τι αξίζει να φτιάξεις πρώτο"}
 </h3>
 <p className={"mb-6 border-l-2 border-red-500/20 pl-4 text-base leading-relaxed text-gray-300 lg:text-lg lg:leading-relaxed"}>
-{"\"Ακούτε συνεχώς τι θα μπορούσε να κάνει το AI, αλλά κανείς δεν σας δείχνει πού αποδίδει στη δική σας επιχείρηση ή τι απέδωσε τελικά.\""}
+{"\"Υπάρχουν δεκάδες εργαλεία, automations και AI λύσεις. Το δύσκολο δεν είναι να διαλέξεις τεχνολογία. Είναι να ξέρεις ποιο πρόβλημα αξίζει να λύσεις.\""}
 </p>
 <div className={"inline-flex items-center gap-2 self-start font-mono text-xs text-red-400/70 lg:text-sm"}>
 <svg className={"w-3 h-3"} xmlns={"http://www.w3.org/2000/svg"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.75"} strokeLinecap={"round"} strokeLinejoin={"round"} aria-hidden={"true"} focusable={"false"}>
@@ -2438,7 +2438,7 @@ case "services": return (<><section id={"services"} className={"relative overflo
 
 </path>
 </svg>
-{" ΕΠΙΠΤΩΣΗ: Εικασίες αντί για αποφάσεις"}
+{" ΤΟ ΑΠΟΤΕΛΕΣΜΑ: Εργαλεία χωρίς ξεκάθαρο λόγο ύπαρξης"}
 </div>
 </div>
 </div>
@@ -2483,10 +2483,10 @@ case "services": return (<><section id={"services"} className={"relative overflo
 </div>
 <div className={"mb-8"}>
 <h4 className={"mb-3 text-xl font-bold text-white"}>
-{"Συμβουλευτική + Command Hub της AiAnchor"}
+{"Χαρτογράφηση, σχεδιασμός & μέτρηση"}
 </h4>
 <p className={"text-lg font-light leading-relaxed text-gray-100"}>
-{"Ελέγχουμε τη ροή των leads σας, κοστολογούμε κάθε κενό και σας δίνουμε ιεραρχημένο οδικό χάρτη. Μετά, κάθε κλήση που απαντάται, κάθε lead που προκρίνεται και κάθε ευρώ pipeline καταγράφεται στο Command Hub της AiAnchor τη στιγμή που συμβαίνει — χωρίς spreadsheets, χωρίς να κυνηγάτε αναφορές."}
+{"Χαρτογραφούμε τη διαδικασία, εντοπίζουμε τα σημεία που κοστίζουν χρόνο ή δημιουργούν τριβή και βάζουμε τις αλλαγές σε σειρά. Μετά παρακολουθείς τι υλοποιείται και πώς λειτουργεί από το AiAnchor Operations Platform."}
 </p>
 </div>
 <div className={"flex items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-4"}>
@@ -2502,7 +2502,123 @@ case "services": return (<><section id={"services"} className={"relative overflo
 {"ΑΠΟΤΕΛΕΣΜΑ"}
 </span>
 <p className={"text-sm font-medium text-white"}>
-{"Ένα καθαρό σχέδιο από την αρχή, και μία ζωντανή εικόνα του τι αποδίδει."}
+{"Ξέρεις τι αλλάζουμε, γιατί το αλλάζουμε και τι αποτέλεσμα περιμένουμε να δούμε."}
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div className={"reveal reveal-frame group relative transition-transform duration-500 ease-out lg:hover:scale-[1.02]"}>
+<div className={"grid items-stretch gap-0 lg:grid-cols-12 lg:gap-8"}>
+<div className={"svc-problem relative flex flex-col overflow-hidden rounded-t-2xl border border-red-500/20 bg-dark-800 p-8 transition-all duration-500 group-hover:border-red-500/60 group-hover:shadow-[0_0_30px_rgba(239,68,68,0.1)] lg:col-span-5 lg:rounded-l-2xl lg:rounded-tr-none"}>
+<div className={"absolute left-0 top-0 z-10 h-full w-1 bg-red-500/50"}>
+
+</div>
+<div className={"relative z-10 mb-8 flex items-start justify-between"}>
+<div className={"flex items-center gap-3"}>
+<span className={"rounded-lg border border-red-500/20 bg-red-500/10 p-2 text-red-500"}>
+<svg className={"w-5 h-5"} xmlns={"http://www.w3.org/2000/svg"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.75"} strokeLinecap={"round"} strokeLinejoin={"round"} aria-hidden={"true"} focusable={"false"}>
+<path d={"M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"}>
+
+</path>
+</svg>
+</span>
+<span className={"font-mono text-xs uppercase tracking-widest text-red-400"}>
+{"Σημείο 04"}
+</span>
+</div>
+<svg className={"w-5 h-5 text-red-500/40 animate-pulse"} xmlns={"http://www.w3.org/2000/svg"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.75"} strokeLinecap={"round"} strokeLinejoin={"round"} aria-hidden={"true"} focusable={"false"}>
+<path d={"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z"}>
+
+</path>
+<path d={"M12 9v4M12 17h.01"}>
+
+</path>
+</svg>
+</div>
+<div className={"relative z-10 flex flex-1 flex-col justify-center"}>
+<h3 className={"mb-4 font-display text-2xl font-bold leading-tight text-white md:text-3xl lg:text-4xl"}>
+{"Δεν έχεις εικόνα για το τι δουλεύει"}
+</h3>
+<p className={"mb-6 border-l-2 border-red-500/20 pl-4 text-base leading-relaxed text-gray-300 lg:text-lg lg:leading-relaxed"}>
+{"\"Συστήματα, δραστηριότητα και αποτελέσματα βρίσκονται σε διαφορετικά εργαλεία. Για να δεις τι γίνεται, πρέπει να τα ψάχνεις ένα ένα.\""}
+</p>
+<div className={"inline-flex items-center gap-2 self-start font-mono text-xs text-red-400/70 lg:text-sm"}>
+<svg className={"w-3 h-3"} xmlns={"http://www.w3.org/2000/svg"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.75"} strokeLinecap={"round"} strokeLinejoin={"round"} aria-hidden={"true"} focusable={"false"}>
+<path d={"M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"}>
+
+</path>
+</svg>
+{" ΤΟ ΑΠΟΤΕΛΕΣΜΑ: Δυσκολεύεσαι να δεις την πρόοδο και τι χρειάζεται βελτίωση"}
+</div>
+</div>
+</div>
+<div className={"relative flex items-center justify-center py-4 lg:col-span-1 lg:flex-col lg:py-0"}>
+<div className={"absolute inset-0 flex items-center justify-center lg:flex-col"}>
+<div className={"h-[2px] w-full bg-gradient-to-r from-red-500/50 via-gray-700 to-primary/50 lg:h-full lg:w-[2px] lg:bg-gradient-to-b"}>
+
+</div>
+</div>
+<div className={"relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all group-hover:shadow-[0_0_20px_rgba(0,240,255,0.4)]"}>
+<svg className={"w-4 h-4 text-white rotate-90 lg:rotate-0"} xmlns={"http://www.w3.org/2000/svg"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.75"} strokeLinecap={"round"} strokeLinejoin={"round"} aria-hidden={"true"} focusable={"false"}>
+<path d={"M5 12h14M12 5l7 7-7 7"}>
+
+</path>
+</svg>
+</div>
+</div>
+<div className={"svc-solution relative overflow-hidden rounded-b-2xl border border-primary/20 bg-gradient-to-br from-gray-900 to-black p-1 shadow-2xl transition-all duration-500 group-hover:border-primary/60 group-hover:shadow-[0_0_30px_rgba(0,240,255,0.2)] lg:col-span-6 lg:rounded-r-2xl lg:rounded-bl-none"}>
+<div className={"absolute inset-0 bg-primary/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100"}>
+
+</div>
+<div className={"relative z-10 flex h-full flex-col justify-between rounded-xl bg-dark-900/80 p-8 backdrop-blur-sm"}>
+<div className={"mb-6 flex items-center justify-between"}>
+<div className={"flex items-center gap-3"}>
+<span className={"rounded-lg border border-primary/20 bg-primary/10 p-2 text-primary shadow-[0_0_10px_rgba(0,240,255,0.15)]"}>
+<svg className={"w-5 h-5"} xmlns={"http://www.w3.org/2000/svg"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.75"} strokeLinecap={"round"} strokeLinejoin={"round"} aria-hidden={"true"} focusable={"false"}>
+<rect x={"3"} y={"3"} width={"7"} height={"7"} rx={"1"}>
+
+</rect>
+<rect x={"14"} y={"14"} width={"7"} height={"7"} rx={"1"}>
+
+</rect>
+<path d={"M10 6.5h4a3 3 0 0 1 3 3V14M6.5 10v4a3 3 0 0 0 3 3H14"}>
+
+</path>
+</svg>
+</span>
+<span className={"font-mono text-xs uppercase tracking-widest text-primary"}>
+{"ΛΥΣΗ"}
+</span>
+</div>
+<span className={"h-2 w-2 rounded-full bg-primary shadow-[0_0_8px_#00f0ff] animate-pulse"}>
+
+</span>
+</div>
+<div className={"mb-8"}>
+<h4 className={"mb-3 text-xl font-bold text-white"}>
+{"Το AiAnchor Operations Platform"}
+</h4>
+<p className={"text-lg font-light leading-relaxed text-gray-100"}>
+{"Βλέπεις τι έχουμε υλοποιήσει, τι τρέχει αυτή τη στιγμή και πώς εξελίσσεται η συνεργασία. Ένα καθαρό dashboard για τα συστήματα, τη δραστηριότητα και τα αποτελέσματά τους."}
+</p>
+</div>
+<div className={"flex items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-4"}>
+<span className={"mt-0.5 shrink-0 text-green-400"}>
+<svg className={"w-5 h-5"} xmlns={"http://www.w3.org/2000/svg"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.75"} strokeLinecap={"round"} strokeLinejoin={"round"} aria-hidden={"true"} focusable={"false"}>
+<path d={"M20 6 9 17l-5-5"}>
+
+</path>
+</svg>
+</span>
+<div>
+<span className={"mb-1 block text-xs font-bold uppercase tracking-wider text-green-400"}>
+{"ΑΠΟΤΕΛΕΣΜΑ"}
+</span>
+<p className={"text-sm font-medium text-white"}>
+{"Βλέπεις τι δουλεύει και τι χρειάζεται βελτίωση."}
 </p>
 </div>
 </div>
@@ -2521,13 +2637,13 @@ case "consulting": return (<><section id={"consulting"} className={"relative ove
 <div className={"relative mx-auto max-w-8xl px-6"}>
 <div className={"reveal mx-auto mb-20 max-w-3xl text-center"}>
 <h2 className={"mb-6 font-display text-4xl font-bold tracking-tight text-white md:text-6xl"}>
-{"Ξεκινήστε από τη συμβουλευτική, όχι από το λογισμικό."}
+{"Δεν ξεκινάμε από το AI. Ξεκινάμε από τη δουλειά σου."}
 </h2>
 <p className={"mb-4 text-2xl text-white"}>
-{"Πριν φτιαχτεί οτιδήποτε, βρίσκουμε πού αποδίδει πραγματικά το AI στην επιχείρησή σας — και πού όχι."}
+{"Πριν προτείνουμε οτιδήποτε, χαρτογραφούμε πώς δουλεύει η ομάδα σου σήμερα."}
 </p>
 <p className={"mx-auto max-w-2xl text-lg text-gray-300"}>
-{"Ένα σύντομο έργο που καταλήγει σε ιεραρχημένο οδικό χάρτη, business case σε ευρώ, και τους πρώτους agents και αυτοματισμούς live. Ίδια ομάδα, ίδιο Command Hub."}
+{"Μετά ξεχωρίζουμε τι χρειάζεται καλύτερη διαδικασία, τι μπορεί να αυτοματοποιηθεί και πού αξίζει να μπει AI ή custom software. Σχεδιάζουμε τη λύση, την υλοποιούμε και συνεχίζουμε να τη βελτιώνουμε."}
 </p>
 </div>
 <div className={"relative"}>
@@ -2557,10 +2673,10 @@ case "consulting": return (<><section id={"consulting"} className={"relative ove
 </div>
 <div className={"relative z-10 mt-6 text-center"}>
 <h3 className={"mb-4 font-display text-2xl font-bold text-white"}>
-{"Audit"}
+{"Χαρτογραφούμε τη διαδικασία"}
 </h3>
 <p className={"mb-8 leading-relaxed text-gray-300"}>
-{"Χαρτογραφούμε πώς φτάνουν τα leads σε εσάς και τι γίνεται μετά: χαμένες κλήσεις, αναπάντητα chat, πρόκριση με το ένστικτο, onboarding στο χέρι, follow-ups που δεν κάνει κανείς."}
+{"Βλέπουμε πώς ξεκινά μια εργασία, από ποια εργαλεία περνά, ποιος αναλαμβάνει κάθε βήμα και πού δημιουργούνται καθυστερήσεις, διπλή δουλειά ή λάθη."}
 </p>
 <div className={"space-y-3 text-left"}>
 <div className={"rounded-lg border border-white/5 bg-black/20 p-4"}>
@@ -2568,7 +2684,7 @@ case "consulting": return (<><section id={"consulting"} className={"relative ove
 {"Παραδοτέα"}
 </div>
 <p className={"text-sm text-gray-200"}>
-{"Έλεγχος ροής leads, αναφορά διαρροών, το κόστος κάθε κενού."}
+{"Χάρτης διαδικασίας, σημεία τριβής και προτεραιότητες."}
 </p>
 </div>
 <div className={"flex items-center justify-between rounded-lg border border-white/5 bg-black/20 p-4"}>
@@ -2608,10 +2724,10 @@ case "consulting": return (<><section id={"consulting"} className={"relative ove
 </div>
 <div className={"relative z-10 mt-6 text-center"}>
 <h3 className={"mb-4 font-display text-2xl font-bold text-white"}>
-{"Οδικός χάρτης"}
+{"Σχεδιάζουμε τη σωστή λύση"}
 </h3>
 <p className={"mb-8 leading-relaxed text-gray-300"}>
-{"Ιεραρχούμε κάθε ευκαιρία με βάση την επίδραση στα έσοδα έναντι του κόπου, και συμφωνούμε ποιοι φωνητικοί agents, chatbots και αυτοματισμοί θα φτιαχτούν πρώτοι — και τι πρέπει να αποδώσει ο καθένας."}
+{"Επιλέγουμε τη μικρότερη λύση που λύνει σωστά το πρόβλημα. Μπορεί να είναι μια διασύνδεση, ένας αυτοματισμός, ένα AI agent, ένα dashboard ή ένα custom εσωτερικό εργαλείο."}
 </p>
 <div className={"space-y-3 text-left"}>
 <div className={"rounded-lg border border-white/5 bg-black/20 p-4"}>
@@ -2619,7 +2735,7 @@ case "consulting": return (<><section id={"consulting"} className={"relative ove
 {"Παραδοτέα"}
 </div>
 <p className={"text-sm text-gray-200"}>
-{"Ιεραρχημένος AI οδικός χάρτης, business case, μετρήσιμοι στόχοι."}
+{"Πλάνο υλοποίησης, scope, κόστος και τρόπος μέτρησης."}
 </p>
 </div>
 <div className={"flex items-center justify-between rounded-lg border border-white/5 bg-black/20 p-4"}>
@@ -2653,10 +2769,10 @@ case "consulting": return (<><section id={"consulting"} className={"relative ove
 </div>
 <div className={"relative z-10 mt-6 text-center"}>
 <h3 className={"mb-4 font-display text-2xl font-bold text-white"}>
-{"Υλοποίηση & βελτιστοποίηση"}
+{"Υλοποιούμε και παρακολουθούμε"}
 </h3>
 <p className={"mb-8 leading-relaxed text-gray-300"}>
-{"Φτιάχνουμε και βγάζουμε live ό,τι συμφωνήσαμε, το συνδέουμε με το CRM και το ημερολόγιό σας, εκπαιδεύουμε την ομάδα σας και συνεχίζουμε να το βελτιώνουμε με βάση αυτά που δείχνει το Command Hub."}
+{"Χτίζουμε τη λύση, τη συνδέουμε με τα υπάρχοντα εργαλεία σου και τη βάζουμε σε πραγματική λειτουργία. Μετά παρακολουθούμε τη χρήση και κάνουμε βελτιώσεις όπου χρειάζεται."}
 </p>
 <div className={"space-y-3 text-left"}>
 <div className={"rounded-lg border border-white/5 bg-black/20 p-4"}>
@@ -2664,7 +2780,7 @@ case "consulting": return (<><section id={"consulting"} className={"relative ove
 {"Παραδοτέα"}
 </div>
 <p className={"text-sm text-gray-200"}>
-{"Live agents & αυτοματισμοί, εκπαίδευση ομάδας, μηνιαία βελτιστοποίηση."}
+{"Σύστημα σε λειτουργία, εκπαίδευση ομάδας και συνεχείς βελτιώσεις."}
 </p>
 </div>
 <div className={"flex items-center justify-between rounded-lg border border-white/5 bg-black/20 p-4"}>
@@ -2683,42 +2799,38 @@ case "consulting": return (<><section id={"consulting"} className={"relative ove
 </div>
 <div className={"reveal mt-14 rounded-2xl border border-white/5 bg-dark-900/40 p-8"}>
 <p className={"text-center font-mono text-xs uppercase tracking-[0.22em] text-gray-500"}>
-{"Σε τι σας συμβουλεύουμε"}
+{"Πού μπορούμε να βοηθήσουμε"}
 </p>
 <ul className={"mt-6 flex flex-wrap justify-center gap-3"}>
 <li className={"rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-200 transition-colors hover:border-primary/50 hover:text-white"}>
-{"AI φωνητικοί agents"}
+{"AI agents / voice agents"}
 </li>
 <li className={"rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-200 transition-colors hover:border-primary/50 hover:text-white"}>
-{"Chatbots (site & WhatsApp)"}
+{"Chat assistants"}
 </li>
 <li className={"rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-200 transition-colors hover:border-primary/50 hover:text-white"}>
-{"Πρόκριση leads"}
+{"Leads & follow-up"}
 </li>
 <li className={"rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-200 transition-colors hover:border-primary/50 hover:text-white"}>
-{"Onboarding πελατών"}
+{"Διασυνδέσεις εργαλείων"}
 </li>
 <li className={"rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-200 transition-colors hover:border-primary/50 hover:text-white"}>
-{"Αυτοματισμοί CRM & follow-up"}
+{"CRM & operational workflows"}
 </li>
 <li className={"rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-200 transition-colors hover:border-primary/50 hover:text-white"}>
-{"Αναφορές Command Hub"}
+{"Dashboards & reporting"}
 </li>
 </ul>
 <p className={"mx-auto mt-6 max-w-2xl border-t border-white/5 pt-5 text-center text-sm text-gray-500"}>
-{"Αν ο οδικός χάρτης χρειάζεται και κάτι φτιαγμένο από πίσω — custom CRM, εσωτερικό εργαλείο, ιστοσελίδα ή web εφαρμογή — τα φτιάχνουμε κι αυτά, με χωριστή προσφορά."}
+{"Δεν περιοριζόμαστε στο AI. Αν η σωστή λύση είναι automation, integration, dashboard ή custom software, αυτό θα προτείνουμε."}
 </p>
 </div>
 <div className={"reveal mt-8 rounded-2xl border border-white/10 bg-gradient-to-r from-blue-900/20 to-primary/20 p-8 text-center backdrop-blur-sm"}>
 <p className={"text-xl text-gray-200"}>
-{"Οι περισσότεροι οδικοί χάρτες ολοκληρώνονται σε "}
-<strong>
-{"λιγότερο από μία εβδομάδα"}
-</strong>
-{", και το πρώτο σύστημα είναι live μέσα σε δύο. Χτισμένο στα δικά σας νούμερα, όχι σε γενικό πρότυπο."}
+{"Μικρές παρεμβάσεις μπορούν να μπουν σε λειτουργία γρήγορα. Μεγαλύτερα έργα χωρίζονται σε στάδια, ώστε να βλέπεις πρόοδο χωρίς να περιμένεις να ολοκληρωθούν όλα μαζί."}
 </p>
 <a href={"/gr/book-demo/"} className={"btn-interactive mt-8 inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 font-bold text-dark-900 hover:bg-primary"}>
-{"Κλείστε κλήση γνωριμίας"}
+{"Κλείσε discovery call"}
 </a>
 </div>
 </div>
@@ -2744,10 +2856,10 @@ case "voice": return (<><section id={"voice-agent"} className={"relative overflo
 <div className={"relative mx-auto max-w-8xl px-6"}>
 <div className={"reveal text-center"}>
 <h2 className={"font-display text-4xl font-bold tracking-tight text-white sm:text-5xl"}>
-{"AI φωνητικοί agents & αυτοματισμοί"}
+{"AI agents / voice agents & αυτοματισμοί"}
 </h2>
 <p className={"mx-auto mt-4 max-w-3xl text-lg text-gray-400"}>
-{"Οι δύο μηχανές που τρέχουμε για εσάς: πολυγλωσσικοί agents (με Ελληνικά και Αγγλικά ως βασική ρύθμιση) που απαντούν, προκρίνουν και κλείνουν ραντεβού σε τηλέφωνο και chat, και αυτοματισμοί που περνούν κάθε lead από πρόκριση, onboarding και follow-up μέσα στο CRM σας. Όλα αναφέρουν στο Command Hub."}
+{"Όταν μια διαδικασία χρειάζεται AI, το εντάσσουμε εκεί που προσφέρει πραγματική αξία. Τηλεφωνικοί agents, chat assistants, qualification και follow-up μπορούν να συνδεθούν με τα εργαλεία που ήδη χρησιμοποιεί η ομάδα σου."}
 </p>
 </div>
 <p className={"reveal mt-10 text-center font-mono text-xs uppercase tracking-[0.22em] text-primary/70"}>
@@ -2757,18 +2869,18 @@ case "voice": return (<><section id={"voice-agent"} className={"relative overflo
 <div className={"space-y-5"}>
 <div className={"reveal reveal-from-left rounded-2xl border border-white/5 bg-white/[0.03] p-5"} style={{"transitionDelay":"200ms"} as CSSProperties}>
 <h3 className={"font-display text-xl font-semibold text-white"}>
-{"Άμεση απάντηση κλήσεων"}
+{"Απαντήσεις όλο το 24ωρο"}
 </h3>
 <p className={"mt-1 text-gray-400"}>
-{"Απαντά σε κάθε κλήση σε πολλές γλώσσες (με Ελληνικά και Αγγλικά ως βασική ρύθμιση), μέρα ή νύχτα. Καμία ευκαιρία δεν καταλήγει στον τηλεφωνητή."}
+{"Ο agent απαντά στις κλήσεις μέρα και νύχτα, σε πολλές γλώσσες. Η βασική ρύθμιση περιλαμβάνει ελληνικά και αγγλικά."}
 </p>
 </div>
 <div className={"reveal reveal-from-left rounded-2xl border border-white/5 bg-white/[0.03] p-5"} style={{"transitionDelay":"300ms"} as CSSProperties}>
 <h3 className={"font-display text-xl font-semibold text-white"}>
-{"Ομαλή μεταφορά στην ομάδα σας"}
+{"Παράδοση στην ομάδα σου"}
 </h3>
 <p className={"mt-1 text-gray-400"}>
-{"Οι κλήσεις που χρειάζονται άνθρωπο φτάνουν στο σωστό άτομο, με το ιστορικό γραμμένο και το lead ήδη καταγεγραμμένο."}
+{"Όταν χρειάζεται άνθρωπος, μεταφέρει την κλήση στο κατάλληλο άτομο μαζί με το ιστορικό και τα στοιχεία του lead."}
 </p>
 </div>
 </div>
@@ -2806,18 +2918,18 @@ case "voice": return (<><section id={"voice-agent"} className={"relative overflo
 <div className={"space-y-5"}>
 <div className={"reveal reveal-from-right rounded-2xl border border-white/5 bg-white/[0.03] p-5"} style={{"transitionDelay":"200ms"} as CSSProperties}>
 <h3 className={"font-display text-xl font-semibold text-white"}>
-{"Έξυπνη διερεύνηση & ραντεβού"}
+{"Ερωτήσεις που οδηγούν στο επόμενο βήμα"}
 </h3>
 <p className={"mt-1 text-gray-400"}>
-{"Κάνει τις ερωτήσεις πρόκρισής σας, καταλαβαίνει τι θέλει ο καλών και κλείνει ραντεβού απευθείας στο ημερολόγιό σας."}
+{"Ρωτά όσα έχεις ορίσει, καταγράφει τι χρειάζεται ο καλών και προγραμματίζει ραντεβού στο ημερολόγιό σου."}
 </p>
 </div>
 <div className={"reveal reveal-from-right rounded-2xl border border-white/5 bg-white/[0.03] p-5"} style={{"transitionDelay":"300ms"} as CSSProperties}>
 <h3 className={"font-display text-xl font-semibold text-white"}>
-{"Φιλτράρισμα spam"}
+{"Φίλτρο για ανεπιθύμητες κλήσεις"}
 </h3>
 <p className={"mt-1 text-gray-400"}>
-{"Ανεπιθύμητες και άσκοπες κλήσεις κόβονται πριν φάνε λεπτά από τον agent σας ή χρόνο από την ομάδα σας."}
+{"Φιλτράρει spam και άσκοπες κλήσεις για να περιορίζει τον χρόνο που καταναλώνουν ο agent και η ομάδα σου."}
 </p>
 </div>
 </div>
@@ -2828,10 +2940,10 @@ case "voice": return (<><section id={"voice-agent"} className={"relative overflo
 {"Αυτοματισμοί"}
 </p>
 <h3 className={"mt-4 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl"}>
-{"Αυτοματισμοί που συνεχίζουν εκεί που τελειώνει η συνομιλία"}
+{"Η συνομιλία τελειώνει. Η δουλειά συνεχίζεται."}
 </h3>
 <p className={"mt-4 text-lg text-gray-400"}>
-{"Chatbots, πρόκριση, onboarding και follow-up — φτιαγμένα γύρω από τη ροή σας και τρέχουν χωρίς να χρειάζεται να τα ξεκινήσει κανείς."}
+{"Συνδέουμε chatbots, αξιολόγηση leads, onboarding και follow-up με τη δική σου διαδικασία. Τα επόμενα βήματα ξεκινούν με τους κανόνες που συμφωνούμε."}
 </p>
 </div>
 <div className={"reveal-stagger mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"}>
@@ -2853,7 +2965,7 @@ case "voice": return (<><section id={"voice-agent"} className={"relative overflo
 {"Chatbots σε site & WhatsApp"}
 </h4>
 <p className={"relative mt-2 text-sm leading-relaxed text-gray-400"}>
-{"Ένα chatbot βασισμένο στη βάση γνώσης σας απαντά από τις υπηρεσίες, τις τιμές και τις πολιτικές σας, καταγράφει το lead και το περνά σε άνθρωπο όταν πρέπει."}
+{"Απαντούν με βάση τις υπηρεσίες, τις τιμές και τις πολιτικές σου. Καταγράφουν το ενδιαφέρον και παραπέμπουν στην ομάδα όταν χρειάζεται."}
 </p>
 </article>
 <article className={"spotlight-card reveal relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-dark-800/40 p-6"} style={{"transitionDelay":"190ms"} as CSSProperties}>
@@ -2871,10 +2983,10 @@ case "voice": return (<><section id={"voice-agent"} className={"relative overflo
 </svg>
 </div>
 <h4 className={"relative mt-4 font-display text-lg font-semibold text-white"}>
-{"Σύστημα πρόκρισης leads"}
+{"Αξιολόγηση leads"}
 </h4>
 <p className={"relative mt-2 text-sm leading-relaxed text-gray-400"}>
-{"Κάθε ερώτημα βαθμολογείται με τα δικά σας κριτήρια — προϋπολογισμός, υπηρεσία, χρονισμός, περιοχή — και δρομολογείται στο σωστό άτομο ή απαντάται ευγενικά."}
+{"Ορίζεις κριτήρια όπως προϋπολογισμό, υπηρεσία, χρόνο και περιοχή. Το σύστημα αξιολογεί κάθε lead και το στέλνει στο κατάλληλο άτομο ή δίνει την προβλεπόμενη απάντηση."}
 </p>
 </article>
 <article className={"spotlight-card reveal relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-dark-800/40 p-6"} style={{"transitionDelay":"280ms"} as CSSProperties}>
@@ -2895,10 +3007,10 @@ case "voice": return (<><section id={"voice-agent"} className={"relative overflo
 </svg>
 </div>
 <h4 className={"relative mt-4 font-display text-lg font-semibold text-white"}>
-{"Onboarding πελατών"}
+{"Διασυνδέσεις εργαλείων"}
 </h4>
 <p className={"relative mt-2 text-sm leading-relaxed text-gray-400"}>
-{"Ο νέος πελάτης λέει ναι και ο αυτοματισμός αναλαμβάνει: στοιχεία συλλέγονται, έγγραφα στέλνονται, kickoff κλείνεται, CRM και ομάδα ενημερώνονται."}
+{"Μετά τη συμφωνία, ο αυτοματισμός ζητά στοιχεία, στέλνει έγγραφα και προγραμματίζει την πρώτη συνάντηση. Το CRM και η ομάδα σου ενημερώνονται."}
 </p>
 </article>
 <article className={"spotlight-card reveal relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-dark-800/40 p-6"} style={{"transitionDelay":"100ms"} as CSSProperties}>
@@ -2910,10 +3022,10 @@ case "voice": return (<><section id={"voice-agent"} className={"relative overflo
 </svg>
 </div>
 <h4 className={"relative mt-4 font-display text-lg font-semibold text-white"}>
-{"Text-back αναπάντητης κλήσης"}
+{"SMS μετά από αναπάντητη κλήση"}
 </h4>
 <p className={"relative mt-2 text-sm leading-relaxed text-gray-400"}>
-{"Μια κλήση που ξεφεύγει παίρνει αμέσως SMS με σύνδεσμο ραντεβού, ώστε το lead να ανακτηθεί πριν πάρει τον ανταγωνιστή."}
+{"Στέλνει SMS με σύνδεσμο για ραντεβού μετά από αναπάντητη κλήση. Ο ενδιαφερόμενος έχει έναν εύκολο τρόπο να συνεχίσει την επικοινωνία."}
 </p>
 </article>
 <article className={"spotlight-card reveal relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-dark-800/40 p-6"} style={{"transitionDelay":"190ms"} as CSSProperties}>
@@ -2931,10 +3043,10 @@ case "voice": return (<><section id={"voice-agent"} className={"relative overflo
 </svg>
 </div>
 <h4 className={"relative mt-4 font-display text-lg font-semibold text-white"}>
-{"Ακολουθίες follow-up"}
+{"Follow-up με πρόγραμμα"}
 </h4>
 <p className={"relative mt-2 text-sm leading-relaxed text-gray-400"}>
-{"Follow-ups πολλών βημάτων, υπενθυμίσεις και αιτήματα αξιολόγησης τρέχουν με το δικό τους πρόγραμμα μέχρι το lead να απαντήσει ή να κλείσει."}
+{"Στέλνει διαδοχικά μηνύματα, υπενθυμίσεις και αιτήματα αξιολόγησης στο πρόγραμμα που ορίζουμε. Η ροή προσαρμόζεται όταν το lead απαντήσει ή κλείσει."}
 </p>
 </article>
 <article className={"spotlight-card reveal relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-dark-800/40 p-6"} style={{"transitionDelay":"280ms"} as CSSProperties}>
@@ -2949,10 +3061,10 @@ case "voice": return (<><section id={"voice-agent"} className={"relative overflo
 </svg>
 </div>
 <h4 className={"relative mt-4 font-display text-lg font-semibold text-white"}>
-{"Συγχρονισμός CRM & υπενθυμίσεις"}
+{"CRM & υπενθυμίσεις"}
 </h4>
 <p className={"relative mt-2 text-sm leading-relaxed text-gray-400"}>
-{"Κάθε lead μπαίνει στο CRM που ήδη χρησιμοποιείτε με το επόμενο βήμα προγραμματισμένο, οπότε τίποτα δεν μένει σε ένα inbox να περιμένει."}
+{"Περνά τα leads στο CRM που χρησιμοποιείς και προγραμματίζει το επόμενο βήμα. Η ομάδα σου βλέπει τι χρειάζεται να γίνει."}
 </p>
 </article>
 </div>
@@ -2960,7 +3072,7 @@ case "voice": return (<><section id={"voice-agent"} className={"relative overflo
 </div>
 <div className={"stack-band relative mt-20 md:mt-24"}>
 <p className={"reveal mb-9 text-center font-mono text-xs uppercase tracking-[0.22em] text-gray-500"}>
-{"Λειτουργεί με το δικό σας stack"}
+{"Συνδέεται με τα εργαλεία σου"}
 </p>
 <div className={"stack-rail relative py-6"}>
 <span className={"stack-line"} aria-hidden={"true"}>
@@ -3239,10 +3351,10 @@ case "features": return (<><section id={"features"} className={"py-24 md:py-32"}
 <div className={"mx-auto max-w-8xl px-6"}>
 <div className={"reveal max-w-2xl"}>
 <h2 className={"font-display text-4xl font-bold tracking-tight text-white sm:text-5xl"}>
-{"Το Command Hub της AiAnchor"}
+{"Το AiAnchor Operations Platform"}
 </h2>
 <p className={"mt-4 text-lg text-gray-400"}>
-{"Μία πλατφόρμα στην οποία συνδέεστε, όπου κάθε agent και αυτοματισμός που τρέχουμε αναφέρει σε πραγματικά νούμερα: κλήσεις και chat που απαντήθηκαν, leads που προκρίθηκαν, πελάτες που μπήκαν σε onboarding, ραντεβού που κλείστηκαν και το τι αξίζουν."}
+{"Το σημείο όπου βλέπεις τι έχουμε υλοποιήσει, τι τρέχει αυτή τη στιγμή και πώς εξελίσσεται η συνεργασία. Ένα καθαρό dashboard για τα συστήματα, τη δραστηριότητα και τα αποτελέσματά τους."}
 </p>
 </div>
 <div className={"reveal-stagger mt-14 grid grid-flow-row-dense gap-4 sm:grid-cols-2 lg:auto-rows-fr lg:grid-cols-4"}>
@@ -3355,10 +3467,10 @@ case "features": return (<><section id={"features"} className={"py-24 md:py-32"}
 </div>
 <div>
 <h3 className={"font-display text-2xl font-bold text-white"}>
-{"AI φωνητικοί agents (πολυγλωσσικοί)"}
+{"Φωνητικοί agents σε πολλές γλώσσες"}
 </h3>
 <p className={"mt-2 max-w-md text-gray-400"}>
-{"Φυσικές τηλεφωνικές συνομιλίες σε πολλές γλώσσες (με Ελληνικά και Αγγλικά ως βασική ρύθμιση), όλο το 24ωρο, με περίληψη και συναίσθημα σε κάθε κλήση."}
+{"Τηλεφωνικές συνομιλίες όλο το 24ωρο, με ελληνικά και αγγλικά στη βασική ρύθμιση. Βλέπεις περίληψη και ανάλυση συναισθήματος για κάθε κλήση."}
 </p>
 </div>
 </div>
@@ -3383,7 +3495,7 @@ case "features": return (<><section id={"features"} className={"py-24 md:py-32"}
 {"Chatbots σε site & WhatsApp"}
 </h3>
 <p className={"relative mt-2 text-sm text-gray-400"}>
-{"Web chat και WhatsApp απαντημένα από τις δικές σας υπηρεσίες και τιμές, με το lead να μπαίνει στο ίδιο pipeline με τις κλήσεις σας."}
+{"Απαντούν με βάση τις υπηρεσίες και τις τιμές σου. Τα leads από chat μπαίνουν στην ίδια ροή με εκείνα από τις κλήσεις."}
 </p>
 </article>
 <article className={"spotlight-card reveal relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-dark-800/40 p-6"}>
@@ -3403,10 +3515,10 @@ case "features": return (<><section id={"features"} className={"py-24 md:py-32"}
 </div>
 </div>
 <h3 className={"relative mt-4 font-semibold text-white"}>
-{"Πρόκριση & δρομολόγηση leads"}
+{"Αξιολόγηση & δρομολόγηση leads"}
 </h3>
 <p className={"relative mt-2 text-sm text-gray-400"}>
-{"Κάθε ερώτημα βαθμολογείται με τα κριτήριά σας και πηγαίνει στο σωστό άτομο, ώστε η ομάδα σας να ασχολείται μόνο με όσα αξίζουν."}
+{"Τα leads αξιολογούνται με τα κριτήριά σου και φτάνουν στο κατάλληλο άτομο. Η ομάδα σου ξέρει πού να δώσει προτεραιότητα."}
 </p>
 </article>
 <article className={"spotlight-card reveal relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-dark-800/40 p-6"}>
@@ -3423,10 +3535,10 @@ case "features": return (<><section id={"features"} className={"py-24 md:py-32"}
 </div>
 </div>
 <h3 className={"relative mt-4 font-semibold text-white"}>
-{"Πραγματικά ραντεβού στο ημερολόγιό σας"}
+{"Ραντεβού στο ημερολόγιό σου"}
 </h3>
 <p className={"relative mt-2 text-sm text-gray-400"}>
-{"Τα ραντεβού καταλήγουν κατευθείαν στο ημερολόγιο που ήδη χρησιμοποιείτε. Χωρίς διπλοκλείσιμο, χωρίς μπρος-πίσω."}
+{"Ο προγραμματισμός συνδέεται με το ημερολόγιο που χρησιμοποιείς και ελέγχει τη διαθεσιμότητα, για να περιορίζει τα διπλά ραντεβού και την ανταλλαγή μηνυμάτων."}
 </p>
 </article>
 <article className={"spotlight-card reveal relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-dark-800/40 p-6"}>
@@ -3446,10 +3558,10 @@ case "features": return (<><section id={"features"} className={"py-24 md:py-32"}
 </div>
 </div>
 <h3 className={"relative mt-4 font-semibold text-white"}>
-{"Αυτοματισμοί onboarding & follow-up"}
+{"Onboarding & follow-up"}
 </h3>
 <p className={"relative mt-2 text-sm text-gray-400"}>
-{"Onboarding πελατών, text-back μετά από χαμένη κλήση, ακολουθίες follow-up και αιτήματα κριτικών, φτιαγμένα γύρω από το πώς δουλεύετε."}
+{"Συλλογή στοιχείων πελατών, SMS μετά από αναπάντητη κλήση, διαδοχικά follow-up και αιτήματα αξιολόγησης. Τα στήνουμε γύρω από τη διαδικασία σου."}
 </p>
 </article>
 <article className={"spotlight-card reveal relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-dark-800/40 p-6"}>
@@ -3466,10 +3578,10 @@ case "features": return (<><section id={"features"} className={"py-24 md:py-32"}
 </div>
 </div>
 <h3 className={"relative mt-4 font-semibold text-white"}>
-{"Αποτίμηση pipeline εσόδων"}
+{"Εκτιμώμενη αξία ευκαιριών"}
 </h3>
 <p className={"relative mt-2 text-sm text-gray-400"}>
-{"Τα leads αποτιμώνται με βάση τα πραγματικά σας ακίνητα ή υπηρεσίες, ώστε ο οδικός χάρτης που συμφωνήσατε να ελέγχεται σε ευρώ."}
+{"Η αποτίμηση των leads βασίζεται στα ακίνητα ή στις υπηρεσίες σου. Έχεις μια εικόνα της πιθανής αξίας τους για να αξιολογείς το πλάνο."}
 </p>
 </article>
 <article className={"spotlight-card reveal relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-dark-800/40 p-6 sm:col-span-2 lg:col-span-2"}>
@@ -3545,10 +3657,10 @@ case "features": return (<><section id={"features"} className={"py-24 md:py-32"}
 </div>
 </div>
 <h3 className={"relative mt-4 font-semibold text-white"}>
-{"Ζωντανά analytics & ηχογραφήσεις κλήσεων"}
+{"Δραστηριότητα & ηχογραφήσεις"}
 </h3>
 <p className={"relative mt-2 text-sm text-gray-400"}>
-{"Πλήρης εικόνα κάθε συνομιλίας και κάθε εκτέλεσης αυτοματισμού, με ηχογραφήσεις διαθέσιμες κατόπιν αιτήματος."}
+{"Παρακολουθείς συνομιλίες και εκτελέσεις αυτοματισμών. Οι ηχογραφήσεις κλήσεων διατίθενται κατόπιν αιτήματος."}
 </p>
 </article>
 <article className={"spotlight-card reveal relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-dark-800/40 p-6"}>
@@ -3565,15 +3677,15 @@ case "features": return (<><section id={"features"} className={"py-24 md:py-32"}
 </div>
 </div>
 <h3 className={"relative mt-4 font-semibold text-white"}>
-{"Agents βασισμένοι σε βάση γνώσης"}
+{"Απαντήσεις από τη βάση γνώσης σου"}
 </h3>
 <p className={"relative mt-2 text-sm text-gray-400"}>
-{"Οι agents σας γνωρίζουν τα ακίνητα, τις υπηρεσίες και τις πολιτικές σας. Δεν αυτοσχεδιάζουν."}
+{"Δίνουμε στους agents πληροφορίες για τα ακίνητα, τις υπηρεσίες και τις πολιτικές σου. Αυτές αποτελούν τη βάση των απαντήσεών τους."}
 </p>
 </article>
 </div>
 </div>
-<div className="mx-auto mt-8 max-w-8xl px-6 text-sm text-gray-300"><p>{"Η αυτόματη εγγραφή δεν είναι ακόμη διαθέσιμη. Ολοκληρώνουμε το Command Hub της AiAnchor, την πλατφόρμα στην οποία συνδέεστε. Μέχρι τότε, κλείστε ένα δωρεάν demo και στήνουμε εμείς τους agents και τους αυτοματισμούς σας."}</p><a className="mt-4 inline-flex min-h-11 items-center text-primary underline" href="https://app.aianchor.online">{"Σύνδεση πελατών"}</a></div>
+<div className="mx-auto mt-8 max-w-8xl px-6 text-sm text-gray-300"><p>{"Η αυτόματη εγγραφή δεν είναι ακόμη διαθέσιμη. Ετοιμάζουμε το AiAnchor Operations Platform, όπου θα βλέπεις τα συστήματα που έχουμε υλοποιήσει, τη δραστηριότητά τους και την πορεία της συνεργασίας. Μέχρι τότε, κλείσε ένα δωρεάν discovery call για να δούμε τι θέλεις να βελτιώσεις."}</p><a className="mt-4 inline-flex min-h-11 items-center text-primary underline" href="https://app.aianchor.online">{"Σύνδεση πελατών"}</a></div>
 </section></>);
 case "about": return (<><section id={"about"} className={"relative overflow-hidden py-24 md:py-32"}>
 <canvas className={"particle-bg absolute inset-0 h-full w-full pointer-events-none"} aria-hidden={"true"}>
@@ -3582,21 +3694,21 @@ case "about": return (<><section id={"about"} className={"relative overflow-hidd
 <div className={"relative mx-auto max-w-5xl px-6"}>
 <div className={"reveal mb-16 text-center"}>
 <h2 className={"mb-8 bg-gradient-to-b from-white to-gray-500 bg-clip-text font-display text-4xl font-bold text-transparent sm:text-6xl"}>
-{"Ποιοι Είμαστε"}
+{"Μια ομάδα που σχεδιάζει και υλοποιεί"}
 </h2>
 <p className={"mb-8 text-xl font-light leading-relaxed text-gray-300 md:text-2xl"}>
-{"Η AiAnchor είναι "}
+{"Στην AiAnchor "}
 <strong className={"font-semibold text-white"}>
-{"μια AI συμβουλευτική που τρέχει και όσα προτείνει"}
+{"δεν ξεκινάμε πουλώντας ένα συγκεκριμένο εργαλείο"}
 </strong>
-{": φωνητικούς agents, chatbots, πρόκριση leads και αυτοματισμούς onboarding, όλα αποδεδειγμένα ζωντανά σ"}
+{". Ξεκινάμε από τη διαδικασία, σχεδιάζουμε τι χρειάζεται και "}
 <strong className={"font-semibold text-white"}>
-{"το Command Hub της AiAnchor"}
+{"αναλαμβάνουμε την υλοποίηση"}
 </strong>
-{"."}
+{" από την αρχή μέχρι τη λειτουργία."}
 </p>
 <p className={"mx-auto max-w-2xl text-lg text-gray-400"}>
-{"Δεν σας δίνουμε μια παρουσίαση στρατηγικής και καλή τύχη, ούτε ένα εργαλείο. Βρίσκουμε πού αποδίδει το AI, το φτιάχνουμε, το τρέχουμε, και σας δείχνουμε τι απέδωσε."}
+{"Ένας συνεργάτης για χαρτογράφηση, σχεδιασμό, υλοποίηση και συνεχή βελτίωση. Χωρίς να χρειάζεται να συντονίζεις διαφορετικούς vendors για κάθε κομμάτι."}
 </p>
 </div>
 <div className={"grid items-center gap-8 md:grid-cols-2"}>
@@ -3605,10 +3717,10 @@ case "about": return (<><section id={"about"} className={"relative overflow-hidd
 <span className={"h-[2px] w-8 bg-primary"}>
 
 </span>
-{" Η Αποστολή μας"}
+{" Γιατί το κάνουμε"}
 </h3>
 <p className={"font-display text-2xl font-bold leading-tight text-white md:text-3xl"}>
-{"Να κάνουμε το AI απόφαση που οι επιχειρήσεις υπηρεσιών δικαιολογούν σε ευρώ, όχι άλμα πίστης."}
+{"Για να βοηθάμε τις επιχειρήσεις να δουλεύουν πιο καθαρά και πιο αποδοτικά, με τεχνολογία που λύνει πραγματικά προβλήματα αντί να προσθέτει άλλο ένα εργαλείο."}
 </p>
 </div>
 <div className={"reveal flex flex-col gap-6"}>
@@ -3617,20 +3729,20 @@ case "about": return (<><section id={"about"} className={"relative overflow-hidd
 {"24/7"}
 </div>
 <div className={"text-sm text-gray-300"}>
-{"Κλήσεις και chat απαντημένα, leads προκριμένα, πελάτες σε onboarding και ραντεβού κλεισμένα, συμπεριλαμβανομένων νυχτών, Σαββατοκύριακων και αργιών."}
+{"Agents και αυτοματισμοί διαθέσιμοι για κλήσεις, chat, αξιολόγηση leads, onboarding και προγραμματισμό ραντεβού. Και εκτός ωραρίου, τα Σαββατοκύριακα και τις αργίες."}
 </div>
 </div>
 <div className={"flex items-center gap-6 rounded-2xl border border-white/5 bg-dark-800/60 p-8"}>
 <div className={"shrink-0 font-display text-4xl font-bold text-white"}>
-{"Ζωντανά"}
+{"Σε ένα σημείο"}
 </div>
 <div className={"text-sm text-gray-300"}>
-{"Κάθε κλήση, chat, lead, ραντεβού και ευρώ pipeline ορατό στο Command Hub τη στιγμή που συμβαίνει."}
+{"Συστήματα, δραστηριότητα, πρόοδος και βασικά αποτελέσματα συγκεντρωμένα στο AiAnchor Operations Platform."}
 </div>
 </div>
 <div className={"flex items-center justify-center rounded-2xl border border-primary/20 bg-gradient-to-r from-primary/10 to-blue-600/10 p-8 text-center"}>
 <span className={"font-medium text-primary"}>
-{"Το ROI είναι στην οθόνη, όχι σε μια παρουσίαση."}
+{"Βλέπεις τι δουλεύει και τι χρειάζεται βελτίωση."}
 </span>
 </div>
 </div>
@@ -3649,13 +3761,13 @@ case "contact": return (<><section id={"contact"} className={"-mt-px bg-dark-800
 <div className={"mx-auto max-w-8xl px-6"}>
 <div className={"reveal mb-14 rounded-3xl border border-white/10 bg-gradient-to-br from-dark-700 to-dark-900 p-8 shadow-[0_0_40px_rgba(0,240,255,0.1)] md:p-10"}>
 <h2 className={"mb-4 max-w-4xl font-display text-3xl font-bold sm:text-5xl"}>
-{"Έτοιμοι να μάθετε πού αποδίδει πραγματικά το AI στην επιχείρησή σας;"}
+{"Ας δούμε τι μπορεί να δουλεύει καλύτερα."}
 </h2>
 <p className={"mb-7 max-w-3xl text-base leading-relaxed text-gray-300 md:text-lg"}>
-{"Κλείστε ένα δωρεάν demo. Θα ακούσετε τον agent να χειρίζεται μια πραγματική κλήση για την επιχείρησή σας, θα δείτε τους αυτοματισμούς να τρέχουν και θα δείτε τι αναφέρει το Command Hub της AiAnchor."}
+{"Κλείσε ένα δωρεάν discovery call. Μας δείχνεις πώς δουλεύει η επιχείρησή σου σήμερα και βλέπουμε μαζί ποιο σημείο αξίζει να βελτιώσουμε πρώτο."}
 </p>
 <a href={"/gr/book-demo/"} className={"btn-interactive inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 font-semibold text-dark-900 hover:bg-gray-100"}>
-{"Κλείστε demo "}
+{"Κλείσε discovery call "}
 <svg className={"w-4 h-4"} xmlns={"http://www.w3.org/2000/svg"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.75"} strokeLinecap={"round"} strokeLinejoin={"round"} aria-hidden={"true"} focusable={"false"}>
 <path d={"M5 12h14M12 5l7 7-7 7"}>
 
@@ -3666,10 +3778,10 @@ case "contact": return (<><section id={"contact"} className={"-mt-px bg-dark-800
 <div className={"grid items-start gap-10 lg:grid-cols-2 lg:gap-12"}>
 <div className={"reveal"}>
 <h3 className={"mb-4 font-display text-2xl font-semibold sm:text-3xl"}>
-{"Πείτε μας τι σας ξεφεύγει."}
+{"Πες μας τι θα ήθελες να βελτιώσεις."}
 </h3>
 <p className={"mb-8 text-base leading-relaxed text-gray-300 md:text-lg"}>
-{"Χαμένες κλήσεις, αναπάντητα chat, πρόκριση με το ένστικτο, onboarding με email. Πείτε μας πού πονάει και θα σας δείξουμε τη λύση να δουλεύει."}
+{"Μια διαδικασία που καθυστερεί; Πολλά εργαλεία που δεν μιλάνε μεταξύ τους; Επαναλαμβανόμενη δουλειά; Γράψε μας τι συμβαίνει και θα δούμε από πού αξίζει να ξεκινήσουμε."}
 </p>
 <div className={"space-y-4"}>
 <a href={"mailto:info@aianchor.online"} className={"btn-interactive group flex items-center gap-5 rounded-2xl border border-white/10 bg-white/5 p-5 hover:border-primary/40 hover:bg-primary/5"}>
@@ -3685,7 +3797,7 @@ case "contact": return (<><section id={"contact"} className={"-mt-px bg-dark-800
 </div>
 <div>
 <h4 className={"mb-1 font-semibold text-white"}>
-{"Στείλτε μας Email"}
+{"Γράψε μας"}
 </h4>
 <p className={"text-gray-300 transition-colors group-hover:text-white"}>
 {"info@aianchor.online"}
@@ -3712,7 +3824,7 @@ case "contact": return (<><section id={"contact"} className={"-mt-px bg-dark-800
 {"LinkedIn"}
 </h4>
 <p className={"text-xs text-gray-300 transition-colors group-hover:text-white"}>
-{"Δείτε τις ενημερώσεις μας"}
+{"Δες τα νέα μας"}
 </p>
 </div>
 </a>
@@ -3755,7 +3867,7 @@ case "faq": return (<><section id={"faq"} className={"py-24 md:py-32"}>
 {"Συχνές ερωτήσεις"}
 </h2>
 <p className={"mt-4 text-lg text-gray-400"}>
-{"Ό,τι θα μας ρωτούσατε έτσι κι αλλιώς με email."}
+{"Οι απαντήσεις που χρειάζεσαι πριν μιλήσουμε."}
 </p>
 </div>
 <div className={"reveal-stagger mt-12 divide-y divide-white/10 rounded-2xl border border-white/10 bg-dark-800/40"}>
@@ -3773,7 +3885,7 @@ case "faq": return (<><section id={"faq"} className={"py-24 md:py-32"}>
 </span>
 </summary>
 <div className={"faq-answer px-6 pb-6 text-gray-400"}>
-{"Χαρτογραφούμε τον τρόπο που λειτουργεί σήμερα η επιχείρησή σας, εντοπίζουμε πού χάνονται χρόνος ή ευκαιρίες και υλοποιούμε τη σωστή λύση με αυτοματισμούς, λογισμικό, AI ή συνδυασμό τους."}
+{"Χαρτογραφούμε πώς δουλεύει σήμερα η επιχείρησή σας, εντοπίζουμε πού υπάρχουν καθυστερήσεις ή περιττή δουλειά και σχεδιάζουμε τη σωστή λύση. Μπορεί να είναι automation, integration, AI ή custom software. Δεν ξεκινάμε από την τεχνολογία, ξεκινάμε από το πρόβλημα."}
 </div>
 </details>
 <details className={"reveal faq-item"}>
@@ -3841,7 +3953,7 @@ case "faq": return (<><section id={"faq"} className={"py-24 md:py-32"}>
 </span>
 </summary>
 <div className={"faq-answer px-6 pb-6 text-gray-400"}>
-{"Σας δίνει ένα σημείο για να παρακολουθείτε τα συστήματα που υλοποιούμε, όπως αυτοματισμούς, AI agents, δραστηριότητα, leads, ραντεβού και λειτουργικά αποτελέσματα."}
+{"Είναι το σημείο όπου βλέπετε τι έχουμε υλοποιήσει, ποια συστήματα είναι ενεργά, τη δραστηριότητά τους και τα βασικά αποτελέσματα. Στόχος είναι να έχετε καθαρή εικόνα της συνεργασίας χωρίς να ψάχνετε σε διαφορετικά εργαλεία."}
 </div>
 </details>
 <details className={"reveal faq-item"}>
@@ -4043,7 +4155,7 @@ case "footer": return (<><footer className={"border-t border-white/[0.06] bg-dar
 </span>
 </div>
 <p className={"mt-5 max-w-xs text-sm leading-relaxed text-gray-400"}>
-{"Διαχειριζόμενες λειτουργίες AI για ομάδες ακινήτων."}
+{"Σχεδιάζουμε και υλοποιούμε καλύτερους τρόπους δουλειάς με automation, AI και software."}
 </p>
 <div className={"mt-6 flex gap-2 text-gray-400"}>
 <a href={"https://www.instagram.com/aianchor_/"} aria-label={"Instagram"} className={"link-hover inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 hover:border-primary/40 hover:text-primary"}>
@@ -4097,7 +4209,7 @@ case "footer": return (<><footer className={"border-t border-white/[0.06] bg-dar
 </li>
 <li>
 <a href={"/gr/#features"} className={"link-hover inline-flex min-h-11 items-center hover:text-primary"}>
-{"Command Hub"}
+{"Operations Platform"}
 </a>
 </li>
 <li>

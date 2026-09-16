@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-16T15:04:41.159Z",
+  "checkedAt": "2026-09-16T15:37:59.511Z",
   "base": "http://localhost:5175",
   "routes": [
     {
@@ -94,14 +94,14 @@
     },
     {
       "path": "/gr/",
-      "title": "AiAnchor | Λειτουργίες AI για ομάδες ακινήτων",
-      "mainTextCharacters": 9771,
+      "title": "AiAnchor | Καλύτερες διαδικασίες, αυτοματισμοί & AI για επιχειρήσεις",
+      "mainTextCharacters": 12754,
       "faqQuestions": 15
     },
     {
       "path": "/gr/book-demo/",
-      "title": "Κλείστε δωρεάν αξιολόγηση ροής εργασίας | AiAnchor",
-      "mainTextCharacters": 1606,
+      "title": "Κλείσε discovery call | AiAnchor",
+      "mainTextCharacters": 1604,
       "faqQuestions": 0
     },
     {
@@ -142,44 +142,44 @@
     },
     {
       "path": "/gr/platform/",
-      "title": "Πλατφόρμα | AiAnchor",
-      "mainTextCharacters": 5302,
+      "title": "Operations Platform | AiAnchor",
+      "mainTextCharacters": 5589,
       "faqQuestions": 15
     },
     {
       "path": "/gr/ai-consulting/",
-      "title": "Συμβουλευτική AI για επιχειρήσεις υπηρεσιών | AiAnchor",
-      "mainTextCharacters": 2130,
+      "title": "Χαρτογράφηση, σχεδιασμός & μέτρηση | AiAnchor",
+      "mainTextCharacters": 2836,
       "faqQuestions": 3
     },
     {
       "path": "/gr/ai-voice-agents/",
-      "title": "AI φωνητικοί agents για κλήσεις και ραντεβού | AiAnchor",
-      "mainTextCharacters": 2240,
+      "title": "Φωνητικοί agents | AiAnchor",
+      "mainTextCharacters": 2770,
       "faqQuestions": 3
     },
     {
       "path": "/gr/chatbots/",
-      "title": "Chatbots για website και WhatsApp | AiAnchor",
-      "mainTextCharacters": 1965,
+      "title": "Chatbots σε site & WhatsApp | AiAnchor",
+      "mainTextCharacters": 2550,
       "faqQuestions": 2
     },
     {
       "path": "/gr/crm-automation/",
-      "title": "Αυτοματισμοί CRM και επιχειρησιακών ροών | AiAnchor",
-      "mainTextCharacters": 1977,
+      "title": "Αυτοματισμοί γύρω από τη δική σου ροή | AiAnchor",
+      "mainTextCharacters": 3067,
       "faqQuestions": 2
     },
     {
       "path": "/gr/about/",
-      "title": "Σχετικά με την AiAnchor | AiAnchor",
-      "mainTextCharacters": 1861,
+      "title": "Μια ομάδα που σχεδιάζει και υλοποιεί | AiAnchor",
+      "mainTextCharacters": 2280,
       "faqQuestions": 2
     },
     {
       "path": "/gr/pricing/",
-      "title": "Τιμές AiAnchor — φωνητικοί agents, chatbots και αυτοματισμοί",
-      "mainTextCharacters": 2951,
+      "title": "Τιμές AiAnchor | Συστήματα AI και αυτοματισμοί",
+      "mainTextCharacters": 3097,
       "faqQuestions": 0
     }
   ],

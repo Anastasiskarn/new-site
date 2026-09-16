@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { preload } from "react-dom";
 import type { Application } from "@splinetool/runtime";
-import { SplineScene } from "./ui/splite";
+import { preloadSpline, SplineScene } from "./ui/splite";
 
 // Scene from serafimcloud's Spline Scene demo on 21st.dev
 const SCENE = "https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode";
@@ -30,7 +31,12 @@ export function RobotCompanion() {
     const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
     // Once mounted, stay mounted: resizing back and forth should never re-download the scene
     const check = () => {
-      if (wide.matches && !saveData) setMount(true);
+      if (wide.matches && !saveData) {
+        // Download the scene alongside the engine, rather than waiting for the engine to execute.
+        preload(SCENE, { as: "fetch", crossOrigin: "anonymous", fetchPriority: "low" });
+        void preloadSpline().catch(() => {}); // Suspense handles an import failure when mounted.
+        setMount(true);
+      }
     };
     check();
     wide.addEventListener("change", check);
@@ -84,7 +90,8 @@ export function RobotCompanion() {
       return;
     }
     setMoving(true);
-    const timer = window.setTimeout(() => setMoving(false), 1100);
+    // Match the section-glide duration in .robot-stage so it settles after crossing.
+    const timer = window.setTimeout(() => setMoving(false), 1800);
     return () => window.clearTimeout(timer);
   }, [side]);
 
@@ -103,6 +110,8 @@ export function RobotCompanion() {
   };
 
   return (
+    <>
+    <link rel="preconnect" href="https://prod.spline.design" crossOrigin="anonymous" />
     <div ref={stage} className="robot-stage" data-side={side} data-moving={moving || undefined} data-ready={ready || undefined} aria-hidden="true">
       <div className="robot-stage-body">
         {mount && (
@@ -112,5 +121,6 @@ export function RobotCompanion() {
         )}
       </div>
     </div>
+    </>
   );
 }
