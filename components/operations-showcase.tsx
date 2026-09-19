@@ -41,8 +41,11 @@ export function OperationsShowcase({ lang }: { lang: Locale }) {
     <div className={styles.stage}>
       <div className={styles.halo} aria-hidden="true" />
       <div className={styles.float}>
-        <div className={styles.window} role="img" aria-label={greek ? "Mockup του AiAnchor client portal με κλήσεις, leads, ραντεβού και δραστηριότητα." : "AiAnchor client portal mockup showing calls, leads, appointments and recent activity."}>
-          <div className={styles.app} aria-hidden="true">
+        <div className={styles.laptop}>
+          <div className={styles.screen}>
+            <span className={styles.camera} aria-hidden="true" />
+            <div className={styles.window} role="img" aria-label={greek ? "Mockup του AiAnchor client portal με κλήσεις, leads, ραντεβού και δραστηριότητα." : "AiAnchor client portal mockup showing calls, leads, appointments and recent activity."}>
+              <div className={styles.app} aria-hidden="true">
             <aside className={styles.sidebar}>
               <div className={styles.brand}><span className={styles.brandMark}><Glyph kind="activity" /></span><span><strong>AiAnchor</strong><small>CLIENT PORTAL</small></span><span className={styles.collapse}>‹</span></div>
               <p className={styles.workspace}>WORKSPACE</p>
@@ -63,6 +66,12 @@ export function OperationsShowcase({ lang }: { lang: Locale }) {
                 <div className={styles.rightColumn}><div className={styles.latest}><div className={styles.sectionHeading}>{greek ? "Τελευταία leads" : "Latest leads"}</div><p className={styles.reply}><Glyph kind="check" />{greek ? "Κανείς δεν περιμένει απάντηση." : "Nobody is waiting for a reply."}</p>{leads.map((name) => <div className={styles.lead} key={name}><div><strong>{name}</strong><span><i />{greek ? "Κλεισμένο" : "Booked"}</span></div><p>{greek ? "Ζήτησε να κλείσει επίσκεψη σε ακίνητο." : "Requested a property viewing."}</p><small><Glyph kind="voice" />MA Prime Properties</small></div>)}<span className={styles.openLeads}>{greek ? "Άνοιγμα leads →" : "Open leads →"}</span></div><div className={styles.pipeline}><div className={styles.sectionHeading}>{greek ? "Πού βρίσκονται τα leads σου" : "Where your leads are"}</div>{stages.map((stage) => <div className={styles.pipelineRow} key={stage.label}><div><span>{stage.label}</span><strong>{stage.value}</strong></div><span className={styles.barTrack}><span className={styles.bar} style={{ width: `${(stage.value / counts.captured) * 100}%` }} /></span></div>)}</div></div>
               </div>
             </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.base} aria-hidden="true">
+            <span className={styles.keyboard}>{Array.from({ length: 70 }, (_, key) => <i key={key} />)}</span>
+            <span className={styles.trackpad} />
           </div>
         </div>
       </div>

@@ -1023,15 +1023,15 @@
     height: 3.25rem;
     padding: 0 1.15rem 0 0.45rem;
     border-radius: 9999px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    background: linear-gradient(135deg, rgba(20, 20, 34, 0.92), rgba(8, 8, 15, 0.94));
+    border: 1px solid rgba(0, 240, 255, 0.24);
+    background: linear-gradient(135deg, rgba(6, 29, 33, 0.94), rgba(5, 10, 12, 0.97));
     -webkit-backdrop-filter: blur(16px) saturate(150%);
     backdrop-filter: blur(16px) saturate(150%);
     font-size: 0.875rem;
     font-weight: 600;
     letter-spacing: -0.01em;
     color: #fff;
-    box-shadow: 0 16px 42px -14px rgba(0, 0, 0, 0.9), 0 0 26px -14px rgba(0, 240, 255, 0.7);
+    box-shadow: 0 16px 42px -14px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 0 26px -16px rgba(0, 240, 255, 0.5);
     transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out),
       border-color var(--dur-base) var(--ease-out), opacity var(--dur-fast) var(--ease-out);
   }
@@ -1057,8 +1057,10 @@
     width: 2.35rem;
     flex-shrink: 0;
     border-radius: 9999px;
-    background: linear-gradient(140deg, #00f0ff, #7000ff);
-    color: #fff;
+    border: 1px solid rgba(0, 240, 255, 0.32);
+    background: linear-gradient(145deg, #0c3a41, #06181c);
+    color: #00f0ff;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 0 16px -8px rgba(0, 240, 255, 0.7);
   }
   /* One slow halo instead of the nagging bounce vendor widgets use: it reads as
      "someone is here" and then gets out of the way. */

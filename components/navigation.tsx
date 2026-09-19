@@ -85,7 +85,7 @@ export function Navigation({
             aria-label="AiAnchor"
             className="flex min-h-11 items-center gap-2.5 justify-self-start whitespace-nowrap font-display text-sm font-bold tracking-wider"
           >
-            <span className="rounded-lg bg-gradient-to-tr from-primary to-secondary p-1.5 [&_svg]:h-[18px] [&_svg]:w-[18px]">
+            <span className="rounded-lg border border-primary/30 bg-primary/10 p-1.5 text-primary shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_18px_rgba(0,240,255,0.16)] [&_svg]:h-[18px] [&_svg]:w-[18px]">
               <AnchorIcon />
             </span>
             AI <span className="text-primary">ANCHOR</span>

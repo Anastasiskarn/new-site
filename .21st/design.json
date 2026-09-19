@@ -71,6 +71,11 @@
                           "component":  "Homepage hero",
                           "source":  "https://21st.dev/@dhileepkumargm/components/aether-flow-hero",
                           "decision":  "Use the selected Aether Flow centered hero, grayscale headline and interactive purple particle network with existing bilingual copy and Action CTA. Use CSS for entrance motion and pause canvas outside view or when reduced motion is enabled."
+                      },
+                      {
+                          "component":  "Operations dashboard showcase",
+                          "source":  "https://21st.dev/@saurabh-2607/components/great-ui-macbook-mockup",
+                          "decision":  "Present the existing dashboard inside a wide, black MacBook-style shell with a restrained floating perspective, thin metallic screen edge, camera, visible black keyboard deck and trackpad. Keep the screen decisively landscape by using a wider canvas and tighter dashboard spacing. Preserve the full dashboard on mobile, retain reduced-motion support and avoid decorative notification cards around the device."
                       }
                   ],
     "evidence":  [
