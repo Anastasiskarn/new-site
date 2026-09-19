@@ -181,3 +181,56 @@
   .pipeline { margin-top: 22px; }
 }
 @media (prefers-reduced-motion: reduce) { .float { transform: none; } }
+
+/* Mobile keeps the desktop dashboard canvas intact and scales it as one unit.
+   This preserves the wide product-window silhouette and every panel. */
+@media (max-width: 767px) {
+  .showcase { margin-top: 3rem; }
+  .stage { padding: 2rem 0 2.25rem; }
+  .float {
+    width: 1100px;
+    margin-inline: auto;
+    transform: none;
+    zoom: .56;
+  }
+  .app { min-height: 585px; font-size: 10px; }
+  .sidebar { display: flex; width: 155px; }
+  .brand { height: 48px; flex-wrap: nowrap; justify-content: flex-start; gap: 8px; padding: 0 12px; text-align: left; }
+  .brand strong { font-size: 12px; }
+  .brand small { font-size: 7px; letter-spacing: 1.2px; }
+  .collapse { display: inline; }
+  .workspace { margin: 18px 14px 7px; font-size: 8px; letter-spacing: 1.4px; }
+  .nav { padding: 0 7px; }
+  .nav > div { gap: 9px; padding: 8px; font-size: 9px; white-space: nowrap; }
+  .nav span { overflow: visible; text-overflow: clip; }
+  .nav svg { width: 12px; height: 12px; }
+  .profile { gap: 8px; padding: 13px; font-size: 10px; }
+  .toolbar { height: 48px; padding: 0 16px; }
+  .toolbarEnd { display: flex; }
+  .search { width: 260px; border: 1px solid #ffffff09; padding: 6px 9px; background: #0a1113; font-size: 9px; }
+  .search kbd { display: inline; }
+  .content { display: grid; grid-template-columns: minmax(0, 1fr) 225px; gap: 30px; padding: 30px 30px 32px; }
+  .summary h3 { max-width: 480px; font-size: 25px; }
+  .summary > p { margin: 12px 0 27px; font-size: 10px; }
+  .metrics { grid-template-columns: 1fr 1fr 1.2fr; }
+  .metrics > div + div { padding-left: 11px; }
+  .metrics > div:nth-child(3) { grid-column: auto; border-top: 0; border-left: 1px solid #ffffff09; }
+  .metrics strong { font-size: 21px; }
+  .metrics span, .metrics small span { display: inline; font-size: 8px; }
+  .rightColumn { display: block; margin-top: 0; padding-top: 0; border-top: 0; }
+  .latest { padding: 0 0 17px 16px; border-left: 1px solid #ffffff08; }
+  .pipeline { margin-top: 19px; padding-top: 14px; border-top: 1px solid #ffffff16; }
+  .card { gap: 12px; padding: 16px 20px; border-radius: 14px; }
+  .booking { top: -24px; right: -28px; }
+  .cardIcon { width: 36px; height: 36px; border-radius: 10px; }
+  .cardIcon svg { width: 19px; height: 19px; }
+  .card small { font-size: 10px; }
+  .card strong { font-size: 13px; }
+  .check { margin-left: 9px; }
+  .leadCard { bottom: -23px; left: -27px; min-width: 245px; }
+  .caption { margin-top: 10px; font-size: 10px; }
+}
+@media (max-width: 640px) { .float { zoom: .46; } }
+@media (max-width: 520px) { .float { zoom: .36; } }
+@media (max-width: 420px) { .float { zoom: .28; } }
+@media (max-width: 360px) { .float { zoom: .24; } }
