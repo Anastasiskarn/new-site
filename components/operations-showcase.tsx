@@ -65,8 +65,6 @@ export function OperationsShowcase({ lang }: { lang: Locale }) {
             </div>
           </div>
         </div>
-        <div className={`${styles.card} ${styles.booking}`} aria-hidden="true"><span className={styles.cardIcon}><Glyph kind="calendar" /></span><div><small>{greek ? "Από την κλήση στο ημερολόγιο" : "From call to calendar"}</small><strong>{greek ? "Κλείστηκε ραντεβού" : "Appointment booked"}</strong></div><span className={styles.check}><Glyph kind="check" /></span></div>
-        <div className={`${styles.card} ${styles.leadCard}`} aria-hidden="true"><span className={styles.liveDot} /><div><small>{greek ? "Τελευταίο lead" : "Latest lead"}</small><strong>Clark Jones <span>↗</span></strong></div><span className={styles.booked}>{greek ? "Κλεισμένο" : "Booked"}</span></div>
       </div>
     </div>
     <figcaption className={styles.caption}>{greek ? "Προεπισκόπηση εφαρμογής · Ενδεικτικά δεδομένα" : "App preview · Example data"}</figcaption>

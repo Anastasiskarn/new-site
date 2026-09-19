@@ -76,17 +76,6 @@
 .pipelineRow strong { font-weight: 600; }
 .barTrack { display: block; height: 2px; margin-top: 7px; border-radius: 2px; background: #ffffff0d; }
 .bar { display: block; height: 100%; border-radius: inherit; background: #13c8e0; }
-.card { position: absolute; display: flex; align-items: center; gap: 12px; border: 1px solid #ffffff25; border-radius: 14px; background: #101b20f5; padding: 16px 20px; box-shadow: 0 20px 45px #0008, inset 0 1px 0 #ffffff08; text-align: left; }
-.booking { right: -28px; top: -24px; transform: translateZ(45px) rotateZ(1deg); }
-.cardIcon { display: grid; width: 36px; height: 36px; flex-shrink: 0; place-items: center; border: 1px solid #14c9dd35; border-radius: 10px; color: #23d0e2; background: #0c323e; }
-.cardIcon svg { width: 19px; height: 19px; }
-.card small { display: block; font-size: 10px; color: #89a1af; }
-.card strong { display: block; margin-top: 3px; font-size: 13px; font-weight: 500; color: #edf5f8; }
-.check { display: flex; margin-left: 9px; color: #1ccba1; }
-.leadCard { bottom: -23px; left: -27px; gap: 13px; transform: translateZ(60px) rotateZ(1deg); min-width: 245px; }
-.liveDot { width: 7px; height: 7px; border-radius: 50%; background: #18d5ae; box-shadow: 0 0 14px #18d5ae55; }
-.leadCard strong span { margin-left: 20px; color: #849ca8; }
-.booked { margin-left: auto; border: 1px solid #0fca9730; border-radius: 5px; padding: 3px 7px; font-size: 9px; color: #27d9b1; background: #0fca970c; }
 .caption { margin-top: 15px; color: #778993; text-align: center; font-size: 11px; }
 @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
   .float { animation: levitate 8s ease-in-out infinite; }
@@ -98,8 +87,6 @@
   .sidebar { width: 130px; }
   .content { gap: 20px; padding: 25px 20px; grid-template-columns: minmax(0, 1fr) 190px; }
   .app { min-height: 550px; }
-  .booking { right: -12px; }
-  .leadCard { left: -12px; }
 }
 @media (max-width: 767px) {
   .showcase { margin-top: 3rem; }
@@ -117,14 +104,6 @@
   .metrics small span { display: none; }
   .event strong { font-size: 10px; }
   .event p { font-size: 8px; }
-  .card { padding: 11px 13px; border-radius: 11px; gap: 9px; }
-  .booking { right: -5px; top: -22px; }
-  .cardIcon { width: 29px; height: 29px; border-radius: 8px; }
-  .cardIcon svg { width: 16px; height: 16px; }
-  .card small { font-size: 8px; }
-  .card strong { font-size: 11px; }
-  .check { margin-left: 0; }
-  .leadCard { left: -5px; bottom: -20px; min-width: 215px; }
   .caption { margin-top: 10px; font-size: 10px; }
 }
 /* Keep every dashboard panel present; narrower mockups reflow the leads and
@@ -146,12 +125,6 @@
   .summary > p { font-size: 9px; }
   .metrics strong { font-size: 19px; }
   .metrics > div + div { padding-left: 8px; }
-  .card { padding: 12px 14px; gap: 9px; }
-  .card strong { font-size: 11px; }
-  .card small { font-size: 8px; }
-  .cardIcon { width: 30px; height: 30px; }
-  .booking { right: -8px; }
-  .leadCard { left: -8px; min-width: 215px; }
 }
 @container (max-width: 580px) {
   .content { display: block; }
@@ -220,14 +193,6 @@
   .rightColumn { display: block; margin-top: 0; padding-top: 0; border-top: 0; }
   .latest { padding: 0 0 17px 16px; border-left: 1px solid #ffffff08; }
   .pipeline { margin-top: 19px; padding-top: 14px; border-top: 1px solid #ffffff16; }
-  .card { gap: 12px; padding: 16px 20px; border-radius: 14px; }
-  .booking { top: -24px; right: -28px; }
-  .cardIcon { width: 36px; height: 36px; border-radius: 10px; }
-  .cardIcon svg { width: 19px; height: 19px; }
-  .card small { font-size: 10px; }
-  .card strong { font-size: 13px; }
-  .check { margin-left: 9px; }
-  .leadCard { bottom: -23px; left: -27px; min-width: 245px; }
   .caption { margin-top: 10px; font-size: 10px; }
 }
 @media (max-width: 640px) { .float { zoom: .46; } }
