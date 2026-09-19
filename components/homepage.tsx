@@ -10,6 +10,7 @@ import { RevealText, SectionIntro } from "./ui/editorial";
 import { LogoMarquee } from "./ui/logo-marquee";
 import { FaqTabs } from "./faq-tabs";
 import { LampContainer } from "./ui/lamp";
+import { OperationsShowcase } from "./operations-showcase";
 
 // Client-side tools the automations connect to, never our own build stack. Marks live in public/media/stack
 // (svgl.app via 21st.dev, Simple Icons for Airtable and HubSpot). Brand names stay untranslated in both locales.
@@ -54,7 +55,8 @@ function DemoPill({ lang, className = "" }: { lang: Locale; className?: string }
 type RobotSide = "left" | "right" | "off";
 
 // The column a section's content gets on lg+: the half the robot companion is not standing in
-function column(robot: RobotSide) {
+function column(robot: RobotSide, expanded = false) {
+  if (robot === "left" && expanded) return "lg:ml-auto lg:w-[60%] lg:pl-8 xl:pl-10";
   if (robot === "left") return "lg:ml-auto lg:w-1/2 lg:pl-10 xl:pl-16";
   if (robot === "right") return "lg:w-1/2 lg:pr-10 xl:pr-16";
   return "";
@@ -63,11 +65,11 @@ function column(robot: RobotSide) {
 // One rhythm for every homepage section: same padding, gutter and measure. `robot` tells the companion where to
 // stand while this section owns the middle of the viewport ("off" once it has stopped at the dashboard);
 // `wide` renders full width underneath the section's column.
-function HomeSection({ id, robot, className = "", children, wide, decoration, connector = false }: { id: string; robot: RobotSide; className?: string; children: ReactNode; wide?: ReactNode; decoration?: ReactNode; connector?: boolean }) {
+function HomeSection({ id, robot, className = "", children, wide, decoration, connector = false, expanded = false }: { id: string; robot: RobotSide; className?: string; children: ReactNode; wide?: ReactNode; decoration?: ReactNode; connector?: boolean; expanded?: boolean }) {
   return <section id={id} data-robot={robot} className={`relative isolate py-16 sm:py-24 md:py-32 ${className}`} {...(connector ? { "data-connector-section": "" } : {})}>
     {decoration}
-    <div className={`relative mx-auto max-w-8xl px-6 ${decoration ? "z-10" : ""}`}>
-      <div className={column(robot)}>{children}</div>
+    <div className={`relative mx-auto ${expanded ? "max-w-[110rem]" : "max-w-8xl"} px-6 ${decoration ? "z-10" : ""}`}>
+      <div className={column(robot, expanded)}>{children}</div>
       {wide}
     </div>
   </section>;
@@ -232,7 +234,6 @@ export function FaqSection({ lang }: { lang: Locale }) {
 // The robot swaps sides section by section: hero R, process L, capabilities R, dashboard intro L.
 export function OperationsHome({ lang, children }: { lang: Locale; children?: ReactNode }) {
   const t = homepageCopy(lang);
-  const pointIcons = ["voice", "follow", "sync", "calendar", "chart", "book"];
   return <main id="main" className="operations-home">
     <RobotCompanion />
     <Hero lang={lang} />
@@ -250,18 +251,15 @@ export function OperationsHome({ lang, children }: { lang: Locale; children?: Re
       <CapabilityCards lang={lang} compact />
     </HomeSection>
 
-    <HomeSection id="features" robot="left">
-      <SectionIntro title={t.dashboard.title} body={t.dashboard.body} from="left" />
-      <ul className="reveal-stagger mt-14 grid gap-x-8 gap-y-10 sm:grid-cols-2 md:mt-16">{t.dashboard.points.map((point, i) => <li key={point.title} className="reveal border-t border-white/10 pt-6">
-        <span className="text-primary"><ProductIcon name={pointIcons[i]} /></span>
-        <h3 className="mt-5 font-display text-lg font-semibold text-white">{point.title}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-gray-400">{point.body}</p>
-      </li>)}</ul>
-      <Statement text={t.dashboard.close} wide />
+    <HomeSection id="features" robot="left" className="overflow-clip" expanded>
+      <div>
+        <SectionIntro title={t.dashboard.title} body={lang === "en" ? "Calls, leads and bookings. All in one place." : "Κλήσεις, leads και ραντεβού. Όλα σε ένα μέρος."} from="left" />
+        <OperationsShowcase lang={lang} />
+      </div>
     </HomeSection>
 
     <HomeSection id="setup" robot="off" decoration={<LampContainer className="pointer-events-none absolute inset-0 z-0" />} connector>
-      <div className="relative z-10 pt-12">
+      <div data-robot-stop="" className="relative z-10 pt-12">
         <SectionIntro title={t.setup.title} centered />
         <ManagedSteps steps={t.setup.steps} />
         <Statement text={t.setup.close} wide />

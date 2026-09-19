@@ -125,10 +125,10 @@ export default {
     "langSwitchLabel": "Ελληνικά"
   },
   "hero": {
-    "headlineLine1": "We improve the way",
+    "headlineLine1": "Better systems, built around",
     "headlineLine2": "",
-    "headlineLine3": "your business works.",
-    "subhead": "We look at how your business works today, find what slows you down and design the right solution. Automation, AI agents, integrations or custom tools, wherever they are useful. Track their progress and activity in the AiAnchor Operations Platform.",
+    "headlineLine3": "how a business already works.",
+    "subhead": "AiAnchor maps how a business already operates, then builds only the automation, AI or software it actually needs. What goes live stays in one place, where its activity and results remain visible.",
     "ctaPrimary": "Book a discovery call",
     "ctaPrimaryHref": "/en/book-demo/",
     "ctaSecondary": "See how we work",
@@ -451,18 +451,18 @@ export default {
   },
   "pricing": {
     "heading": "We start with what your work needs.",
-    "subhead": "First we review the process. Then we define what to implement and what ongoing support makes sense.",
+    "subhead": "First we review the process. Then we build the solution and keep it running after go-live.",
     "vatNote": "Prices before VAT.",
     "plans": [
       {
         "name": "Initial review",
         "price": "Free",
-        "purpose": "To see whether there is a useful improvement to make.",
-        "body": "In a first conversation, we map the problem, the tools involved and the result you want. If there is a clear opportunity to improve, we explain how we would approach it.",
+        "purpose": "A first conversation to map the process, the tools involved and the result that matters.",
+        "body": "If there is a clear opportunity, the scope and next step are laid out.",
         "items": [
-          "Initial review",
-          "Points of friction",
+          "Process and friction points",
           "Possible solutions",
+          "Rough scope and setup estimate",
           "A clear next step"
         ],
         "cta": {
@@ -471,45 +471,46 @@ export default {
         }
       },
       {
-        "name": "Ongoing operation and improvement",
-        "pricePrefix": "From",
-        "price": "€349",
-        "priceSuffix": "/month",
-        "featured": true,
-        "purpose": "For systems that need monitoring, support and ongoing improvements after implementation.",
-        "body": "We handle the operation, monitoring and improvements of the systems we have implemented. Initial implementation is priced separately, based on scope.",
-        "items": [
-          "Monitoring and management",
-          "Automation and integration support",
-          "AI agent support where used",
-          "Technical support",
-          "Ongoing small improvements",
-          "AiAnchor Operations Platform access"
-        ],
-        "cta": {
-          "label": "Book a discovery call",
-          "target": "book"
-        }
-      },
-      {
-        "name": "Custom implementation",
+        "name": "Setup",
         "price": "Quoted to scope",
-        "purpose": "For projects that need design and development from the ground up.",
-        "body": "We agree the scope, connections, deliverables and how to measure the result. The quote is based on the actual project.",
+        "priceSuffix": "one-time",
+        "purpose": "A one-time build to design the solution, connect it to existing tools and put it into real use.",
+        "body": "Priced by scope, from a single workflow to a multi-system setup.",
         "items": [
-          "Internal tools and custom software",
-          "Custom dashboards and client portals",
-          "CRM improvements",
-          "Complex and multi-system workflows",
-          "Larger operational projects"
+          "Process mapping and solution design",
+          "Automations, AI agents and integrations",
+          "CRM connection and configuration",
+          "Operations Platform setup",
+          "Testing and go-live"
         ],
         "cta": {
           "label": "Tell us about your project",
           "target": "contact"
         }
+      },
+      {
+        "name": "Monthly operation and improvement",
+        "pricePrefix": "From",
+        "price": "€349",
+        "priceSuffix": "/month",
+        "featured": true,
+        "purpose": "Runs after go-live: monitoring, support and ongoing improvements, plus access to the Operations Platform.",
+        "body": "",
+        "items": [
+          "Operations Platform access (leads, calls, bookings, results)",
+          "Monitoring and management",
+          "Automation and integration support",
+          "AI agent support where used",
+          "Ongoing improvements",
+          "Technical support"
+        ],
+        "cta": {
+          "label": "Book a discovery call",
+          "target": "book"
+        }
       }
     ],
-    "note": "Implementation is priced by scope. The monthly engagement covers the operation, support and improvement of systems that are already in place."
+    "note": "Every engagement is a one-time setup plus a monthly operation fee. Larger or more complex builds are quoted to scope."
   },
   "comparison": {
     "heading": "What does each option include?",

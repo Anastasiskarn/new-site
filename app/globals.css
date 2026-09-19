@@ -459,11 +459,15 @@ button:disabled {
     pointer-events: none;
     transform: translate3d(100%, 0, 0);
     translate: 0 var(--robot-lift, 0px);
-    transition: transform 1800ms cubic-bezier(0.45, 0, 0.35, 1);
+    transition: transform 1800ms cubic-bezier(0.45, 0, 0.35, 1), left 1800ms cubic-bezier(0.45, 0, 0.35, 1);
     will-change: transform, translate;
   }
   .robot-stage[data-side="left"] {
     transform: translate3d(0, 0, 0);
+  }
+  .robot-stage[data-layout="showcase"] {
+    width: 50%;
+    left: -6%;
   }
   /* Below the fixed header, so the robot's head is never tucked under the nav */
   .robot-stage-body {

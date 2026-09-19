@@ -1,0 +1,183 @@
+.showcase { position: relative; margin: 4rem auto 0; max-width: 1180px; container-type: inline-size; }
+.stage { position: relative; padding: 2rem 1rem 3rem; perspective: 1800px; }
+.halo { position: absolute; inset: 4% -10% 0; pointer-events: none; background: radial-gradient(ellipse at 50% 50%, #00f0ff15, transparent 65%), radial-gradient(ellipse at 75% 65%, #7000ff13, transparent 55%); filter: blur(35px); }
+.float { position: relative; transform: rotateX(4deg) rotateY(-3deg) rotateZ(-1deg); transform-style: preserve-3d; }
+.window { position: relative; overflow: hidden; border: 1px solid #ffffff20; border-radius: 14px; background: #05090a; box-shadow: 0 50px 85px -25px #000c, 0 0 0 5px #ffffff03, 0 0 60px -25px #00f0ff30; }
+.window::after { position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 1px 0 #ffffff16; pointer-events: none; content: ""; }
+.app { display: flex; min-height: 585px; text-align: left; color: #dbe5e9; font-family: var(--font-body), sans-serif; font-size: 10px; line-height: 1.5; }
+.app svg, .card svg { width: 15px; height: 15px; flex-shrink: 0; }
+.sidebar { display: flex; flex-direction: column; width: 155px; flex-shrink: 0; border-right: 1px solid #ffffff08; background: #080e10; }
+.brand { display: flex; height: 48px; gap: 8px; align-items: center; padding: 0 12px; border-bottom: 1px solid #ffffff08; }
+.brand strong { display: block; font-size: 12px; }
+.brand small { display: block; font-size: 7px; letter-spacing: 1.2px; color: #83959f; }
+.brandMark { display: grid; width: 23px; height: 23px; place-items: center; border-radius: 7px; background: #00cbe011; color: #16c7dd; }
+.collapse { margin-left: auto; font-size: 20px; color: #84949e; }
+.workspace { margin: 18px 14px 7px; font-size: 8px; font-weight: 600; letter-spacing: 1.4px; color: #83959f; }
+.nav { padding: 0 7px; }
+.nav > div { display: flex; align-items: center; gap: 9px; padding: 8px; color: #8c9ca8; font-size: 9px; white-space: nowrap; }
+.nav .active { color: #f2f6f8; background: #112025; border-radius: 6px; font-weight: 600; }
+.active svg { color: #19c9e0; }
+.nav svg { width: 12px; height: 12px; }
+.profile { display: flex; align-items: center; gap: 8px; margin-top: auto; padding: 13px; border-top: 1px solid #ffffff08; }
+.profile > span, .avatar { display: grid; width: 25px; height: 25px; place-items: center; border-radius: 50%; color: #13c5da; background: #0b333c; font-size: 8px; }
+.profile strong, .profile small { display: block; }
+.profile small { color: #83959f; font-size: 8px; }
+.main { flex: 1; min-width: 0; }
+.toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 48px; padding: 0 16px; border-bottom: 1px solid #ffffff08; }
+.search { display: flex; align-items: center; width: 260px; gap: 7px; border: 1px solid #ffffff09; border-radius: 8px; padding: 6px 9px; color: #8b9ba4; background: #0a1113; font-size: 9px; }
+.search svg { color: #12c3d9; width: 12px; }
+.search kbd { margin-left: auto; border: 1px solid #ffffff12; border-radius: 4px; padding: 0 4px; font-size: 7px; white-space: nowrap; }
+.toolbarEnd { display: flex; align-items: center; gap: 15px; color: #81939e; }
+.toolbarEnd > span:first-child { border: 1px solid #ffffff12; border-radius: 5px; color: #c6dce2; padding: 1px 5px; font-size: 7px; }
+.content { display: grid; grid-template-columns: minmax(0, 1fr) 225px; gap: 30px; padding: 30px 30px 32px; background: radial-gradient(ellipse at 40% 0, #04384038, transparent 50%); }
+.overview { min-width: 0; }
+.period { display: inline-flex; gap: 10px; color: #8ba5b0; font-size: 9px; }
+.summary h3 { margin-top: 11px; max-width: 480px; color: #eff4f6; font-size: clamp(18px, 1.7vw, 25px); font-weight: 500; letter-spacing: -.6px; line-height: 1.4; }
+.summary em { border-bottom: 1px solid #12c4db88; font-weight: 600; font-style: normal; }
+.summary > p { margin: 12px 0 27px; font-size: 10px; color: #8eabb7; }
+.sectionHeading { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 10px; font-weight: 600; color: #e4edf2; }
+.sectionHeading > span { font-weight: 400; font-size: 7px; color: #88a2ad; }
+.metrics { display: grid; grid-template-columns: 1fr 1fr 1.2fr; margin: 9px 0 20px; border-top: 1px solid #ffffff18; border-bottom: 1px solid #ffffff18; }
+.metrics > div { min-width: 0; padding: 11px 8px 11px 0; }
+.metrics > div + div { padding-left: 11px; border-left: 1px solid #ffffff09; }
+.metrics span { font-size: 8px; color: #8aa4b0; }
+.metrics strong { display: block; margin: 4px 0 1px; font-size: 21px; font-weight: 600; line-height: 1.2; letter-spacing: -.5px; }
+.metrics small { font-size: 7px; color: #b3c2cb; }
+.metrics .growth { color: #27d9b1; }
+.metrics .decline { color: #e3b780; }
+.metrics small span { font-size: 7px; }
+.savings { grid-template-columns: 1fr 1fr; margin-bottom: 30px; }
+.activity { border-top: 1px solid #ffffff16; padding-top: 15px; }
+.activity .sectionHeading > span { color: #17bfd5; }
+.event { display: flex; gap: 9px; align-items: center; margin-top: 16px; }
+.eventIcon { display: grid; width: 26px; height: 26px; place-items: center; color: #1dc8dc; border: 1px solid #08b6cc35; background: #06333c77; border-radius: 8px; flex-shrink: 0; }
+.eventIcon svg { width: 13px; height: 13px; }
+.success { color: #16c799; border-color: #16c79930; background: #052b2077; }
+.event > div { flex: 1; min-width: 0; }
+.event strong { font-size: 9px; font-weight: 500; }
+.event p { margin-top: 2px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: #8aa4b0; font-size: 8px; }
+.event > small { font-size: 7px; color: #829ba6; }
+.latest { padding: 0 0 17px 16px; border-left: 1px solid #ffffff08; border-radius: 10px; }
+.reply { display: flex; gap: 5px; align-items: center; margin-top: 5px; color: #88a2ad; font-size: 8px; }
+.reply svg { width: 10px; height: 10px; color: #07c898; }
+.lead { padding: 13px 0 12px; border-top: 1px solid #ffffff0d; margin-top: 10px; }
+.lead + .lead { margin-top: 0; }
+.lead > div { display: flex; justify-content: space-between; align-items: center; }
+.lead strong { font-size: 9px; font-weight: 600; }
+.lead span { display: flex; align-items: center; gap: 4px; font-size: 7px; color: #8aa4b0; }
+.lead i { width: 4px; height: 4px; border-radius: 50%; background: #07c898; }
+.lead p { margin: 5px 0; font-size: 8px; color: #8aa4b0; }
+.lead small { display: flex; align-items: center; gap: 5px; font-size: 7px; color: #8aa4b0; }
+.lead small svg { width: 9px; height: 9px; }
+.openLeads { font-size: 8px; color: #12c3d9; }
+.pipeline { margin-top: 19px; border-top: 1px solid #ffffff16; padding-top: 14px; }
+.pipelineRow { margin-top: 13px; }
+.pipelineRow > div { display: flex; justify-content: space-between; font-size: 9px; }
+.pipelineRow strong { font-weight: 600; }
+.barTrack { display: block; height: 2px; margin-top: 7px; border-radius: 2px; background: #ffffff0d; }
+.bar { display: block; height: 100%; border-radius: inherit; background: #13c8e0; }
+.card { position: absolute; display: flex; align-items: center; gap: 12px; border: 1px solid #ffffff25; border-radius: 14px; background: #101b20f5; padding: 16px 20px; box-shadow: 0 20px 45px #0008, inset 0 1px 0 #ffffff08; text-align: left; }
+.booking { right: -28px; top: -24px; transform: translateZ(45px) rotateZ(1deg); }
+.cardIcon { display: grid; width: 36px; height: 36px; flex-shrink: 0; place-items: center; border: 1px solid #14c9dd35; border-radius: 10px; color: #23d0e2; background: #0c323e; }
+.cardIcon svg { width: 19px; height: 19px; }
+.card small { display: block; font-size: 10px; color: #89a1af; }
+.card strong { display: block; margin-top: 3px; font-size: 13px; font-weight: 500; color: #edf5f8; }
+.check { display: flex; margin-left: 9px; color: #1ccba1; }
+.leadCard { bottom: -23px; left: -27px; gap: 13px; transform: translateZ(60px) rotateZ(1deg); min-width: 245px; }
+.liveDot { width: 7px; height: 7px; border-radius: 50%; background: #18d5ae; box-shadow: 0 0 14px #18d5ae55; }
+.leadCard strong span { margin-left: 20px; color: #849ca8; }
+.booked { margin-left: auto; border: 1px solid #0fca9730; border-radius: 5px; padding: 3px 7px; font-size: 9px; color: #27d9b1; background: #0fca970c; }
+.caption { margin-top: 15px; color: #778993; text-align: center; font-size: 11px; }
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  .float { animation: levitate 8s ease-in-out infinite; }
+  @keyframes levitate { 0%, 100% { transform: translateY(0) rotateX(4deg) rotateY(-3deg) rotateZ(-1deg); } 50% { transform: translateY(-10px) rotateX(3deg) rotateY(-2deg) rotateZ(-.6deg); } }
+}
+@media (max-width: 1023px) {
+  .stage { padding: 2rem 1rem 2rem; }
+  .float { transform: rotateZ(-.7deg); }
+  .sidebar { width: 130px; }
+  .content { gap: 20px; padding: 25px 20px; grid-template-columns: minmax(0, 1fr) 190px; }
+  .app { min-height: 550px; }
+  .booking { right: -12px; }
+  .leadCard { left: -12px; }
+}
+@media (max-width: 767px) {
+  .showcase { margin-top: 3rem; }
+  .stage { padding: 2rem 0 2rem; }
+  .toolbarEnd, .search kbd { display: none; }
+  .content { display: block; padding: 24px 20px; }
+  .app { min-height: 0; }
+  .toolbar { height: 45px; padding: 0 16px; }
+  .search { width: 100%; border: 0; padding: 0; background: transparent; }
+  .summary h3 { font-size: 23px; max-width: 400px; }
+  .summary > p { font-size: 10px; margin-bottom: 25px; }
+  .metrics strong { font-size: 19px; }
+  .metrics span { font-size: 8px; }
+  .metrics > div + div { padding-left: 8px; }
+  .metrics small span { display: none; }
+  .event strong { font-size: 10px; }
+  .event p { font-size: 8px; }
+  .card { padding: 11px 13px; border-radius: 11px; gap: 9px; }
+  .booking { right: -5px; top: -22px; }
+  .cardIcon { width: 29px; height: 29px; border-radius: 8px; }
+  .cardIcon svg { width: 16px; height: 16px; }
+  .card small { font-size: 8px; }
+  .card strong { font-size: 11px; }
+  .check { margin-left: 0; }
+  .leadCard { left: -5px; bottom: -20px; min-width: 215px; }
+  .caption { margin-top: 10px; font-size: 10px; }
+}
+/* Keep every dashboard panel present; narrower mockups reflow the leads and
+   pipeline below the overview instead of removing them. */
+@container (max-width: 900px) {
+  .stage { padding: 2rem 1rem 2rem; }
+  .sidebar { width: 125px; }
+  .brand { gap: 5px; padding: 0 8px; }
+  .brand strong { font-size: 10px; }
+  .brand small { font-size: 6px; letter-spacing: .6px; }
+  .workspace { margin-left: 11px; font-size: 7px; }
+  .nav > div { gap: 6px; padding: 8px 4px; font-size: 8px; }
+  .nav span { overflow: hidden; text-overflow: ellipsis; }
+  .app { min-height: 0; }
+  .content { display: grid; grid-template-columns: minmax(0, 1fr) 175px; gap: 18px; padding: 24px 18px; }
+  .toolbar { padding: 0 14px; }
+  .search { width: 100%; min-width: 0; font-size: 8px; }
+  .summary h3 { font-size: 21px; }
+  .summary > p { font-size: 9px; }
+  .metrics strong { font-size: 19px; }
+  .metrics > div + div { padding-left: 8px; }
+  .card { padding: 12px 14px; gap: 9px; }
+  .card strong { font-size: 11px; }
+  .card small { font-size: 8px; }
+  .cardIcon { width: 30px; height: 30px; }
+  .booking { right: -8px; }
+  .leadCard { left: -8px; min-width: 215px; }
+}
+@container (max-width: 580px) {
+  .content { display: block; }
+  .rightColumn { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 26px; padding-top: 20px; border-top: 1px solid #ffffff16; }
+  .latest { padding: 0; border-left: 0; }
+  .pipeline { margin-top: 0; padding-top: 0; border-top: 0; }
+  .sidebar { width: 105px; }
+  .metrics small span { display: none; }
+}
+@container (max-width: 440px) {
+  .sidebar { width: 82px; }
+  .brand { flex-wrap: wrap; justify-content: center; gap: 2px; height: 65px; text-align: center; }
+  .brand small { font-size: 5px; }
+  .collapse { display: none; }
+  .nav > div { gap: 4px; font-size: 7px; white-space: normal; }
+  .nav span { overflow: visible; }
+  .nav svg { width: 10px; height: 10px; }
+  .workspace { margin-left: 8px; font-size: 6px; letter-spacing: 1px; }
+  .profile { gap: 4px; padding: 9px 5px; font-size: 8px; }
+  .stage { padding-inline: 0; }
+  .content { padding: 24px 12px; }
+  .summary h3 { font-size: 19px; }
+  .metrics { grid-template-columns: 1fr 1fr; }
+  .metrics > div:nth-child(3) { grid-column: 1 / -1; padding-left: 0; border-left: 0; border-top: 1px solid #ffffff09; }
+  .metrics strong { font-size: 18px; }
+  .rightColumn { display: block; }
+  .pipeline { margin-top: 22px; }
+}
+@media (prefers-reduced-motion: reduce) { .float { transform: none; } }

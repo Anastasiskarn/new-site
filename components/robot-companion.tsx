@@ -12,12 +12,13 @@ type Side = "left" | "right" | "off";
 
 // One robot for the top of the homepage. It lives in a fixed half-viewport stage behind the content and glides to
 // whichever side the block under the middle of the viewport asks for (data-robot="left|right|off" on the block).
-// When the [data-robot-stop] element (the dashboard image) reaches the bottom of the screen the robot stops
-// following: it stays standing on top of the image and scrolls away with the page.
+// When [data-robot-stop] in the setup section enters the screen, the robot scrolls away.
+// This keeps it alongside the dashboard for the full platform section.
 // Wide screens only: below lg the sections fall back to full width and the WebGL runtime is never requested.
 // The layout itself is pure CSS, so nothing shifts when this hydrates or when the scene is slow to arrive.
 export function RobotCompanion() {
   const [side, setSide] = useState<Side>("right");
+  const [showcaseLayout, setShowcaseLayout] = useState(false);
   const [moving, setMoving] = useState(false);
   const [gone, setGone] = useState(false);
   const [mount, setMount] = useState(false);
@@ -51,6 +52,7 @@ export function RobotCompanion() {
           else active.delete(entry.target);
         }
         const current = markers.filter((marker) => active.has(marker)).pop();
+        setShowcaseLayout(current?.id === "features");
         setSide((current?.dataset.robot as Side | undefined) ?? "off");
       },
       // A thin band across the middle of the viewport decides who owns the robot
@@ -112,7 +114,7 @@ export function RobotCompanion() {
   return (
     <>
     <link rel="preconnect" href="https://prod.spline.design" crossOrigin="anonymous" />
-    <div ref={stage} className="robot-stage" data-side={side} data-moving={moving || undefined} data-ready={ready || undefined} aria-hidden="true">
+    <div ref={stage} className="robot-stage" data-side={side} data-layout={showcaseLayout ? "showcase" : undefined} data-moving={moving || undefined} data-ready={ready || undefined} aria-hidden="true">
       <div className="robot-stage-body">
         {mount && (
           <div className="robot-canvas">

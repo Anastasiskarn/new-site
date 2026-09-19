@@ -19,7 +19,7 @@ export function Navigation({
   const other = lang === "en" ? "gr" : "en";
   const home = homepageCopy(lang);
   const entries = [
-    [pathFor(lang) + "#services", home.nav.platform],
+    [pathFor(lang) + "#features", home.nav.platform],
     [pathFor(lang) + "#how-it-works", home.nav.process],
     [pathFor(lang) + "#pricing", home.nav.pricing],
     [pathFor(lang) + "#about", home.nav.about],

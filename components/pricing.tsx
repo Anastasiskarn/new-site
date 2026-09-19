@@ -1,6 +1,7 @@
 import type { Content } from "../lib/content";
 import { getContent } from "../lib/content";
 import { pathFor, type Locale } from "../lib/routes";
+import styles from "./pricing.module.css";
 
 type Plan = Content["pricing"]["plans"][number];
 
@@ -20,12 +21,12 @@ function Check() {
   );
 }
 
-// One engagement level: name, price, who it is for, a short list and a single CTA pinned to the bottom
+// One step in the engagement, with a single CTA pinned to the bottom.
 function PlanCard({ plan, href }: { plan: Plan; href: string }) {
   const featured = "featured" in plan && plan.featured;
   return (
     <article
-      className={`pricing-card card-lift relative flex flex-col rounded-2xl border p-6 sm:p-8 ${
+      className={`${styles.card} pricing-card card-lift relative flex flex-col rounded-2xl border p-6 sm:p-8 ${
         featured
           ? "border-primary/40 bg-gradient-to-b from-primary/[0.06] to-dark-800/40"
           : "border-white/10 bg-dark-800/40"
@@ -33,7 +34,7 @@ function PlanCard({ plan, href }: { plan: Plan; href: string }) {
     >
       <span className="pricing-card-glow" aria-hidden="true" />
       <div className="relative flex flex-1 flex-col">
-        <h3 className="font-display text-xl font-semibold text-white">
+        <h3 className="font-display text-xl font-semibold text-white lg:min-h-14">
           {plan.name}
         </h3>
         <p className="mt-5 flex min-h-12 flex-wrap items-baseline gap-x-2 gap-y-1">
@@ -50,9 +51,9 @@ function PlanCard({ plan, href }: { plan: Plan; href: string }) {
         <p className="mt-4 text-base leading-relaxed text-gray-200 lg:min-h-[4.5rem]">
           {plan.purpose}
         </p>
-        <p className="mt-3 text-sm leading-relaxed text-gray-400">
+        {plan.body && <p className="mt-3 text-sm leading-relaxed text-gray-400">
           {plan.body}
-        </p>
+        </p>}
         <ul className="mt-6 space-y-3 border-t border-white/[0.08] pt-6 text-sm leading-5 text-gray-300">
           {plan.items.map((item) => (
             <li key={item} className="flex gap-3">
@@ -92,6 +93,7 @@ export function Pricing({
     book: pathFor(lang, "book-demo"),
     contact: `mailto:${getContent(lang).footer.contactEmail}`,
   };
+  const steps = lang === "en" ? ["Review", "Setup", "Operate & improve"] : ["Αξιολόγηση", "Υλοποίηση", "Λειτουργία & βελτίωση"];
   return (
     <section id="pricing" className="relative overflow-hidden py-16 sm:py-24 md:py-32">
       <div
@@ -111,19 +113,23 @@ export function Pricing({
             {copy.subhead}
           </p>
         </div>
-        <div className="mt-14 grid gap-4 md:mt-16 lg:grid-cols-3 lg:gap-5">
-          {copy.plans.map((plan) => (
+        <ol className={styles.journey} aria-label={lang === "en" ? "Engagement steps" : "Βήματα συνεργασίας"}>
+          {copy.plans.map((plan, index) => (
+            <li className={styles.step} key={plan.name}>
+              <div className={styles.stepHead}>
+                <span className={styles.marker} aria-hidden="true">{index + 1}</span>
+                <span className={styles.stepLabel}>{steps[index]}</span>
+              </div>
             <PlanCard
-              key={plan.name}
               plan={plan}
               href={targets[plan.cta.target as keyof typeof targets]}
             />
+            </li>
           ))}
-        </div>
+        </ol>
         <p className="mt-10 max-w-2xl text-base leading-relaxed text-gray-300">
-          {copy.note}
+          {copy.note} {copy.vatNote}
         </p>
-        <p className="mt-2 text-sm text-gray-400">{copy.vatNote}</p>
       </div>
     </section>
   );
